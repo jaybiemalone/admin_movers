@@ -1,0 +1,182 @@
+.legal-main-content {
+    max-width: 1000px;
+    height: 100vh;
+    color: black;
+    padding: 10px 50px;
+    overflow: auto;
+}
+
+li{
+    list-style: none;
+}
+
+.legal-main-content::-webkit-scrollbar{
+    display: none;
+}
+
+.legal-main-content .legal-container .legal-box .legal-boxbox2 i {
+    flex-shrink: 0;
+    font-size: 50px;
+    fill: #EDEDED;
+}
+
+.legal-main-content .legal-container {
+    border-radius: 20px;
+    flex-wrap: wrap;
+    display: flex;
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+.legal-container::-webkit-scrollbar {
+    display: none;
+}
+
+.legal-main-content .legal-container .legal-box {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    overflow: auto;
+}
+/*1 Legal box edit*/
+.legal-main-content .legal-container .legal-box:nth-child(1){
+    display: grid;
+    grid-template-rows: 40px 1fr;
+}
+
+.legal-main-content .legal-container .legal-box:nth-child(1) .legal-boxbox1 {
+    background-color: #DADADA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.legal-main-content .legal-container .legal-box:nth-child(1) .legal-boxbox2 {
+    display: flex;
+    gap: 80px;
+    border-top: 1px solid grey;
+    padding: 20px 80px 20px 80px;
+    flex-wrap: wrap;
+}
+
+.legal-main-content .legal-container .legal-box:nth-child(1) .legal-boxbox2 .complience-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #628EFF;
+    width: 140px;
+    height: 100px;
+}
+
+.legal-main-content .legal-container .legal-box:nth-child(1) .legal-boxbox2 a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.legal-main-content .legal-container .legal-box:nth-child(1) .legal-boxbox2 a:hover{
+    opacity: 80%;
+}
+/*Legal box 1 end*/
+
+
+
+/*2 Legal box edit*/
+.legal-main-content .legal-container .legal-box:nth-child(2){
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.legal-main-content .legal-container .legal-box:nth-child(2) .top ul{
+    box-sizing: border-box;
+    width: 250px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+}
+.legal-main-content .legal-container .legal-box:nth-child(2) .top ul li{
+    padding-top: 5px;
+    list-style: none;
+    font-size: 12px;
+    display: flex;
+    margin-left: 50px;
+}
+.legal-main-content .legal-container .legal-box:nth-child(2) .top ul li span{
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.legal-main-content .legal-container .legal-box:nth-child(2) .top ul li:nth-child(1) span{
+    background-color: rgba(65, 53, 235, 0.623);
+}
+.legal-main-content .legal-container .legal-box:nth-child(2) .top ul li:nth-child(2) span{
+    background-color: rgba(187, 61, 23, 0.658);
+}
+.legal-main-content .legal-container .legal-box:nth-child(2) .top ul li:nth-child(3) span{
+    background-color: rgba(12, 107, 55, 0.596);
+}
+.legal-main-content .legal-container .legal-box:nth-child(2) .top ul li:nth-child(4) span{
+    background-color: rgba(112, 52, 209, 0.541);
+}
+.legal-main-content .legal-container .legal-box:nth-child(2) .top ul li:nth-child(5) span{
+    background-color: rgba(187, 96, 22, 0.589);
+}
+.legal-main-content .legal-container .legal-box:nth-child(2) .bottom ul li{
+    list-style: none;
+}
+.legal-main-content .legal-container .legal-box:nth-child(2) .bottom{
+    width: 250px;
+    height: 200px;
+}
+/*Legal box 2 end*/
+
+/*3 Legal box edit*/
+.legal-main-content .legal-container .legal-box:nth-child(3){
+    width: 640px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.legal-main-content .legal-container .legal-box:nth-child(3) .top{
+    width: 250px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.legal-main-content .legal-container .legal-box:nth-child(3) .bottom{
+    width: auto;
+    height: auto;
+}
+
+/*Legal box 3 end*/
+
+
+
+@media only screen and (max-width: 945px) {
+}
+
+@media only screen and (max-width: 875px) {
+}
+
+@media only screen and (max-width: 660px) {
+}
+
+@media only screen and (max-width: 475px) {
+}
+
+@media only screen and (max-width: 375px) {
+}
