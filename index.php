@@ -10,7 +10,6 @@
 </head>
 <body>
     <div class="login-container">
-        <img src="./Asset/loginbackground.png" alt="">
         <form id="login-form">
             <div class="logo-container">
                 <img src="./Asset/logo.png" alt="" width="300" height="120">
