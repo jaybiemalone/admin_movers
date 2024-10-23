@@ -2,7 +2,7 @@
 // Database connection settings
 $servername = "localhost";
 $username = "admin_adminmov";
-$password = "gHvlCB%CK3kt*Jl";
+$password = "gHvlCB%CK3kt*Jl^";
 $dbname = "admin_movers";
 
 // Create connection
