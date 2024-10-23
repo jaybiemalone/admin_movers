@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="sidebar2" style="display: none;" id="sideshow">
+    <!-- <div class="sidebar2" style="display: none;" id="sideshow">
         <ul>
             <li>
                 <div class="Logo">
@@ -86,7 +86,7 @@
                 </a>
             </li>
         </ul>
-    </div>
+    </div> -->
     <div class="sidebar">
         <ul>
             <li>
@@ -187,7 +187,7 @@
                 <button style="display: none;" id="sidebtn"><i class='bx bx-menu bx-rotate-180' ></i></button>
             </div>
         </nav>
-        <div class="legal-monitoring-content">
+        <div class="legal-monitoring-passenger">
             <div class="passenger-container">
                 <div class="top">
                     <h3>Passenger</h3>

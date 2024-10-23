@@ -187,7 +187,7 @@
             <div class="monitoring-container">
                 <div class="monitor">
                     <div class="top">
-                        <h3>Monitoring</h3>
+                        <h2>Monitoring</h2>
                     </div>
                     <div class="box">
                         <a href="passenger-button.php"><div class="passenger">
