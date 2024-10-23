@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <!-- <div class="sidebar2" style="display: none;" id="sideshow">
+    <div class="sidebar2" style="display: none;" id="sideshow">
         <ul>
             <li>
                 <div class="Logo">
@@ -86,7 +86,7 @@
                 </a>
             </li>
         </ul>
-    </div> -->
+    </div>
     <div class="sidebar">
         <ul>
             <li>
@@ -195,7 +195,7 @@
                 <div class="bottom">
                     <div class="passenger-log-container">
                     <?php
-            // Include database connection
+            // Include database connection po
             include 'db.php';
 
             // Query to retrieve passenger data
