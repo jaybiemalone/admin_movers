@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="sidebar2" style="display: none;" id="sideshow">
+    <!-- <div class="sidebar2" style="display: none;" id="sideshow">
         <ul>
             <li>
                 <div class="Logo">
@@ -86,7 +86,7 @@
                 </a>
             </li>
         </ul>
-    </div>
+    </div> -->
     <div class="sidebar">
         <ul>
             <li>
@@ -171,7 +171,9 @@
                     <span>Legal Compliance</span>
                 </a>
                 <i class='bx bx-chevron-right'></i>
-                <span>Monitoring</span>
+                <a href="monitoring.php"><span>Monitoring</span></a>
+                <i class='bx bx-chevron-right'></i>
+                <span>Driver</span>
             </div>
             <div class="log-out">
                 <button id="toggleBtn"><i class='bx bx-cog' ></i></button>
@@ -184,28 +186,11 @@
             </div>
         </nav>
         <div class="legal-monitoring-content">
-            <div class="monitoring-container">
-                <div class="monitor">
-                    <div class="top">
-                        <h2>Monitoring</h2>
-                    </div>
-                    <div class="box">
-                        <a href="passenger-button.php"><div class="passenger">
-                            <img src="./Asset/passenger-button.png" alt="" style="border-radius: 20px;">
-                            <h2>Passenger</h2>
-                        </div></a>
-                        <a href="legal-driver-monitor.php"><div class="driver">
-                            <img src="./Asset/driver-button.png" alt="" style="border-radius: 20px;">
-                            <h2>Driver</h2>
-                        </div></a>
-                    </div>
-                </div>
+            <div class="legal-driver-container">
+
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-    <script src="./javascript/legal-chart.js"></script>
-    <script src="./javascript/legal-chart2.js"></script>
 </body>
 
 </html>
