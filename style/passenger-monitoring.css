@@ -4,41 +4,133 @@
     justify-content: center;
 }
 
-.passenger-container{
+.passenger-container {
     background-color: white;
     color: black;
     max-width: 1080px;
     height: 600px;
 }
 
-.passenger-container .top{
+.passenger-container .top {
     display: flex;
     align-items: center;
-    justify-content: center ;
+    justify-content: center;
     height: 50px;
     width: 100%;
     background-color: #efefef;
 }
 
-.passenger-container .bottom{
+.passenger-container .bottom {
     min-width: 600px;
 }
 
-.passenger-container .bottom .passenger-log-container table tr td{
+.passenger-container .bottom .passenger-log-container table tr td {
     padding: 20px;
 }
 
 .passenger-container .bottom .passenger-log-container table tr td:nth-child(6),
-.passenger-container .bottom .passenger-log-container table tr td:nth-child(8){
+.passenger-container .bottom .passenger-log-container table tr td:nth-child(8) {
     display: none;
 }
-.passenger-container .bottom .passenger-log-container table tr:nth-child(even){
+
+.passenger-container .bottom .passenger-log-container table tr:nth-child(even) {
     background-color: aqua;
 }
-.passenger-container .bottom .passenger-log-container table tr:nth-child(odd){
+
+.passenger-container .bottom .passenger-log-container table tr:nth-child(odd) {
     background-color: rgba(0, 255, 255, 0.493);
 }
-.passenger-container .bottom .passenger-log-container table tr:nth-child(1){
+
+.passenger-container .bottom .passenger-log-container table tr:nth-child(1) {
     background: black;
     color: white;
 }
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: white;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%; /* Could be more or less depending on screen size */
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Close button (X) */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+@media only screen and (max-width: 942px) {}
+
+@media only screen and (max-width: 660px) {
+    .passenger-container {
+        position: absolute;
+        margin-top: 650px;
+
+    }
+
+    .passenger-container .bottom .passenger-log-container table tr td:nth-child(2),
+    .passenger-container .bottom .passenger-log-container table tr td:nth-child(3),
+    .passenger-container .bottom .passenger-log-container table tr td:nth-child(4),
+    .passenger-container .bottom .passenger-log-container table tr td:nth-child(5),
+    .passenger-container .bottom .passenger-log-container table tr td:nth-child(7) {
+        display: none;
+    }
+    .passenger-container .bottom .passenger-log-container table tr td:nth-child(8) button{
+        background: blue;
+        border: none;
+        padding:10px 25px;
+        color: white;
+        border-radius: 15px;
+        font-weight: bold;
+    }
+    .passenger-container .bottom .passenger-log-container table tr td:nth-child(8) button:hover{
+        opacity: 80%;
+    }
+    .passenger-container .bottom .passenger-log-container table tr td:nth-child(8){
+        display: block;
+    }
+
+    .passenger-container #detailsModal.modal .modal-content > a{
+        position: absolute;
+        right: 0;
+        margin-right: 60px;
+        margin-top: 10px;
+        background-color: rgb(230, 75, 75);
+        padding: 10px 20px;
+        border-radius: 15px;
+    }
+    .passenger-container #detailsModal.modal .modal-content > a:hover{
+        background-color: green;
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 568px) {}
+
+@media only screen and (max-width: 475px) {}
+
+@media only screen and (max-width: 375px) {}

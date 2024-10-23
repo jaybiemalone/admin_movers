@@ -212,7 +212,7 @@
                             <td><h3>Ticket</h3></td>
                             <td><h3>Status</h3></td>
                             <td style="display: none;">text</td>
-                            <td><h3>Data</h3></td>
+                            <td><h3>Date</h3></td>
                             <td><h3>Action</h3></td>
                         </tr>';
 

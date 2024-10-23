@@ -5,13 +5,13 @@ function showDetails(id) {
         .then(data => {
             // Populate the modal with details
             const modalDetails = document.getElementById('modalDetails');
-            modalDetails.innerHTML = `
-                <p><strong>User:</strong> ${data.user}</p>
-                <p><strong>ID:</strong> ${data.id}</p>
-                <p><strong>Email:</strong> ${data.email}</p>
-                <p><strong>Ticket:</strong> ${data.ticket}</p>
-                <p><strong>Status:</strong> ${data.dstatus}</p>
-                <p><strong>Details:</strong> ${data.dtext}</p>
+            modalDetails.innerHTML = `<br>
+                <p><strong>User:</strong> ${data.user}</p><br>
+                <p><strong>ID:</strong> ${data.id}</p><br>
+                <p><strong>Email:</strong> <a href="#" style="color: blue;"><u>${data.email}</u></a></p><br>
+                <p><strong>Ticket:</strong> ${data.ticket}</p><br>
+                <p><strong>Status:</strong> ${data.dstatus}</p><br>
+                <p><strong>Details:</strong> ${data.dtext}</p><br>
                 <p><strong>Date:</strong> ${data.ddate}</p>
             `;
 

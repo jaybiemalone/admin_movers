@@ -1,12 +1,12 @@
 <?php
 // Database connection settings
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "admin_adminmov";
+$password = "gHvlCB%CK3kt*Jl";
 $dbname = "admin_movers";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-
+// password:gHvlCB%CK3kt*Jl^
 ?>
