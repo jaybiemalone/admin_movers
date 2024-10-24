@@ -10,7 +10,7 @@ function showDetails(id) {
                 <p><strong>ID:</strong> ${data.id}</p><br>
                 <p><strong>Email:</strong> <a href="#" style="color: blue;"><u>${data.email}</u></a></p><br>
                 <p><strong>Ticket:</strong> ${data.ticket}</p><br>
-                <p><strong>Status:</strong> ${data.dstatus}</p><br>
+                <p><strong>Status:</strong> <span style=" border: 1px solid black; border-radius: 15px; padding: 10px 20px;">${data.dstatus}</span></p><br>
                 <p><strong>Details:</strong> ${data.dtext}</p><br>
                 <p><strong>Date:</strong> ${data.ddate}</p>
             `;

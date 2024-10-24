@@ -26,10 +26,6 @@ const doughnut = new Chart(ctx2, {
         }]
     },
     options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
+        responsive: true,
     }
 });

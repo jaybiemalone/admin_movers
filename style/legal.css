@@ -54,7 +54,8 @@ li{
 
 .legal-main-content .legal-container .legal-box:nth-child(1) .legal-boxbox2 {
     display: flex;
-    gap: 80px;
+    align-items: center;
+    justify-content: space-between;
     border-top: 1px solid grey;
     padding: 20px 80px 20px 80px;
     flex-wrap: wrap;
@@ -69,6 +70,7 @@ li{
     background-color: #628EFF;
     width: 140px;
     height: 100px;
+    margin: 20px 30px;
 }
 
 .legal-main-content .legal-container .legal-box:nth-child(1) .legal-boxbox2 a {

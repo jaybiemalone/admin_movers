@@ -12,7 +12,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="sidebar2" style="display: none;" id="sideshow">
+    <!-- <div class="sidebar2" style="display: none;" id="sideshow">
         <ul>
             <li>
                 <div class="Logo">
@@ -84,7 +84,7 @@
                 </a>
             </li>
         </ul>
-    </div>
+    </div> -->
     <div class="sidebar">
         <ul>
             <li>
@@ -177,6 +177,71 @@
                 <button style="display: none;" id="sidebtn"><i class='bx bx-menu bx-rotate-180' ></i></button>
             </div>
         </nav>
+        <div class="user-content">
+            <div class="user-content-top">
+                <div class="employees">
+                    <h2>Employees <span id="num-account">()</span></h2>
+                </div>
+                <div class="user-content-top-right">
+                    <div class="user-search">
+                        <input type="search" id="search" name="search"><label for="search"><i class='bx bx-search' style='color:#878484'></i></label>
+                    </div>
+                    <div class="user-export-salaries">
+                        <a href="#">Export Salaries</a>
+                    </div>
+                    <div class="add-employee">
+                        <a href="#">Add Employee</a>
+                    </div>
+                </div>
+            </div>
+            <div class="user-container">
+                <button id="showContent1" class="show-button"><h3>Personal</h3></button>
+                <button id="showContent2" class="show-button"><h3>Archive</h3></button>
+
+                <div id="content1" class="content">
+                    <div class="select-option">
+                        <ul>
+                            <li><label for="role">Role
+                                <select name="role" id="role">
+                                    <option value="">All</option>
+                                    <option value="">All</option>
+                                    <option value="">All</option>
+                                </select>
+                            </label></li>
+                            <li>
+                                <label for="position">Position
+                                <select name="position" id="position">
+                                    <option value="">All</option>
+                                    <option value="">All</option>
+                                    <option value="">All</option>
+                                </select>
+                            </label></li>
+                            <li>
+                                <label for="team">Team
+                                <select name="team" id="team">
+                                    <option value="">All</option>
+                                    <option value="">All</option>
+                                    <option value="">All</option>
+                                </select>
+                            </label></li>
+                            <li>
+                                <label for="location">Location
+                                <select name="location" id="location">
+                                    <option value="">All</option>
+                                    <option value="">All</option>
+                                    <option value="">All</option>
+                                </select>
+                            </label></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="content2" class="content" style="display: none;">
+                    <p>This is the second content!</p>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="./javascript/user-container.js"></script>
 </body>
 </html>

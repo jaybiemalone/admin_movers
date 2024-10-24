@@ -11,6 +11,7 @@
 @import url(sidebar2.css);
 @import url(monitoring.css);
 @import url(passenger-monitoring.css);
+@import url(user-content.css);
 
 *{
     padding: 0;
@@ -50,7 +51,6 @@ body{
 }
 @media  only screen and (max-width: 660px){
     .main-content{
-        padding-top: 50px;
         width: 100vw;
         position: absolute;
     }
