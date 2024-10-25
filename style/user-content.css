@@ -114,7 +114,7 @@
 .select-option ul table tr td {
     padding: 5px 30px;
     text-align: start;
-    border: 2px solid rgba(128, 128, 128, 0.301);
+    border: none;
 }
 
 .select-option ul table tr td span {

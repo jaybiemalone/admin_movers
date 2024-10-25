@@ -245,7 +245,7 @@
 
             if (mysqli_num_rows($result) > 0) {
                 // Start table HTML
-                echo '<table style="width:100%; text-align: center;">
+                echo '<table style="width:100%; text-align: center;" cellspacing="0">
                                 <tr>
                                     <td>Full Name/ Phone</td>
                                     <td>Role</td>
