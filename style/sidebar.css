@@ -3,6 +3,7 @@
     height: 100vh;
     padding: 5px 1em;
     border-right: 1px solid rgb(233, 230, 230);
+    font-size: 12px;
 
     overflow: auto;
 

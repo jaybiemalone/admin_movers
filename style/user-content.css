@@ -9,18 +9,24 @@
     overflow: hidden;
 }
 
+.user-content .user-content-top .employees h1{
+    font-size: 18px;
+}
+
 .user-content-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
+    font-size: 12px;
 }
 
 .user-content-top-right {
     display: flex;
     gap: 50px;
     flex-wrap: wrap;
+    font-size: 12px;
 }
 
 .user-search {
@@ -62,6 +68,7 @@
     align-items: flex-start;
     flex-direction: column;
     overflow: auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.411);
 }
 
 .choose {
@@ -70,17 +77,18 @@
 
 #content1, #content2 {
     margin: 0 10px;
-    width: 1180px;
+    width: 1080px;
     height: 600px;
     border-top: 3px solid rgba(128, 128, 128, 0.74);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    font-size: 12px;
 }
 
 .select-option {
-    width: 1180px;
+    width: 1080px;
     height: 100%;
 
     overflow: auto;
@@ -96,6 +104,7 @@
 
 .select-option ul li {
     padding: 0 10px;
+    font-size: 12px;
 }
 
 .user-container button {
@@ -106,15 +115,15 @@
     border-bottom: rgb(60, 60, 145);
 }
 
-.user-container .choose > button:hover {
-    border-bottom: 3px solid rgb(60, 60, 145);
+.user-container .choose > button:hover{
     color: rgb(60, 60, 145);
 }
 
 .select-option ul table tr td {
-    padding: 5px 30px;
+    padding: 5px 0px;
     text-align: start;
     border: none;
+    font-size: 12px;
 }
 
 .select-option ul table tr td span {
@@ -131,6 +140,7 @@
     color: white;
     border-radius: 10px;
     padding: 10px 20px;
+    font-size: 12px;
 }
 
 .select-option ul table tr td button:last-child {
@@ -139,6 +149,7 @@
     border-radius: 10px;
     padding: 10px 20px;
     margin-left: 10px;
+    font-size: 12px;
 }
 
 .select-option ul table tr:hover {
@@ -169,6 +180,15 @@
     width: 80%;
     max-width: 600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user-modal-content .choices button{
+    text-align: center;
+}
+
+.user-modal-content .choices button:hover{
+    border-bottom: 3px solid rgb(60, 60, 145);
+    color: rgb(60, 60, 145);
 }
 
 .user-modal-close {

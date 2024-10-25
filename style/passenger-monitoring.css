@@ -2,13 +2,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 12px;
+    padding: 20px;
 }
 
 .passenger-container {
     background-color: white;
     color: black;
-    max-width: 1080px;
+    width: 100%;
     height: 600px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.411);
 }
 
 .passenger-container .top {
@@ -18,6 +23,8 @@
     height: 50px;
     width: 100%;
     background-color: #efefef;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .passenger-container .bottom {

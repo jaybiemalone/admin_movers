@@ -38,6 +38,7 @@ li{
     box-sizing: border-box;
     background-color: white;
     overflow: auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.411);
 }
 /*1 Legal box edit*/
 .legal-main-content .legal-container .legal-box:nth-child(1){

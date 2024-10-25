@@ -180,7 +180,7 @@
         <div class="user-content">
             <div class="user-content-top">
                 <div class="employees">
-                    <h2>Employees <span id="num-account">()</span></h2>
+                    <h1>Employees <span id="num-account">()</span></h1>
                 </div>
                 <div class="user-content-top-right">
                     <div class="user-search">
@@ -196,8 +196,8 @@
             </div>
             <div class="user-container">
                 <div class="choose">
-                <button id="showContent1" class="show-button"><h3>Personal</h3></button>
-                <button id="showContent2" class="show-button"><h3>Archive</h3></button>
+                <button id="showContent1" class="show-button" ><h3>Personal</h3></button>
+                <button id="showContent2" class="show-button" ><h3>Archive</h3></button>
                 </div>
                 <div id="content1" class="content">
                     <div class="select-option">
