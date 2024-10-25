@@ -195,9 +195,10 @@
                 </div>
             </div>
             <div class="user-container">
+                <div class="choose">
                 <button id="showContent1" class="show-button"><h3>Personal</h3></button>
                 <button id="showContent2" class="show-button"><h3>Archive</h3></button>
-
+                </div>
                 <div id="content1" class="content">
                     <div class="select-option">
                         <ul>
@@ -251,6 +252,7 @@
                                     <td>Position/Rate</td>
                                     <td>Team</td>
                                     <td>Room</td>
+                                    <td></td>
                                 </tr>';
 
                 // Loop through the query results and display each row
@@ -286,7 +288,11 @@
                                 <button id="add-vacation" class="add-vacation">Vacation</button>
                             </div>
                             <div id="add-employee-content" class="add-employee-content">
-                                
+                            <div class="top">
+                                <div class="left-profile"></div>
+                                <div class="right-information"></div>
+                            </div>
+                            <div class="bottom"></div>
                             </div>
                             <div id="add-work-content" class="add-work-content" style="display: none;">
                             </div>
@@ -296,7 +302,7 @@
                         <!-- user-Modal Content end-->
                     </div>
                 </div>
-
+        </div>
                 <div id="content2" class="content" style="display: none;">
                 </div>
             </div>
