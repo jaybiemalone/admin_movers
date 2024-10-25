@@ -12,7 +12,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <!-- <div class="sidebar2" style="display: none;" id="sideshow">
+    <div class="sidebar2" style="display: none;" id="sideshow">
         <ul>
             <li>
                 <div class="Logo">
@@ -84,7 +84,7 @@
                 </a>
             </li>
         </ul>
-    </div> -->
+    </div>
     <div class="sidebar">
         <ul>
             <li>
@@ -189,7 +189,7 @@
                     <div class="user-export-salaries">
                         <a href="#">Export Salaries</a>
                     </div>
-                    <div class="add-employee">
+                    <div class="add-employee" id="user-open-modal">
                         <a href="#">Add Employee</a>
                     </div>
                 </div>
@@ -233,11 +233,71 @@
                                 </select>
                             </label></li>
                         </ul>
+                        <ul>
+                        <?php
+            // Include database connection po   
+            include 'db.php';
+
+            // Query to retrieve passenger data
+            $sql = "SELECT dname, drole, dphone, dposition, drate, dteam, droom FROM user"; // Update 'your_table_name' with actual table name
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+                // Start table HTML
+                echo '<table style="width:100%; text-align: center;">
+                                <tr>
+                                    <td>Full Name/ Phone</td>
+                                    <td>Role</td>
+                                    <td>Position/Rate</td>
+                                    <td>Team</td>
+                                    <td>Room</td>
+                                </tr>';
+
+                // Loop through the query results and display each row
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>
+                            <td>{$row['dname']}<br><span>{$row['dphone']}</span></td>
+                            <td>{$row['drole']}</td>
+                            <td>{$row['dposition']}<br><span>{$row['drate']}</span></td>
+                            <td>{$row['dteam']}</td>
+                            <td>{$row['droom']}</td>
+                            <td><button>Edit</button><button>Delete</button></td>
+                          </tr>";
+                }
+
+                // End table HTML
+                echo '</table>';
+            } else {
+                echo "<p>No results found.</p>";
+            }
+
+            // Close the connection
+            mysqli_close($conn);
+        ?>
+                        </ul>
+                        <div id="user-Modal" class="user-modal">
+
+                        <!-- user-Modal Content -->
+                        <div class="user-modal-content">
+                            <span class="user-modal-close">&times;</span>
+                            <div class="choices">
+                                <button id="add-employee"  class="add-employee">Employee</button>
+                                <button id="add-work" class="add-work">Work</button>
+                                <button id="add-vacation" class="add-vacation">Vacation</button>
+                            </div>
+                            <div id="add-employee-content" class="add-employee-content">
+                                
+                            </div>
+                            <div id="add-work-content" class="add-work-content" style="display: none;">
+                            </div>
+                            <div id="add-vacation-content" class="add-vacation-content" style="display: none;">
+                            </div>
+                        </div>
+                        <!-- user-Modal Content end-->
                     </div>
                 </div>
 
                 <div id="content2" class="content" style="display: none;">
-                    <p>This is the second content!</p>
                 </div>
             </div>
         </div>
@@ -245,3 +305,7 @@
     <script src="./javascript/user-container.js"></script>
 </body>
 </html>
+
+
+
+            
