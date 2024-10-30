@@ -174,7 +174,7 @@
 
 .user-modal-content {
     background-color: white;
-    margin: 10% auto;
+    margin: 8% auto;
     padding: 20px;
     border-radius: 5px;
     width: 80%;
@@ -267,13 +267,45 @@
     border: none;
     height: 40px;
     border-bottom: 1px solid grey;
-    outline: none;
+    outline: none   ;
 }
 
 /*Modal Bellow employee*/
 .user-modal-content .add-employee-content .bottom .bellow-employee-info{
     width: 100%;
     height: 150px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.user-modal-content .add-employee-content .bottom .bellow-employee-info .info{
+    width: 30%;
+    gap: 20px;
+}
+
+.user-modal-content .add-employee-content .bottom .bellow-employee-info .info:nth-child(4){
+    width: 100%;
+}
+.user-modal-content .add-employee-content .bottom .bellow-employee-info .info:nth-child(4) textarea{
+    width: 100%;
+    height: 70px;
+    text-wrap: wrap;
+    outline: none;
+}
+
+.user-modal-content .add-employee-content .bottom .bellow-employee-info .info input,
+.user-modal-content .add-employee-content .bottom .bellow-employee-info .info:nth-child(3) select,
+.user-modal-content .add-employee-content .bottom .bellow-employee-info .info select input{
+    border: none;
+    height: 40px;
+    border-bottom: 1px solid grey;
+    outline: none;
+}
+
+.user-modal-content .add-employee-content .bottom .bellow-employee-info .info:nth-child(2) select{
+    border: none;
 }
 
 /*End emplyoee setup*/

@@ -295,7 +295,7 @@
                             <div class="bottom">
                                 <div class="left-icon">
                                     <input type="file" name="file" id="file" style="display: none;">
-                                    <label for="file">Upload</label>
+                                    <label for="file">Upload</label><br>
                                     <p>upload picture</p>
                                 </div>
                                 <div class="right-info">
@@ -350,6 +350,33 @@
                                             <option value=""></option>
                                             <option value="">Driver</option>
                                             <option value="">User</option>
+                                            <option value="">Employee</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="bellow-employee-info">
+                                    <div class="info">
+                                        <h1>Contact</h1>
+                                        <label for="">Email</label><br>
+                                        <input type="email">
+                                    </div>
+                                    <div class="info">
+                                        <label for="">Phone number</label><br>
+                                        <select name="" id="">
+                                            <option value="">+43</option>
+                                            <option value="">+63</option>
+                                            <option value="">+45</option>
+                                            <option value="">+75</option>
+                                            <option value="">+24</option>
+                                            <option value="">+54</option>
+                                            <input type="text">
+                                        </select>
+                                    </div>
+                                    <div class="info">
+                                        <h1>Team</h1>
+                                        <label for="">team</label><br>
+                                        <select name="" id="">
+                                            <option value=""></option>
                                             <option value="">Operations Team</option>
                                             <option value="">Driver Management Team</option>
                                             <option value="">Customer Support Team</option>
@@ -359,8 +386,11 @@
                                             <option value="">Compliance and Regulatory Team</option>
                                         </select>
                                     </div>
+                                    <div class="info"><br>
+                                        <h1>Description</h1>
+                                        <textarea name="" id=""></textarea>
+                                    </div>
                                 </div>
-                                <div class="bellow-employee-info"></div>
                             </div>
                             </div>
                             <div id="add-work-content" class="add-work-content" style="display: none;">Work
