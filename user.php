@@ -292,11 +292,80 @@
                                 <div class="left-profile"></div>
                                 <div class="right-information"></div>
                             </div>
-                            <div class="bottom"></div>
+                            <div class="bottom">
+                                <div class="left-icon">
+                                    <input type="file" name="file" id="file" style="display: none;">
+                                    <label for="file">Upload</label>
+                                    <p>upload picture</p>
+                                </div>
+                                <div class="right-info">
+                                    <div class="info">
+                                        <label for="">First Name(requirements)</label>
+                                        <input type="text" placeholder="First Name">
+                                    </div>
+                                    <div class="info">
+                                        <label for="">Last Name(requirements)</label>
+                                        <input type="text" placeholder="Last Name">
+                                    </div>
+                                    <div class="info">
+                                        <label for="">Position</label><br>
+                                        <select name="" id="">
+                                            <option value=""></option>
+                                            <option value="" disabled>Operations Team</option>
+                                            <option value="">Operations Manager</option>
+                                            <option value="">Dispatch Officer</option>
+                                            <option value="">Fleet Manager</option>
+                                            <option value="">Logistics Coordinator</option>
+                                            <option value="" disabled>Driver Management Team</option>
+                                            <option value="">Driver Recruitment Specialist</option>
+                                            <option value="">Driver Relations Officer</option>
+                                            <option value="">Driver Training Coordinator</option>
+                                            <option value="">Compliance Officer</option>
+                                            <option value="" disabled>Customer Support Team</option>
+                                            <option value="">Customer Service Representative</option>
+                                            <option value="">Escalation Specialist</option>
+                                            <option value="">Customer Experience Manager</option>
+                                            <option value="" disabled>Product and Technology Team</option>
+                                            <option value="">Product Manager</option>
+                                            <option value="">Software Engineer</option>
+                                            <option value="">Data Analyst</option>
+                                            <option value="">Quality Assurance Tester</option>
+                                            <option value="" disabled>Marketing and Sales Team</option>
+                                            <option value="">Marketing Manager</option>
+                                            <option value="">Sales Executive</option>
+                                            <option value="">Brand Ambassador</option>
+                                            <option value="" disabled>Finance Team</option>
+                                            <option value="">Finance Manager</option>
+                                            <option value="">Payroll Officer</option>
+                                            <option value="">Financial Analyst</option>
+                                            <option value="" disabled>Compliance and Regulatory Team</option>
+                                            <option value="">Compliance Manager</option>
+                                            <option value="">Legal Counsel</option>
+                                            <option value="">Safety & Risk Manager</option>
+                                        </select>
+                                    </div>
+                                    <div class="info">
+                                        <label for="">Role</label><br>
+                                        <select name="" id="">
+                                            <option value=""></option>
+                                            <option value="">Driver</option>
+                                            <option value="">User</option>
+                                            <option value="">Operations Team</option>
+                                            <option value="">Driver Management Team</option>
+                                            <option value="">Customer Support Team</option>
+                                            <option value="">Product and Technology Team</option>
+                                            <option value="">Marketing and Sales Team</option>
+                                            <option value="">Finance Team</option>
+                                            <option value="">Compliance and Regulatory Team</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="bellow-employee-info"></div>
                             </div>
-                            <div id="add-work-content" class="add-work-content" style="display: none;">
                             </div>
-                            <div id="add-vacation-content" class="add-vacation-content" style="display: none;">
+                            <div id="add-work-content" class="add-work-content" style="display: none;">Work
+                            </div>
+                            <div id="add-vacation-content" class="add-vacation-content" style="display: none;">vacation
                             </div>
                         </div>
                         <!-- user-Modal Content end-->

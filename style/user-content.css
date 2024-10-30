@@ -174,7 +174,7 @@
 
 .user-modal-content {
     background-color: white;
-    margin: 15% auto;
+    margin: 10% auto;
     padding: 20px;
     border-radius: 5px;
     width: 80%;
@@ -203,7 +203,81 @@
     cursor: pointer;
 }
 
-/* Responsive adjustments */
+
+/*Add employee setup*/
+
+.user-modal-content .add-employee-content .bottom{
+    display: flex;
+    flex-wrap: wrap;
+}
+/*Modal Left avatar for user*/
+.user-modal-content .add-employee-content .bottom .left-icon{
+    width: 30%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.user-modal-content .add-employee-content .bottom .left-icon input{
+    text-align: center;
+    border: none;
+}
+.user-modal-content .add-employee-content .bottom .left-icon label{
+    cursor: pointer;
+    border: 2px solid grey;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Modal Right Information for User*/
+.user-modal-content .add-employee-content .bottom .right-info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.user-modal-content .add-employee-content .bottom .right-info .info{
+    width: 200px;
+    height: 50px;
+}
+
+.user-modal-content .add-employee-content .bottom .right-info .info select{
+    width: 150px;
+}
+
+.user-modal-content .add-employee-content .bottom .right-info .info select option{
+    text-wrap: wrap;
+}
+
+.user-modal-content .add-employee-content .bottom .right-info{
+    width: 70%;
+    height: 150px;
+}
+
+.user-modal-content .add-employee-content .bottom .right-info .info input,
+.user-modal-content .add-employee-content .bottom .right-info .info select{
+    border: none;
+    height: 40px;
+    border-bottom: 1px solid grey;
+    outline: none;
+}
+
+/*Modal Bellow employee*/
+.user-modal-content .add-employee-content .bottom .bellow-employee-info{
+    width: 100%;
+    height: 150px;
+}
+
+/*End emplyoee setup*/
+/* Responsive */
 @media only screen and (max-width: 660px) {
     .user-search input {
         width: 100px;
