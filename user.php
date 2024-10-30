@@ -180,7 +180,7 @@
         <div class="user-content">
             <div class="user-content-top">
                 <div class="employees">
-                    <h1>Employees <span id="num-account">()</span></h1>
+                    <h1>Employees <span style="font-size: 18px;" id="num-account">()</span></h1>
                 </div>
                 <div class="user-content-top-right">
                     <div class="user-search">
