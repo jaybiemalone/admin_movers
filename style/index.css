@@ -12,6 +12,7 @@
 @import url(monitoring.css);
 @import url(passenger-monitoring.css);
 @import url(user-content.css);
+@import url(facility.css);
 
 *{
     padding: 0;
@@ -65,3 +66,18 @@ body{
 @media  only screen and (max-width: 375px){
 
 }
+
+/* @media  only screen and (max-width: 942px){
+}
+
+@media  only screen and (max-width: 660px){
+}
+
+@media  only screen and (max-width: 568px){
+}
+
+@media  only screen and (max-width: 475px){
+}
+
+@media  only screen and (max-width: 375px){
+} */
