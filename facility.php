@@ -197,7 +197,15 @@
                 </div>
             </div>
             <div class="facility-inventory">
-                <div class="facility-navbar"></div>
+                <div class="facility-navbar">
+                    <ul>
+                        <li><h3>ID</h3></li>
+                        <li><h3>Title</h3></li>
+                        <li><h3>Status</h3></li>
+                        <li><h3>Priority</h3></li>
+                        <li><h3>Actions</h3></li>
+                    </ul>
+                </div>
                 <div class="facility-table-content"></div>
             </div>
         </div>
