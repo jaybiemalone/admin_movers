@@ -13,7 +13,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body onload="readALL()">
-    <!-- <div class="sidebar2" style="display: none;" id="sideshow">
+    <div class="sidebar2" style="display: none;" id="sideshow">
         <ul>
             <li>
                 <div class="Logo">
@@ -85,7 +85,7 @@
                 </a>
             </li>
         </ul>
-    </div> -->
+    </div>
     <div class="sidebar">
         <ul>
             <li>
@@ -184,10 +184,25 @@
                 <button style="display: none;" id="sidebtn"><i class='bx bx-menu bx-rotate-180' ></i></button>
             </div>
         </nav>
-        <div class="trip-container">
-            <div class="history-box">
-                <div class="trip-title"></div>
-                <div class="trip-logs"></div>
+        <div class="trip-content">
+            <div class="trip-history">
+                <div class="trip-title-history">
+                    <h1>Trips history</h1>
+                </div>
+                <div class="trip-container">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>Client</td>
+                            <td>Email</td>
+                            <td>Trip from</td>
+                            <td>Trip to</td>
+                            <td>Hours</td>
+                            <td>Amount</td>
+                            <td>Tips</td>
+                            <td>Actions</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
