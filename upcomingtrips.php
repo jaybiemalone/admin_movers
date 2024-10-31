@@ -191,12 +191,12 @@
                 <div class="bottom-box">
                     <div class="top-content">
                         <ul>
-                            <li class="active"><a href="upcomingtrips.html"><button class="callendar-button">Today</button></a></li>
-                            <li><a href="callendar-Aug.html"><button class="callendar-button">Aug</button></a></li>
-                            <li><a href="callendar-sept.html"><button class="callendar-button">Sept</button></a></li>
-                            <li><a href="callendar-oct.html"><button class="callendar-button">Oct</button></a></li>
-                            <li><a href="callendar-nov.html"><button class="callendar-button">Nov</button></a></li>
-                            <li><a href="callendar-dec.html"><button class="callendar-button">Dec</button></a></li>
+                            <li class="active"><a href="upcomingtrips.php"><button class="callendar-button">Today</button></a></li>
+                            <li><a href="callendar-Aug.php"><button class="callendar-button">Aug</button></a></li>
+                            <li><a href="callendar-sept.php"><button class="callendar-button">Sept</button></a></li>
+                            <li><a href="callendar-oct.php"><button class="callendar-button">Oct</button></a></li>
+                            <li><a href="callendar-nov.php"><button class="callendar-button">Nov</button></a></li>
+                            <li><a href="callendar-dec.php"><button class="callendar-button">Dec</button></a></li>
                         </ul>
                         <ul>
                             <li><button class="callendar-button">Calendar</button></li>

@@ -206,7 +206,9 @@
                         <li><h3>Actions</h3></li>
                     </ul>
                 </div>
-                <div class="facility-table-content"></div>
+                <div class="facility-table-content">
+                    
+                </div>
             </div>
         </div>
     </div>
