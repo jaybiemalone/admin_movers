@@ -36,3 +36,12 @@
     height: auto;
     padding: 20px;
 }
+
+.trip-content .trip-history .trip-container table{
+    text-align: center;
+    text-wrap: wrap;
+}
+
+.trip-content .trip-history .trip-container table tr td{
+    padding: 10px 15px;
+}
