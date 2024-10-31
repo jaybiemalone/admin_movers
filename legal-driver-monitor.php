@@ -195,8 +195,26 @@
                     </Select>
                 </div>
             </div>
-            <div class="content-status"></div>
-            <div class="content-container"></div>
+            <div class="content-status">
+                <ul>
+                    <li>Total:</li>
+                    <li><button>Off: <span>0</span> people</button></li>
+                    <li><button>On duty: <span>0</span> people</button></li>
+                    <li><button>On Driving: <span>0</span> people</button></li>
+                    <li><button>Emergency: <span>0</span> people</button></li>
+                    <li><Button>Edit</Button></li>
+                </ul>
+            </div>
+            <div class="content-container">
+                <table style="width: 100%;">
+                    <tr>
+                        <td>Date</td>
+                        <td>Status</td>
+                        <td>Start</td>
+                        <td>End</td>
+                        <td>Name</td>
+                    </tr>
+                </table></div>
         </div>
     </div>
 </body>
