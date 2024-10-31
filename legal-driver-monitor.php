@@ -186,7 +186,15 @@
             </div>
         </nav>
         <div class="driver-content">
-            <div class="content-title"></div>
+            <div class="content-title">
+                <h1>Daily log</h1>
+                <div class="button">
+                    <button>Download File</button>
+                    <Select>
+                        <option value="">Today</option>
+                    </Select>
+                </div>
+            </div>
             <div class="content-status"></div>
             <div class="content-container"></div>
         </div>
