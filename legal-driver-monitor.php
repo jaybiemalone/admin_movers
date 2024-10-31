@@ -185,10 +185,10 @@
                 <button style="display: none;" id="sidebtn"><i class='bx bx-menu bx-rotate-180' ></i></button>
             </div>
         </nav>
-        <div class="legal-monitoring-content">
-            <div class="legal-driver-container">
-
-            </div>
+        <div class="driver-content">
+            <div class="content-title"></div>
+            <div class="content-status"></div>
+            <div class="content-container"></div>
         </div>
     </div>
 </body>

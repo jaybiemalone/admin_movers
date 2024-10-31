@@ -14,6 +14,7 @@
 @import url(user-content.css);
 @import url(facility.css);
 @import url(document.css);
+@import url(driver-monitor.css);
 
 *{
     padding: 0;
