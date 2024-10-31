@@ -207,7 +207,6 @@
                     </ul>
                 </div>
                 <div class="facility-table-content">
-                    
                 </div>
             </div>
         </div>

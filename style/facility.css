@@ -78,6 +78,10 @@
     border-radius: 10px;
 }
 
+.facility-container .facility-inventory .facility-table-content button{
+    border: 1px solid blue;
+}
+
 @media  only screen and (max-width: 992px){
     .facility-container .facility-card .card{
         width: 100%;
