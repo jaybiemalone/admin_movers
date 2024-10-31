@@ -35,6 +35,10 @@ body{
     color: white;
 }
 
+li{
+    list-style: none;
+}
+
 .main-content{
     display: grid;
     grid-template-rows: 50px 1fr;
