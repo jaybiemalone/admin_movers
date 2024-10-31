@@ -59,16 +59,12 @@
 .document-content .document-upload ul li:nth-child(4) button{
     width: 98%;
     border: 1px solid rgb(30, 96, 218);
-    background: none;
+    background-color: rgb(30, 96, 218);
+    color: white;
     height: 30px;
     border-radius: 10px;
 
     cursor: pointer;
-}
-
-.document-content .document-upload ul li:nth-child(4) button:hover{
-    background-color: rgb(30, 96, 218);
-    color: white;
 }
 
 /*Document history*/

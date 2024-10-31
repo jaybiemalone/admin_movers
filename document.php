@@ -1,3 +1,54 @@
+<?php
+session_start(); // Start the session
+include 'db.php';
+
+// Check if the form is submitted
+if (isset($_POST['submit'])) {
+    $uploadDirectory = 'uploads/';
+
+    // Create uploads directory if it doesn't exist
+    if (!is_dir($uploadDirectory)) {
+        mkdir($uploadDirectory, 0777, true);
+    }
+
+    // Get the file details
+    $fileName = $_FILES['docu_file']['name'];
+    $fileTmpName = $_FILES['docu_file']['tmp_name'];
+    $fileType = $_FILES['docu_file']['type'];
+
+    // Check if the file is a PDF
+    $allowedType = 'application/pdf';
+    if ($fileType !== $allowedType) {
+        die("Error: Only PDF files are allowed.");
+    }
+
+    // Define the upload path
+    $uploadPath = $uploadDirectory . basename($fileName);
+
+    // Upload the file and save to database if successful
+    if (move_uploaded_file($fileTmpName, $uploadPath)) {
+        $stmt = $conn->prepare("INSERT INTO pdf_files (file_name, file_path) VALUES (?, ?)");
+        $stmt->bind_param("ss", $fileName, $uploadPath);
+
+        if ($stmt->execute()) {
+            // Set a success message
+            $_SESSION['success_message'] = "PDF uploaded successfully!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+    } else {
+        echo "Error uploading the PDF.";
+    }
+
+    // Redirect to the same page to avoid resubmission
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit(); // Make sure to exit after the redirect
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -179,18 +230,20 @@
         </nav>
         <div class="document-content">
             <div class="document-upload">
-                <ul>
-                    <li><h1>Upload Document</h1></li>
-                    <li><label for="">Document Title</label>
-                    <input type="text" placeholder="Enter Document Title">
-                    </li>
-                    <li>
-                        <label for="">Upload Document</label>
-                        <input type="file">
-                    </li>
-                    <li><button>Upload Document</button></li>
-                    <li><!--description here--></li>
-                </ul>
+            <form method="post" enctype="multipart/form-data">
+                    <ul>
+                        <li><h1>Upload Document</h1></li>
+                        <li>
+                            <label for="">Document Title</label>
+                            <input type="text" name="document_title" placeholder="Enter Document Title" required>
+                        </li>
+                        <li>
+                            <label for="">Upload Document</label>
+                            <input type="file" id="docu_file" name="docu_file" accept="application/pdf" required>
+                        </li>
+                        <li><button type="submit" name="submit">Upload Document</button></li>
+                    </ul>
+                </form>
             </div>
             <div class="document-container">
                 <div class="document-title">
@@ -218,9 +271,27 @@
                             <td>Action</td>
                         </tr>
                     </table>
+                    <ul>
+                        <?php
+                        // Fetch uploaded PDFs from database
+                        $result = $conn->query("SELECT * FROM pdf_files");
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<li><a href='{$row['file_path']}' download>{$row['file_name']}</a></li>";
+                            }
+                        } else {
+                            echo "<p>No PDFs found.</p>";
+                        }
+                        ?>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+
+<?php
+
+$conn->close();
+?>
