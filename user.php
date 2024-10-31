@@ -349,7 +349,7 @@
                                         <select name="" id="">
                                             <option value=""></option>
                                             <option value="">Driver</option>
-                                            <option value="">User</option>
+                                            <option value="">Passenger</option>
                                             <option value="">Employee</option>
                                         </select>
                                     </div>

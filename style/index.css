@@ -13,6 +13,7 @@
 @import url(passenger-monitoring.css);
 @import url(user-content.css);
 @import url(facility.css);
+@import url(document.css);
 
 *{
     padding: 0;

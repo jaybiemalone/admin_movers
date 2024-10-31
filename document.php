@@ -177,6 +177,50 @@
                 <button style="display: none;" id="sidebtn"><i class='bx bx-menu bx-rotate-180' ></i></button>
             </div>
         </nav>
+        <div class="document-content">
+            <div class="document-upload">
+                <ul>
+                    <li><h1>Upload Document</h1></li>
+                    <li><label for="">Document Title</label>
+                    <input type="text" placeholder="Enter Document Title">
+                    </li>
+                    <li>
+                        <label for="">Upload Document</label>
+                        <input type="file">
+                    </li>
+                    <li><button>Upload Document</button></li>
+                    <li><!--description here--></li>
+                </ul>
+            </div>
+            <div class="document-container">
+                <div class="document-title">
+                    <h1>Document</h1>
+                </div>
+                <div class="document-history">
+                    <ul>
+                        <li><label for="document-page">Select Page</label>
+                            <Select id="document-page">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                            <option value="">6</option>
+                            <option value="">7</option>
+                            <option value="">8</option>
+                        </Select></li>
+                    </ul>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>Document Name</td>
+                            <td>Uploaded At</td>
+                            <td>Time</td>
+                            <td>Action</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
