@@ -179,71 +179,26 @@
                 <button style="display: none;" id="sidebtn"><i class='bx bx-menu bx-rotate-180' ></i></button>
             </div>
         </nav>
-        <div class="legal-main-content">
-            <div class="legal-container">
-                <div class="legal-box">
-                    <div class="legal-boxbox1"><h4>Quick Access Navigation Bar</h4></div>
-                    <div class="legal-boxbox2">
-                        <a href="#">
-                        <div class="complience-box">
-                                <i class='bx bxs-user' style='color:#fff8f8' ></i>
-                                <h4>My Control</h4>
-                        </div>
-                        </a>
-                        <a href="monitoring.php">
-                        <div class="complience-box">
-                                <i class='bx bx-file' style='color:#fff8f8'  ></i>
-                                <h4>Monitoring</h4>
-                        </div>
-                        </a>
-                        <a href="#">
-                        <div class="complience-box">
-                                <i class='bx bx-file' style='color:#fff8f8'  ></i>
-                                <h4>Policies</h4>
-                        </div>
-                        </a>
-                        <a href="#">
-                        <div class="complience-box">
-                                <i class='bx bx-file' style='color:#fff8f8'  ></i>
-                                <h4>Indicators Tracker</h4>
-                        </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="legal-box">
-                    <div class="top">
-                        <ul>
-                            <li><span></span><p>Background Checks</p></li>
-                            <li><span></span><p>Vehivle Maintenance</p></li>
-                            <li><span></span><p>Safety Measures</p></li>
-                            <li><span></span><p>Insurance Coverage</p></li>
-                            <li><span></span><p>App Functionality</p></li>
-                        </ul>
-                    </div>
-                    <div class="bottom">
-                        <ul>
-                            <li>
-                                <div class="legal-chart">
-                                    <canvas id="legalchart"></canvas>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="legal-box">
-                    <div class="top">
-                        <p>Compliance  by Regulation</p>
-                    </div>
-                    <div class="bottom">
-                        <ul>
-                            <li>
-                                <div class="chart">
-                                    <canvas id="legalchart2" width="600" height="300"></canvas>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+        <div class="legal-content">
+            <div class="legal-navigation">
+                <h1 class="title">Quick Access Navigation Bar</h1>
+                <a href=""><div class="card"><i class='bx bxs-user' style='color:#fffcfc'></i><label for="">My Control</label></div></a>
+                <a href="monitoring.php"><div class="card"><i class='bx bx-file' style='color:#fffcfc' ></i><label for="">Monitoring</label></div></a>
+                <a href=""><div class="card"><i class='bx bx-file' style='color:#fffcfc' ></i><label for="">Policies</label></div></a>
+                <a href=""><div class="card"><i class='bx bx-file' style='color:#fffcfc' ></i><label for="">Indicators Tracker</label></div></a>
+            </div>
+            <div class="legal-chart1">
+                <ul>
+                    <li><span></span> Background Checks</li>
+                    <li><span></span> Vehicle Maintenance</li>
+                    <li><span></span> Safety Measures</li>
+                    <li><span></span> Insurance Coverage</li>
+                    <li><span></span> App Functionality</li>
+                </ul>
+                <canvas id="legalchart" width="200" height="100"></canvas>
+            </div>
+            <div class="legal-chart2">
+                <canvas id="legalchart2" width="300" height="200"></canvas>
             </div>
         </div>
     </div>
