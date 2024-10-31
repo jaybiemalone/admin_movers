@@ -4,7 +4,7 @@ const legalchart = new Chart(ctx2, {
     data: {
         datasets: [{
             label: 'This Month',
-            data: [5, 5, 5, 5, 5],
+            data: [0,0,0,0,0],
             backgroundColor: [
                 'rgba(65, 53, 235, 0.623)',
                 'rgba(187, 61, 23, 0.658)',

@@ -361,20 +361,11 @@
                                         <input type="email">
                                     </div>
                                     <div class="info">
-                                        <label for="">Phone number</label><br>
-                                        <select name="" id="">
-                                            <option value="">+43</option>
-                                            <option value="">+63</option>
-                                            <option value="">+45</option>
-                                            <option value="">+75</option>
-                                            <option value="">+24</option>
-                                            <option value="">+54</option>
+                                        <label for="">Phone number</label><br><br>
                                             <input type="text">
-                                        </select>
                                     </div>
                                     <div class="info">
-                                        <h1>Team</h1>
-                                        <label for="">team</label><br>
+                                        <h1>Team</h1><br>
                                         <select name="" id="">
                                             <option value=""></option>
                                             <option value="">Operations Team</option>
@@ -389,6 +380,7 @@
                                     <div class="info"><br>
                                         <h1>Description</h1>
                                         <textarea name="" id=""></textarea>
+                                        <button type="submit" id="submit">Save</button>
                                     </div>
                                 </div>
                             </div>

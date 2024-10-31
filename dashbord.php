@@ -182,8 +182,8 @@
                 </div>
                 <div class="second-box">
                     <div class="text-box">
-                        <h5><i class='bx bxs-up-arrow bx-burst' style='color:#00780C'  ></i> <span style="color: #00780C;">12%</span> from last week</h5>
-                        <h1>8,500</h1>
+                        <h5><i class='bx bxs-up-arrow bx-burst' style='color:#00780C'  ></i> <span style="color: #00780C;">0%</span> from last week</h5>
+                        <h1>0</h1>
                         <p>Trips</p>
                     </div>
                 </div>
@@ -196,8 +196,8 @@
                 </div>
                 <div class="second-box">
                     <div class="text-box">
-                        <h5><i class='bx bxs-up-arrow bx-burst' style='color:#00780C'  ></i> <span style="color: #00780C;">12%</span> from last week</h5>
-                        <h1>2,900</h1>
+                        <h5><i class='bx bxs-up-arrow bx-burst' style='color:#00780C'  ></i> <span style="color: #00780C;">0%</span> from last week</h5>
+                        <h1>0</h1>
                         <p>Passenger</p>
                     </div>
                 </div>
@@ -210,8 +210,8 @@
                 </div>
                 <div class="second-box">
                     <div class="text-box">
-                        <h5><i class='bx bxs-down-arrow bx-burst' style='color:#780000' ></i> <span style="color: #780000;">23%</span>from last week</h5>
-                        <h1>₱466,916</h1>
+                        <h5><i class='bx bxs-down-arrow bx-burst' style='color:#780000' ></i> <span style="color: #780000;">0%</span>from last week</h5>
+                        <h1>₱0</h1>
                         <p>Earnings</p>
                     </div></div>
                 </div>
@@ -224,20 +224,20 @@
                 <div class="second-box">
                     <div class="left-box">
                         <p>This Month</p>
-                        <b>₱4,878,990</b>
+                        <b>₱0</b>
                         <span style="background-color: #00780C; border-radius: 5px; padding-bottom: 5px; margin-bottom: 7px;">+21.68%</span>
                         <div class="trips-container">
                             <ul>
-                                <li>Booked <br><span>3,900</span></li>
-                                <li>Trips <br><span>18.9%</span></li>
+                                <li>Booked <br><span>0</span></li>
+                                <li>Trips <br><span>0%</span></li>
                             </ul>
                             <ul>
-                                <li>Growth <br><span>6095</span></li>
-                                <li>Signups <br><span>560</span></li>
+                                <li>Growth <br><span>0</span></li>
+                                <li>Signups <br><span>0</span></li>
                             </ul>
                             <ul>
-                                <li>Ratings <br><span>559,970.61</span></li>
-                                <li>Earnings <br><span>361,367.25</span></li>
+                                <li>Ratings <br><span>0</span></li>
+                                <li>Earnings <br><span>0</span></li>
                             </ul>
                         </div>
                     </div>
@@ -258,15 +258,15 @@
                     <div class="circle">
                         <div class="large">
                             <img src="./Asset/largecircle.png" alt="" width="223px" height="200px">
-                            <b>Total <br>249</b>
+                            <b>Total <br>0</b>
                         </div>
                         <div class="medium">
                             <img src="./Asset/mediumcircle.png" alt="" width="156px" height="144px" style="rotate: 20; margin-top: 10px; border-radius: 50%;">
-                            <b>Total <br>24</b>
+                            <b>Total <br>0</b>
                         </div>
                         <div class="small">
                             <img src="./Asset/smallcircle.png" alt="" width="116px" height="100px" style="margin-top: 5px; border-radius: 50%;">
-                            <b>Total <br>269</b>
+                            <b>Total <br>0</b>
                         </div>
                     </div>
                     <div class="second-circle">
@@ -281,9 +281,9 @@
                         </div>
                     </div>
                     <div class="circle-percent" style="text-align: center;">
-                        <h3>54%<br><p style="font-weight: normal; font-size: 12px;">Male</p></h3>
-                        <h3>36%<br><p style="font-weight: normal; font-size: 12px;">Female</p></h3>
-                        <h3>10%<br><p style="font-weight: normal; font-size: 12px;">Other</p></h3>
+                        <h3>0%<br><p style="font-weight: normal; font-size: 12px;">Male</p></h3>
+                        <h3>0%<br><p style="font-weight: normal; font-size: 12px;">Female</p></h3>
+                        <h3>0%<br><p style="font-weight: normal; font-size: 12px;">Other</p></h3>
                     </div>
                 </div>
             </div>

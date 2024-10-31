@@ -6,11 +6,11 @@ const legalchart2 = new Chart(ctx, {
         datasets: [{
             label: 'User Compliance',
             backgroundColor: "rgb(44, 101, 187)",
-            data: [85, 92, 78, 95, 88]
+            data: [0,0,0,0,0]
         }, {
             label: 'Driver Compliance',
             backgroundColor: "#f7760c",
-            data: [90, 88, 95, 92, 85]
+            data: [0,0,0,0,0]
         }]
     },
     options: {
