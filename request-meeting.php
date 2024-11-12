@@ -165,7 +165,11 @@
                     <span>Home</span>
                 </a>
                 <i class='bx bx-chevron-right'></i>
-                <span>Facility</span>
+                <a href="facility.php">
+                    <span>Facility</span>
+                </a>
+                <i class='bx bx-chevron-right'></i>
+                <span>Meeting</span>
             </div>
             <div class="log-out">
                 <button id="toggleBtn"><i class='bx bx-cog' ></i></button>
@@ -177,72 +181,6 @@
                 <button style="display: none;" id="sidebtn"><i class='bx bx-menu bx-rotate-180' ></i></button>
             </div>
         </nav>
-        <div class="facility-container">
-            <div class="facility-card">
-                <div class="card">
-                    <h1><a href="request-meeting.php">Request Meeting</a></h1>
-                    <span>0</span>
-                </div>
-                <div class="card">
-                    <h1><a href="">Active Tickets</a></h1>
-                    <span>0</span>
-                </div>
-                <div class="card">
-                    <h1><a href="">Resolve Issues</a></h1>
-                    <span>0</span>
-                </div>
-                <div class="card">
-                    <h1><a href="">Inventory Items</a></h1>
-                    <span>0</span>
-                </div>
-            </div>
-            <div class="facility-inventory">
-                <div class="facility-navbar">
-                    <ul>
-                        <li><h3>ID</h3></li>
-                        <li><h3>Meeting For</h3></li>
-                        <li><h3>Status</h3></li>
-                        <li><h3>Request Date</h3></li>
-                        <li><h3>Actions</h3></li>
-                    </ul>
-                    <div class="facility-table-content">
-                    </div>
-                </div>
-                <div class="facility-navbar">
-                    <ul>
-                        <li><h3>ID</h3></li>
-                        <li><h3>Meeting For</h3></li>
-                        <li><h3>Status</h3></li>
-                        <li><h3>Request Date</h3></li>
-                        <li><h3>Actions</h3></li>
-                    </ul>
-                    <div class="facility-table-content">
-                    </div>
-                </div>
-                <div class="facility-navbar">
-                    <ul>
-                        <li><h3>ID</h3></li>
-                        <li><h3>Meeting For</h3></li>
-                        <li><h3>Status</h3></li>
-                        <li><h3>Request Date</h3></li>
-                        <li><h3>Actions</h3></li>
-                    </ul>
-                    <div class="facility-table-content">
-                    </div>
-                </div>
-                <div class="facility-navbar">
-                    <ul>
-                        <li><h3>ID</h3></li>
-                        <li><h3>Meeting For</h3></li>
-                        <li><h3>Status</h3></li>
-                        <li><h3>Request Date</h3></li>
-                        <li><h3>Actions</h3></li>
-                    </ul>
-                    <div class="facility-table-content">
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </body>
 </html>
