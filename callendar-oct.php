@@ -46,49 +46,49 @@
                 </ul>
             </li>
             <li>
-                <a href="communication.html">
+                <a href="communication.php">
                     <i class='bx bx-chat' ></i>
                     <span>Communication</span>
                 </a>
             </li>
             <li>
-                <a href="facility.html">
+                <a href="facility.php">
                     <i class='bx bxs-car-garage' ></i>
                     <span>Facility</span>
                 </a>
             </li>
             <li>
-                <a href="document.html">
+                <a href="document.php">
                     <i class='bx bx-folder-open' ></i>
                     <span>Document</span>
                 </a>
             </li>
             <li>
-                <a href="legal.html">
+                <a href="legal.php">
                     <i class='bx bx-file' ></i>
                     <span>Legal Compliance</span>
                 </a>
             </li>
             <li>
-                <a href="contract.html">
+                <a href="contract.php">
                     <i class='bx bxs-edit' ></i>
                     <span>Contract</span>
                 </a>
             </li>
             <li>
-                <a href="security.html">
+                <a href="security.php">
                     <i class='bx bx-shield' ></i>
                     <span>Security</span>
                 </a>
             </li>
             <li>
-                <a href="maintenance.html">
+                <a href="maintenance.php">
                     <i class='bx bx-sitemap' ></i>
                     <span>Maintenance</span>
                 </a>
             </li>
             <li>
-                <a href="index.html">
+                <a href="index.php">
                     <i class='bx bx-user-circle bx-rotate-180' ></i>
                     <span>Log out</span>
                 </a>
