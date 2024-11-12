@@ -165,7 +165,11 @@
                     <span>Home</span>
                 </a>
                 <i class='bx bx-chevron-right'></i>
-                <span>Facility</span>
+                <a href="facility.php">
+                    <span>Facility</span>
+                </a>
+                <i class='bx bx-chevron-right'></i>
+                <span>Ticket</span>
             </div>
             <div class="log-out">
                 <button id="toggleBtn"><i class='bx bx-cog' ></i></button>
@@ -177,72 +181,6 @@
                 <button style="display: none;" id="sidebtn"><i class='bx bx-menu bx-rotate-180' ></i></button>
             </div>
         </nav>
-        <div class="facility-container">
-            <div class="facility-card">
-                <div class="card">
-                    <h1><a href="request-meeting.php">Request Meeting</a></h1>
-                    <span>0</span>
-                </div>
-                <div class="card">
-                    <h1><a href="tickets-management.php">Active Tickets</a></h1>
-                    <span>0</span>
-                </div>
-                <div class="card">
-                    <h1><a href="resolve-issues.php">Resolve Issues</a></h1>
-                    <span>0</span>
-                </div>
-                <div class="card">
-                    <h1><a href="inventory-management.php">Inventory Items</a></h1>
-                    <span>0</span>
-                </div>
-            </div>
-            <div class="facility-inventory">
-                <div class="facility-navbar">
-                    <ul>
-                        <li><h3>ID</h3></li>
-                        <li><h3>Name</h3></li>
-                        <li><h3>room request</h3></li>
-                        <li><h3>schedule</h3></li>
-                        <li><h3>Actions</h3></li>
-                    </ul>
-                    <div class="facility-table-content">
-                    </div>
-                </div>
-                <div class="facility-navbar">
-                    <ul>
-                        <li><h3>ID</h3></li>
-                        <li><h3>Name</h3></li>
-                        <li><h3>Email</h3></li>
-                        <li><h3>Ticket</h3></li>
-                        <li><h3>Actions</h3></li>
-                    </ul>
-                    <div class="facility-table-content">
-                    </div>
-                </div>
-                <div class="facility-navbar">
-                    <ul>
-                        <li><h3>ID</h3></li>
-                        <li><h3>Name</h3></li>
-                        <li><h3>Email</h3></li>
-                        <li><h3>Date</h3></li>
-                        <li><h3>Actions</h3></li>
-                    </ul>
-                    <div class="facility-table-content">
-                    </div>
-                </div>
-                <div class="facility-navbar">
-                    <ul>
-                        <li><h3>ID</h3></li>
-                        <li><h3>Item Name</h3></li>
-                        <li><h3>Quantity</h3></li>
-                        <li><h3>Recieve Date</h3></li>
-                        <li><h3>availability</h3></li>
-                    </ul>
-                    <div class="facility-table-content">
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </body>
 </html>
