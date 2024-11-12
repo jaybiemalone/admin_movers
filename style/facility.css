@@ -12,11 +12,12 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 20px;
+    gap: 40px;
 }
 /*facility dashboard card*/
 .facility-container .facility-card .card{
-    width: 250px;
+    box-sizing: border-box;
+    min-width: 200px;
     height: 150px;
     border-radius: 20px;
     background-color: white;
@@ -24,9 +25,15 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 40px;
+    background-color: #007bff68;
 }
 
-.facility-container .facility-card .card h1{
+.facility-container .facility-card .card:hover{
+    background-color: #007bff90;
+}
+
+.facility-container .facility-card .card h1 a{
     font-size: 20px;
 }
 
