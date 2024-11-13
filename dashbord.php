@@ -287,6 +287,22 @@
                     </div>
                 </div>
             </div>
+            <div class="box">
+                <div class="first-box">
+                    <ul>
+                        <li><h1>Pipe Line</h1></li>
+                    </ul>
+                    <ul>
+                        <li><button>Month</button></li>
+                        <li><button>Year</button></li>
+                    </ul>
+                </div>
+                <div class="second-box">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
