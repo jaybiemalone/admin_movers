@@ -177,6 +177,108 @@
                 <button style="display: none;" id="sidebtn"><i class='bx bx-menu bx-rotate-180' ></i></button>
             </div>
         </nav>
+        <div class="contract-content">
+            <div class="contract-container">
+                <div class="contract-catigories">
+                    <div class="process">
+                        <button>Open Contracts</button>
+                        <button>Archived Contracts</button>
+                        <button>All Contracts</button>
+                    </div>
+                    <div class="add-contract">
+                        <button>Add Contract</button>
+                    </div>
+                </div>
+                <div class="contract-search">
+                    <div class="box"><h1>Search Contracts</h1></div>
+                    <div class="box"><input type="search" placeholder="Search by Name, ID, Party, or Vendor"></div>
+                    <div class="box">
+                        <div class="select">
+                            <label for="">Vendor:</label>
+                            <select name="" id="">
+                                <option value=""></option>
+                                <option value="">All</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="select">
+                            <label for="">Hospital</label>
+                            <select name="" id="">
+                                <option value=""></option>
+                                <option value="">All</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="select">
+                            <label for="">Department</label>
+                            <select name="" id="">
+                                <option value=""></option>
+                                <option value="">All</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="select">
+                            <label for="">Type</label>
+                            <select name="" id="">
+                                <option value=""></option>
+                                <option value="">All</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="select">
+                            <label for="">Termination Date</label>
+                            <select name="" id="">
+                                <option value=""></option>
+                                <option value="">All</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="select">
+                            <label for="">Contract Value</label>
+                            <select name="" id="">
+                                <option value=""></option>
+                                <option value="">All</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="select">
+                            <label for="">Category</label>
+                            <select name="" id="">
+                                <option value=""></option>
+                                <option value="">All</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="checkbox">
+                            <input type="checkbox">
+                            <label for="">Active</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox">
+                            <label for="">Draft</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox">
+                            <label for="">Pending</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox">
+                            <label for="">Expired</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="contract-progress"></div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
