@@ -81,9 +81,9 @@
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="#">Issue</a></li>
-                        <li><a href="#">Task</a></li>
-                        <li><a href="#">Inbox</a></li>
+                        <li><a href="issue-maintenance.php">Issue</a></li>
+                        <li><a href="task-management.php">Task</a></li>
+                        <li><a href="inbox-management.php">Inbox</a></li>
                     </div>
                 </ul>
             </li>
@@ -162,9 +162,9 @@
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="#">Issue</a></li>
-                        <li><a href="#">Task</a></li>
-                        <li><a href="#">Inbox</a></li>
+                        <li><a href="issue-maintenance.php">Issue</a></li>
+                        <li><a href="task-management.php">Task</a></li>
+                        <li><a href="inbox-management.php">Inbox</a></li>
                     </div>
                 </ul>
             </li>
