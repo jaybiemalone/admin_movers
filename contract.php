@@ -258,6 +258,7 @@
                         </div>
                     </div>
                     <div class="box">
+                        <span></span>
                         <div class="checkbox">
                             <input type="checkbox">
                             <label for="">Active</label>
@@ -276,7 +277,27 @@
                         </div>
                     </div>
                 </div>
-                <div class="contract-progress"></div>
+                <div class="contract-progress">
+                    <table style="width: 100%; color: black; border-bottom: solid 1px grey; padding: 10px;">
+                        <tbody>
+                            <tr>
+                                <td><label for="">ID</label><select name="" id="" style="outline: none; border:  none; color: grey;">
+                                    <option value=""></option>
+                                    <option value="">All</option>
+                                    <option value=""></option>
+                                </select></td>
+                                <td>Name</td>
+                                <td>Contract Type</td>
+                                <td>Vendor</td>
+                                <td>Contract Owner</td>
+                                <td>Start Date</td>
+                                <td>Termination Date</td>
+                                <td>Status</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
