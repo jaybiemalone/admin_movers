@@ -177,11 +177,13 @@
                 <button>
                     <i class='bx bx-home-alt-2'></i>
                 </button>
-                <a href="index.php">
+                <a href="dashbord.php">
                     <span>Home</span>
                 </a>
                 <i class='bx bx-chevron-right'></i>
                 <span>Maintenance</span>
+                <i class='bx bx-chevron-right'></i>
+                <span>Issue</span>
             </div>
             <div class="log-out">
                 <button id="toggleBtn"><i class='bx bx-cog' ></i></button>
@@ -193,6 +195,33 @@
                 <button style="display: none;" id="sidebtn"><i class='bx bx-menu bx-rotate-180' ></i></button>
             </div>
         </nav>
+        <div class="issue-content">
+            <div class="issue-dashboard">
+                <div class="box">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                </div>
+                <div class="box">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                </div>
+                <div class="box">
+                    <div class="issue-container">
+                        <div class="top"></div>
+                        <div class="bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-sidebar">
+                <div class="activity"></div>
+                <div class="all-report"></div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

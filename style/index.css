@@ -16,7 +16,7 @@
 @import url(document.css);
 @import url(driver-monitor.css);
 @import url(contract-management.css);
-
+@import url(issue-management.css);
 *{
     padding: 0;
     margin: 0;
