@@ -71,11 +71,19 @@
                     <span>Contract</span>
                 </a>
             </li>
-            <li class="active">
-                <a href="maintenance.php">
+            <li>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <i class='bx bx-sitemap'></i>
                     <span>Maintenance</span>
-                </a>
+                    <i class='bx bx-chevron-right'></i>
+                </button>
+                <ul class="sub-menu">
+                    <div>
+                        <li><a href="#">Issue</a></li>
+                        <li><a href="#">Task</a></li>
+                        <li><a href="#">Inbox</a></li>
+                    </div>
+                </ul>
             </li>
             <li>
                 <a href="index.php">
@@ -144,11 +152,19 @@
                     <span>Contract</span>
                 </a>
             </li>
-            <li class="active">
-                <a href="maintenance.php">
+            <li>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <i class='bx bx-sitemap'></i>
                     <span>Maintenance</span>
-                </a>
+                    <i class='bx bx-chevron-right'></i>
+                </button>
+                <ul class="sub-menu">
+                    <div>
+                        <li><a href="#">Issue</a></li>
+                        <li><a href="#">Task</a></li>
+                        <li><a href="#">Inbox</a></li>
+                    </div>
+                </ul>
             </li>
         </ul>
     </div>

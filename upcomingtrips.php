@@ -72,10 +72,18 @@
                 </a>
             </li>
             <li>
-                <a href="maintenance.php">
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <i class='bx bx-sitemap'></i>
                     <span>Maintenance</span>
-                </a>
+                    <i class='bx bx-chevron-right'></i>
+                </button>
+                <ul class="sub-menu">
+                    <div>
+                        <li><a href="#">Issue</a></li>
+                        <li><a href="#">Task</a></li>
+                        <li><a href="#">Inbox</a></li>
+                    </div>
+                </ul>
             </li>
             <li>
                 <a href="index.php">
@@ -151,10 +159,18 @@
                 </a>
             </li>
             <li>
-                <a href="maintenance.php">
-                    <i class='bx bx-sitemap' ></i>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <i class='bx bx-sitemap'></i>
                     <span>Maintenance</span>
-                </a>
+                    <i class='bx bx-chevron-right'></i>
+                </button>
+                <ul class="sub-menu">
+                    <div>
+                        <li><a href="#">Issue</a></li>
+                        <li><a href="#">Task</a></li>
+                        <li><a href="#">Inbox</a></li>
+                    </div>
+                </ul>
             </li>
         </ul>
     </div>
