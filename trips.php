@@ -130,12 +130,6 @@
                 </a>
             </li>
             <li>
-                <a href="communication.php">
-                    <i class='bx bx-chat' ></i>
-                    <span>Communication</span>
-                </a>
-            </li>
-            <li>
                 <a href="facility.php">
                     <i class='bx bxs-car-garage' ></i>
                     <span>Facility</span>

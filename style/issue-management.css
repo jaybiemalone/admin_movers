@@ -10,13 +10,11 @@
 
 .issue-dashboard{
     width: 100%;
-    max-width: 700px;
+    max-width: 750px;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    background-color: grey;
 }
 
 .issue-dashboard .box:nth-child(1){
@@ -29,7 +27,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    gap: 30px;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
@@ -49,5 +47,58 @@
 }
 
 .issue-dashboard .box:nth-child(2){
-    
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.issue-dashboard .box:nth-child(2) .card{
+    width: 100px;
+    height: 70px;
+    background-color: white;
+
+    border-radius: 10px;
+}
+
+.issue-dashboard .box:nth-child(3){
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .top{
+    width: 100%;
+    height: 50px;
+
+    background-color: white;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom{
+    width: 100%;
+    height: 300px;
+
+    background-color: white;
 }
