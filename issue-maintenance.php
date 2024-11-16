@@ -198,9 +198,31 @@
         <div class="issue-content">
             <div class="issue-dashboard">
                 <div class="box">
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
+                    <div class="card">
+                        <ul>
+                            <li><h1>0</h1></li>
+                            <li><h3>Report Issue</h3></li>
+                            <li>
+                                <img src="./Asset/building_up_down.gif" alt="" width="60">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <ul>
+                            <li><h1>0</h1></li>
+                            <li><h3>Issue Solve</h3></li>
+                            <li>
+                                <img src="./Asset/building_up_down.gif" alt="" width="60">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <ul>
+                            <li><h1>0</h1></li>
+                            <li><h3>Task Active</h3></li>
+                            <img src="./Asset/building_up_down.gif" alt="" width="60">
+                        </ul>
+                    </div>
                 </div>
                 <div class="box">
                     <div class="card"></div>
