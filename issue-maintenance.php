@@ -1,3 +1,11 @@
+<?php
+include 'db.php';
+
+$sql = "SELECT * FROM issue_management";
+$result = $conn->query($sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -278,6 +286,35 @@
                             </div>
                         </div>
                         <div id="bottom" class="bottom">
+                        <?php
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<ul>";
+                                echo "<li>" . htmlspecialchars($row['picture']) . "</li>";
+                                echo "</ul>";
+
+                                echo "<ul>";
+                                echo "<li>" . htmlspecialchars($row['task_name']) . "</li>";
+                                echo "<li>" . htmlspecialchars($row['short_discrip']) . "</li>";
+                                echo "<li>" . htmlspecialchars($row['location']) . "</li>";
+                                echo "</ul>";
+
+                                echo "<ul>";
+                                echo "<li>" . htmlspecialchars($row['category']) . "</li>";
+                                echo "</ul>";
+
+                                echo "<ul>";
+                                echo "<li>" . htmlspecialchars($row['reporter']) . "</li>";
+                                echo "</ul>";
+
+                                echo "<ul>";
+                                echo "<li><button>Edit</button></li>";
+                                echo "</ul>";
+                            }
+                        } else {
+                            echo "<p>No users found in the database.</p>";
+                        }
+                        ?>
                         </div>
                         <div id="bottom2" class="bottom" style="display: none;">
                         </div>
@@ -295,3 +332,8 @@
     <script src="./javascript/show-button.js"></script>
 </body>
 </html>
+
+<?php
+// Close the database connection
+$conn->close();
+?>
