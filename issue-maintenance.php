@@ -225,17 +225,82 @@
                     </div>
                 </div>
                 <div class="box">
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
+                    <div class="card">
+                        <ul>
+                            <li><img src="./Asset/assembly-line.gif" alt="" width="45"></li>
+                            <li><h1>Assembly</h1></li>
+                            <li><h1 style="font-size: 18px; color: ;">0</h1></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <ul>
+                            <li><img src="./Asset/electric-car.gif" alt="" width="45"></li>
+                            <li><h1>Electicity</h1></li>
+                            <li><h1 style="font-size: 18px; color: ;">0</h1></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <ul>
+                            <li><img src="./Asset/maintenance.gif" alt="" width="45"></li>
+                            <li><h1>Maintenance</h1></li>
+                            <li><h1 style="font-size: 18px; color: ;">0</h1></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <ul>
+                            <li><img src="./Asset/mop.gif" alt="" width="45"></li>
+                            <li><h1>Cleaning</h1></li>
+                            <li><h1 style="font-size: 18px; color: ;">0</h1></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <ul>
+                            <li><img src="./Asset/request.gif" alt="" width="45"></li>
+                            <li><h1>Request</h1></li>
+                            <li><h1 style="font-size: 18px; color: ;">0</h1></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <ul>
+                            <li><img src="./Asset/more.gif" alt="" width="45"></li>
+                            <li><h1>Others</h1></li>
+                            <li><h1 style="font-size: 18px; color: ;">0</h1></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="box">
                     <div class="issue-container">
-                        <div class="top"></div>
-                        <div class="bottom"></div>
+                        <div class="top">
+                            <div class="left">
+                                <div class="issue"><button>Issue</button></div>
+                                <div class="solve"><button>Solve</button></div>
+                                <div class="actived"><button>Actived</button></div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <ul>
+                                <li></li>
+                            </ul>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="bottom2" style="display: none;">
+                            <ul>
+                                <li></li>
+                            </ul>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="bottom3" style="display: none;">
+                            <ul>
+                                <li></li>
+                            </ul>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
