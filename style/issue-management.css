@@ -7,6 +7,7 @@
     gap: 20px;
 
     overflow: auto;
+    color: black;
 }
 
 .issue-dashboard{
@@ -108,62 +109,98 @@
     box-sizing: border-box;
     width: 100%;
     height: 590px;
-    position: relative;
 
     background-color: white;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
+    overflow: auto;
 }
 
 .issue-dashboard .box:nth-child(3) .issue-container .bottom .header{
-    width: 100%;
-    height: 50px;
-    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 97%;
+    height: 20px;
+    padding: 10px 20px 0 10px;
 }
 
-.issue-dashboard .box:nth-child(3) .issue-container .bottom .header ul{
-    width: 40%;
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .header ul:nth-child(1){
+    width: 50%;
+    text-align: left;
 }
 
 .issue-dashboard .box:nth-child(3) .issue-container .bottom .header ul:nth-child(2){
     display: flex;
-
+    justify-content: flex-end;
+    gap: 70px;
+    width: 50%;
+    margin-right: 10px;
 }
 
-.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(1),
-.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(2),
-.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(3),
-.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(4),
+.issue-dashboard .box:nth-child(3) .issue-container .bottom li{
+    font-weight: bold;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(2) li:nth-child(2){
+    color: rgb(60, 60, 60);
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem{
+    box-sizing: border-box;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding: 10px;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(1){
+    height: 100%;
+    border-radius: 10px;
+}
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(2){
+    width: 250px;
+    height: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(2) i {
+    font-size: 20px;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(3){
+    width: 130px;
+}
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(4){
+    width: 110px;
+}
 .issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(5){
-    display: none;
+    width: 80px;
 }
 
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(5) button{
+    background-color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(5) button i{
+    font-size: 28px;
+}
 .issue-dashboard .box:nth-child(3) .issue-container .bottom2{
     width: 100%;
     height: 590px;
-    position: relative;
-
-    background-color: green;
 }
 
 .issue-dashboard .box:nth-child(3) .issue-container .bottom3{
     width: 100%;
     height: 590px;
-    position: relative;
-
-    background-color: aquass;
-}
-
-.issue-dashboard .box:nth-child(3) .issue-container .bottom ul:nth-child(2){
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    bottom: 0;
 }
 
 .issue-content .right-sidebar{
