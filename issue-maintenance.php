@@ -269,36 +269,30 @@
                     </div>
                 </div>
                 <div class="box">
-                    <div class="issue-container">
+                <div class="issue-container">
                         <div class="top">
                             <div class="left">
-                                <div class="issue"><button>Issue</button></div>
-                                <div class="solve"><button>Solve</button></div>
-                                <div class="actived"><button>Actived</button></div>
+                                <div class="issue"><button id="Issue">Issue</button></div>
+                                <div class="solve"><button id="Solve">Solve</button></div>
+                                <div class="actived"><button id="Actived">Actived</button></div>
                             </div>
                         </div>
-                        <div class="bottom">
+                        <div id="bottom" class="bottom">
                             <ul>
-                                <li></li>
-                            </ul>
-                            <ul>
-                                <li></li>
+                                <li>Item 1</li>
+                                <li>Item 2</li>
                             </ul>
                         </div>
-                        <div class="bottom2" style="display: none;">
+                        <div id="bottom2" class="bottom" style="display: none;">
                             <ul>
-                                <li></li>
-                            </ul>
-                            <ul>
-                                <li></li>
+                                <li>Solved 1</li>
+                                <li>Solved 2</li>
                             </ul>
                         </div>
-                        <div class="bottom3" style="display: none;">
+                        <div id="bottom3" class="bottom" style="display: none;">
                             <ul>
-                                <li></li>
-                            </ul>
-                            <ul>
-                                <li></li>
+                                <li>Active 1</li>
+                                <li>Active 2</li>
                             </ul>
                         </div>
                     </div>
@@ -310,5 +304,6 @@
             </div>
         </div>
     </div>
+    <script src="./javascript/show-button.js"></script>
 </body>
 </html>
