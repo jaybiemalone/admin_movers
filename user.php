@@ -1,3 +1,52 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $conn = new mysqli("localhost", "admin_nov", "gHvlCB%CK3kt*Jl^", "admin_movers");
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $first_name = $_POST['first_name'] ?? '';
+    $last_name = $_POST['last_name'] ?? '';
+    $position = $_POST['position'] ?? '';
+    $drole = $_POST['drole'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $phone_number = $_POST['phone_number'] ?? '';
+    $team = $_POST['team'] ?? '';
+    $ddescription = $_POST['ddescription'] ?? '';
+    $file_path = "";
+
+    if (isset($_FILES['file']) && $_FILES['file']['error'] == 0) {
+        $target_dir = "uploads/";
+        if (!is_dir($target_dir)) {
+            mkdir($target_dir, 0777, true);
+        }
+        $file_path = $target_dir . basename($_FILES["file"]["name"]);
+        if (!move_uploaded_file($_FILES["file"]["tmp_name"], $file_path)) {
+            $file_path = "";
+        }
+    }
+
+    $sql = $conn->prepare("INSERT INTO user_management (first_name, last_name, position, drole, email, phone_number, team, ddescription, uploaded_file_path) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $sql->bind_param("sssssssss", $first_name, $last_name, $position, $drole, $email, $phone_number, $team, $ddescription, $file_path);
+
+    if ($sql->execute()) {
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    } else {
+        echo "Error: " . $sql->error;
+    }
+    $sql->close();
+    $conn->close();
+}
+
+// Fetch records for display
+$conn = new mysqli("localhost", "admin_nov", "gHvlCB%CK3kt*Jl^", "admin_movers");
+$sql = "SELECT * FROM user_management";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -217,30 +266,30 @@
                 </div>
                 <div id="content1" class="content">
                     <div class="select-option">
+                    <form action="" method="POST" enctype="multipart/form-data">
                         <ul>
-                            <li><label for="role">Role
-                                <select name="role" id="role">
-                                    <option value="">All</option>
-                                    <option value="">All</option>
-                                    <option value="">All</option>
-                                </select>
-                            </label></li>
-                            <li>
-                                <label for="position">Position
-                                <select name="position" id="position">
-                                    <option value="">All</option>
-                                    <option value="">All</option>
-                                    <option value="">All</option>
-                                </select>
-                            </label></li>
-                            <li>
-                                <label for="team">Team
-                                <select name="team" id="team">
-                                    <option value="">All</option>
-                                    <option value="">All</option>
-                                    <option value="">All</option>
-                                </select>
-                            </label></li>
+                        <li><label for="role">Role
+                        <select name="role" id="role">
+                            <option value="">Select Role</option>
+                            <option value="Driver">Driver</option>
+                            <option value="Passenger">Passenger</option>
+                            <option value="Employee">Employee</option>
+                        </select>
+                        </label></li>
+                        <li><label for="position">Position
+                            <select name="position" id="position">
+                                <option value="">Select Position</option>
+                                <option value="Operations Manager">Operations Manager</option>
+                                <option value="Driver">Driver</option>
+                            </select>
+                        </label></li>
+                        <li><label for="team">Team
+                            <select name="team" id="team">
+                                <option value="">Select Team</option>
+                                <option value="Operations Team">Operations Team</option>
+                                <option value="Customer Support Team">Customer Support Team</option>
+                            </select>
+                        </label></li>
                             <li>
                                 <label for="location">Location
                                 <select name="location" id="location">
@@ -251,47 +300,52 @@
                             </label></li>
                         </ul>
                         <ul>
-                        <?php
-            // Include database connection po   
-            include 'db.php';
-
-            // Query to retrieve passenger data
-            $sql = "SELECT dname, drole, dphone, dposition, drate, dteam, droom FROM user"; // Update 'your_table_name' with actual table name
-            $result = mysqli_query($conn, $sql);
-
-            if (mysqli_num_rows($result) > 0) {
-                // Start table HTML
-                echo '<table style="width:100%; text-align: center;" cellspacing="0">
+                        <table>
+                            <thead>
                                 <tr>
-                                    <td>Full Name/ Phone</td>
-                                    <td>Role</td>
-                                    <td>Position/Rate</td>
-                                    <td>Team</td>
-                                    <td>Room</td>
-                                    <td></td>
-                                </tr>';
-
-                // Loop through the query results and display each row
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<tr>
-                            <td>{$row['dname']}<br><span>{$row['dphone']}</span></td>
-                            <td>{$row['drole']}</td>
-                            <td>{$row['dposition']}<br><span>{$row['drate']}</span></td>
-                            <td>{$row['dteam']}</td>
-                            <td>{$row['droom']}</td>
-                            <td><button>Edit</button><button>Delete</button></td>
-                          </tr>";
-                }
-
-                // End table HTML
-                echo '</table>';
-            } else {
-                echo "<p>No results found.</p>";
-            }
-
-            // Close the connection
-            mysqli_close($conn);
-        ?>
+                                    <th>ID</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Position</th>
+                                    <th>Role</th>
+                                    <th>Email</th>
+                                    <th>Phone Number</th>
+                                    <th>Team</th>
+                                    <th>Description</th>
+                                    <th>Uploaded File</th>
+                                    <th>Created At</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                if ($result && $result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<tr>";
+                                        echo "<td>" . $row['id'] . "</td>";
+                                        echo "<td>" . $row['first_name'] . "</td>";
+                                        echo "<td>" . $row['last_name'] . "</td>";
+                                        echo "<td>" . $row['position'] . "</td>";
+                                        echo "<td>" . $row['drole'] . "</td>";
+                                        echo "<td>" . $row['email'] . "</td>";
+                                        echo "<td>" . $row['phone_number'] . "</td>";
+                                        echo "<td>" . $row['team'] . "</td>";
+                                        echo "<td>" . $row['ddescription'] . "</td>";
+                                        echo "<td>";
+                                        if (!empty($row['uploaded_file_path'])) {
+                                            echo "<a href='" . $row['uploaded_file_path'] . "' target='_blank'>View File</a>";
+                                        } else {
+                                            echo "No file uploaded";
+                                        }
+                                        echo "</td>";
+                                        echo "<td>" . $row['created_at'] . "</td>";
+                                        echo "</tr>";
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='11'>No records found.</td></tr>";
+                                }
+                                ?>
+                            </tbody>
+                        </table>
                         </ul>
                         <div id="user-Modal" class="user-modal">
 
@@ -308,6 +362,7 @@
                                 <div class="left-profile"></div>
                                 <div class="right-information"></div>
                             </div>
+                            <form action="save_select" method="POST">
                             <div class="bottom">
                                 <div class="left-icon">
                                     <input type="file" name="file" id="file" style="display: none;">
@@ -396,10 +451,11 @@
                                     <div class="info"><br>
                                         <h1>Description</h1>
                                         <textarea name="" id=""></textarea>
-                                        <button type="submit" id="submit">Save</button>
+                                        <button type="submit" name="save_select" id="submit">Save</button>
                                     </div>
                                 </div>
                             </div>
+                            </form>
                             </div>
                             <div id="add-work-content" class="add-work-content" style="display: none;">Work
                             </div>
@@ -407,6 +463,7 @@
                             </div>
                         </div>
                         <!-- user-Modal Content end-->
+                            </form>
                     </div>
                 </div>
         </div>
@@ -416,9 +473,23 @@
         </div>
     </div>
     <script src="./javascript/user-container.js"></script>
+    <script>
+    // Modal handling for forms
+    document.querySelectorAll('.choices button').forEach(button => {
+        button.addEventListener('click', function() {
+            document.querySelectorAll('.add-employee-content, .add-work-content, .add-vacation-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            const contentId = this.id + '-content';
+            document.getElementById(contentId).style.display = 'block';
+        });
+    });
+</script>
 </body>
 </html>
 
-
+<?php
+$conn->close();
+?>
 
             
