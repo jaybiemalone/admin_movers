@@ -278,22 +278,10 @@
                             </div>
                         </div>
                         <div id="bottom" class="bottom">
-                            <ul>
-                                <li>Item 1</li>
-                                <li>Item 2</li>
-                            </ul>
                         </div>
                         <div id="bottom2" class="bottom" style="display: none;">
-                            <ul>
-                                <li>Solved 1</li>
-                                <li>Solved 2</li>
-                            </ul>
                         </div>
                         <div id="bottom3" class="bottom" style="display: none;">
-                            <ul>
-                                <li>Active 1</li>
-                                <li>Active 2</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
