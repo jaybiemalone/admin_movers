@@ -204,125 +204,133 @@ $result = $conn->query($sql);
             </div>
         </nav>
         <div class="issue-content">
-            <div class="issue-dashboard">
-                <div class="box">
-                    <div class="card">
-                        <ul>
-                            <li><h1>0</h1></li>
-                            <li><h3>Report Issue</h3></li>
-                            <li>
-                                <img src="./Asset/building_up_down.gif" alt="" width="60">
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <ul>
-                            <li><h1>0</h1></li>
-                            <li><h3>Issue Solve</h3></li>
-                            <li>
-                                <img src="./Asset/building_up_down.gif" alt="" width="60">
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <ul>
-                            <li><h1>0</h1></li>
-                            <li><h3>Task Active</h3></li>
-                            <img src="./Asset/building_up_down.gif" alt="" width="60">
-                        </ul>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="card">
-                        <ul>
-                            <li><img src="./Asset/assembly-line.gif" alt="" width="45"></li>
-                            <li><h1>Assembly</h1></li>
-                            <li><h1 style="font-size: 18px; color: ;">0</h1></li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <ul>
-                            <li><img src="./Asset/electric-car.gif" alt="" width="45"></li>
-                            <li><h1>Electicity</h1></li>
-                            <li><h1 style="font-size: 18px; color: ;">0</h1></li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <ul>
-                            <li><img src="./Asset/maintenance.gif" alt="" width="45"></li>
-                            <li><h1>Maintenance</h1></li>
-                            <li><h1 style="font-size: 18px; color: ;">0</h1></li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <ul>
-                            <li><img src="./Asset/mop.gif" alt="" width="45"></li>
-                            <li><h1>Cleaning</h1></li>
-                            <li><h1 style="font-size: 18px; color: ;">0</h1></li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <ul>
-                            <li><img src="./Asset/request.gif" alt="" width="45"></li>
-                            <li><h1>Request</h1></li>
-                            <li><h1 style="font-size: 18px; color: ;">0</h1></li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <ul>
-                            <li><img src="./Asset/more.gif" alt="" width="45"></li>
-                            <li><h1>Others</h1></li>
-                            <li><h1 style="font-size: 18px; color: ;">0</h1></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="box">
-                <div class="issue-container">
-                        <div class="top">
-                            <div class="left">
-                                <div class="issue"><button id="Issue">Issue</button></div>
-                                <div class="solve"><button id="Solve">Solve</button></div>
-                                <div class="actived"><button id="Actived">Actived</button></div>
-                            </div>
-                        </div>
-                        <div id="bottom" class="bottom">
-                        <?php
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
-                                echo "<ul>";
-                                echo "<li>" . htmlspecialchars($row['picture']) . "</li>";
-                                echo "</ul>";
-
-                                echo "<ul>";
-                                echo "<li>" . htmlspecialchars($row['task_name']) . "</li>";
-                                echo "<li>" . htmlspecialchars($row['short_discrip']) . "</li>";
-                                echo "<li>" . htmlspecialchars($row['location']) . "</li>";
-                                echo "</ul>";
-
-                                echo "<ul>";
-                                echo "<li>" . htmlspecialchars($row['category']) . "</li>";
-                                echo "</ul>";
-
-                                echo "<ul>";
-                                echo "<li>" . htmlspecialchars($row['reporter']) . "</li>";
-                                echo "</ul>";
-
-                                echo "<ul>";
-                                echo "<li><button>Edit</button></li>";
-                                echo "</ul>";
-                            }
-                        } else {
-                            echo "<p>No users found in the database.</p>";
-                        }
-                        ?>
-                        </div>
-                        <div id="bottom2" class="bottom" style="display: none;">
-                        </div>
-                        <div id="bottom3" class="bottom" style="display: none;">
-                        </div>
-                    </div>
+        <div class="issue-dashboard">
+    <div class="box">
+        <div class="card">
+            <ul>
+                <li><h1>0</h1></li>
+                <li><h3>Report Issue</h3></li>
+                <li><img src="./Asset/building_up_down.gif" alt="" width="60"></li>
+            </ul>
+        </div>
+        <div class="card">
+            <ul>
+                <li><h1>0</h1></li>
+                <li><h3>Issue Solve</h3></li>
+                <li><img src="./Asset/building_up_down.gif" alt="" width="60"></li>
+            </ul>
+        </div>
+        <div class="card">
+            <ul>
+                <li><h1>0</h1></li>
+                <li><h3>Task Active</h3></li>
+                <img src="./Asset/building_up_down.gif" alt="" width="60">
+            </ul>
+        </div>
+    </div>
+    <div class="box">
+        <div class="card">
+            <ul>
+                <li><img src="./Asset/assembly-line.gif" alt="" width="45"></li>
+                <li><h1>Assembly</h1></li>
+                <li><h1 style="font-size: 18px;">0</h1></li>
+            </ul>
+        </div>
+        <div class="card">
+            <ul>
+                <li><img src="./Asset/electric-car.gif" alt="" width="45"></li>
+                <li><h1>Electicity</h1></li>
+                <li><h1 style="font-size: 18px;">0</h1></li>
+            </ul>
+        </div>
+        <div class="card">
+            <ul>
+                <li><img src="./Asset/maintenance.gif" alt="" width="45"></li>
+                <li><h1>Maintenance</h1></li>
+                <li><h1 style="font-size: 18px;">0</h1></li>
+            </ul>
+        </div>
+        <div class="card">
+            <ul>
+                <li><img src="./Asset/mop.gif" alt="" width="45"></li>
+                <li><h1>Cleaning</h1></li>
+                <li><h1 style="font-size: 18px;">0</h1></li>
+            </ul>
+        </div>
+        <div class="card">
+            <ul>
+                <li><img src="./Asset/request.gif" alt="" width="45"></li>
+                <li><h1>Request</h1></li>
+                <li><h1 style="font-size: 18px;">0</h1></li>
+            </ul>
+        </div>
+        <div class="card">
+            <ul>
+                <li><img src="./Asset/more.gif" alt="" width="45"></li>
+                <li><h1>Others</h1></li>
+                <li><h1 style="font-size: 18px;">0</h1></li>
+            </ul>
+        </div>
+    </div>
+    <div class="box">
+        <div class="issue-container">
+            <div class="top">
+                <div class="left">
+                    <div class="issue"><button id="Issue">Issue</button></div>
+                    <div class="solve"><button id="Solve">Solve</button></div>
+                    <div class="actived"><button id="Actived">Actived</button></div>
                 </div>
             </div>
+            <div id="bottom" class="bottom">
+                <div class="header">
+                    <ul>
+                        <li><h1>Task Name</h1></li>
+                    </ul>
+                    <ul>
+                        <li><h1>Category</h1></li>
+                        <li><h1>Reporter</h1></li>
+                        <li><h1>Action</h1></li>
+                    </ul>
+                </div>
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<div class=\"problem\">"; // Opening div tag for each problem
+                        
+                        echo "<ul>";
+                        echo "<li><img src=\"" . htmlspecialchars($row['picture']) . "\" alt=\"Task Picture\"></li>";
+                        echo "</ul>";
+
+                        echo "<ul>";
+                        echo "<li>" . htmlspecialchars($row['task_name']) . "</li>";
+                        echo "<li>" . htmlspecialchars($row['short_discrip']) . "</li>";
+                        echo "<li>" . htmlspecialchars($row['location']) . "</li>";
+                        echo "</ul>";
+
+                        echo "<ul>";
+                        echo "<li>" . htmlspecialchars($row['category']) . "</li>";
+                        echo "</ul>";
+
+                        echo "<ul>";
+                        echo "<li>" . htmlspecialchars($row['reporter']) . "</li>";
+                        echo "</ul>";
+
+                        echo "<ul>";
+                        echo "<li><button>Edit</button></li>";
+                        echo "</ul>";
+
+                        echo "</div>"; // Closing div tag for each problem
+                    }
+                } else {
+                    echo "<p>No issues found in the database.</p>";
+                }
+                ?>
+            </div>
+            <div id="bottom2" class="bottom" style="display: none;"></div>
+            <div id="bottom3" class="bottom" style="display: none;"></div>
+        </div>
+    </div>
+</div>
             <div class="right-sidebar">
                 <div class="activity"></div>
                 <div class="all-report"></div>
