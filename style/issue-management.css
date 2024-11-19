@@ -114,6 +114,24 @@
     overflow: auto;
 }
 
+.issue-dashboard .box:nth-child(3) .issue-container .bottom2{
+    box-sizing: border-box;
+    width: 100%;
+    height: 590px;
+
+    background-color: white;
+    overflow: auto;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom3{
+    box-sizing: border-box;
+    width: 100%;
+    height: 590px;
+
+    background-color: white;
+    overflow: auto;
+}
+
 .issue-dashboard .box:nth-child(3) .issue-container .bottom .header{
     display: flex;
     align-items: center;
@@ -235,6 +253,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .issue-container .top .left{
@@ -242,7 +262,6 @@
     align-items: center;
     justify-content: flex-start;
     gap: 20px;
-    padding: 0 20px;
 
     width: 100%;
 }
@@ -260,8 +279,23 @@
     font-size: 14px;
 }
 
+.issue-container .top .right button{
+    width: 120px;
+    border: none;
+    box-sizing: border-box;
+    background-color: rgb(219 234 254);
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 .issue-container .top .left button:hover{
     font-weight: bold;
+}
+
+.issue-container .top .right button:hover{
+    background-color: rgb(19, 93, 212);
+    color: white;
 }
 
 @media  only screen and (max-width: 942px){

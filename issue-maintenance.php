@@ -280,6 +280,11 @@ $result = $conn->query($sql);
                         <div class="solve"><button id="Solve">Solve</button></div>
                         <div class="actived"><button id="Actived">Active</button></div>
                     </div>
+                    <div class="right">
+                        <div class="button">
+                            <button>Add-issue</button>
+                        </div>
+                    </div>
                 </div>
                 <div id="bottom" class="bottom">
                     <div class="header">
@@ -326,6 +331,8 @@ $result = $conn->query($sql);
                     }
                     ?>
                 </div>
+                <div class="bottom2" id="bottom2" style="display: none;"></div>
+                <div class="bottom3" id="bottom3" style="display: none;"></div>
             </div>
         </div>
     </div>
