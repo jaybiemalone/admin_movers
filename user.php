@@ -303,7 +303,6 @@ $result = $conn->query($sql);
                         <table>
                             <thead>
                                 <tr>
-                                    <th>ID</th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Position</th>
@@ -321,7 +320,6 @@ $result = $conn->query($sql);
                                 if ($result && $result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
                                         echo "<tr>";
-                                        echo "<td>" . $row['id'] . "</td>";
                                         echo "<td>" . $row['first_name'] . "</td>";
                                         echo "<td>" . $row['last_name'] . "</td>";
                                         echo "<td>" . $row['position'] . "</td>";

@@ -326,7 +326,17 @@
     border: none;
 }
 
+.user-content .user-container .content .select-option form ul:nth-child(2) table{
+    width: 100%;
+}
 
+.user-content .user-container .content .select-option form ul:nth-child(2) table tr{
+    background-color: white;
+}
+
+.user-content .user-container .content .select-option form ul:nth-child(2) table tr td{
+    text-align: center;
+}
 
 /*End emplyoee setup*/
 /* Responsive */
