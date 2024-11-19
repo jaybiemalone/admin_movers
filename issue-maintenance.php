@@ -1,9 +1,23 @@
 <?php
 include 'db.php';
 
+// SQL query to count rows
+$stmt = $conn->prepare("SELECT COUNT(*) AS total_rows FROM issue_management");
+$stmt->execute();
+$count_result = $stmt->get_result();
+$total_rows = 0;
+
+if ($count_result->num_rows > 0) {
+    $row = $count_result->fetch_assoc();
+    $total_rows = $row['total_rows'];
+} else {
+    $total_rows = 0;
+}
+$stmt->close();
+
+// Fetch all rows for display
 $sql = "SELECT * FROM issue_management";
 $result = $conn->query($sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -208,7 +222,15 @@ $result = $conn->query($sql);
         <div class="box">
             <div class="card">
                 <ul>
-                    <li><h1>0</h1></li>
+                    <li>
+                    <?php
+                    if ($total_rows > 0) {
+                        echo "<h1>" . htmlspecialchars($total_rows) . "</h1>";
+                    } else {
+                        echo "<p>0</p>";
+                    }
+                    ?>
+                    </li>
                     <li><h3>Report Issue</h3></li>
                     <li><img src="./Asset/building_up_down.gif" alt="" width="60"></li>
                 </ul>
@@ -327,7 +349,7 @@ $result = $conn->query($sql);
                             echo "</div>";
                         }
                     } else {
-                        echo "<p>No issues found in the database.</p>";
+                        echo "<p>No issues found.</p>";
                     }
                     ?>
                 </div>
@@ -337,8 +359,29 @@ $result = $conn->query($sql);
         </div>
     </div>
     <div class="right-sidebar">
-        <div class="activity"></div>
-        <div class="all-report"></div>
+        <div class="activity">
+            <div class="top">
+                <h1>Activity</h1>
+            </div>
+            <div class="bottom"></div>
+        </div>
+        <div class="all-report">
+            <div class="top">
+                <h1>ALL report</h1>
+            </div>
+            <div class="bottom"></div>
+            <div class="footer">
+                <div class="box">
+                <?php
+                if ($total_rows > 0) {
+                    echo "<span>" . htmlspecialchars($total_rows) . "</span>";
+                } else {
+                    echo "<p>0</p>";
+                }
+                ?>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
     </div>

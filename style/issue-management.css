@@ -1,3 +1,5 @@
+/*-------- issue management start ------------*/
+
 .issue-content{
     display: flex;
     align-items: flex-start;
@@ -232,22 +234,79 @@
     padding: 20px 0;
 }
 
+/*-------- start issue management right side notification ------------*/
 
 .issue-content .right-sidebar .activity{
     width: 100%;
     height: 450px;
     border-radius: 10px;
+    display: grid;
+    grid-template-rows: 50px 1fr;
 
     background-color: white;
+
+
 }
 
+.issue-content .right-sidebar .activity .top{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+}
+
+.issue-content .right-sidebar .activity .top h1{
+    font-size: 20px;
+}
+
+/*-------- end issue management right side notification activity ------------*/
+
+
+/*-------- issue management right side notification all-report------------*/
 .issue-content .right-sidebar .all-report{
     width: 100%;
     height: 500px;
     border-radius: 10px;
+    display: grid;
+    grid-template-rows: 50px 1fr 70px;
 
     background-color: white;
 }
+
+.issue-content .right-sidebar .all-report .top{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+}
+
+.issue-content .right-sidebar .all-report .top h1{
+    font-size: 18px;
+}
+
+.issue-content .right-sidebar .all-report .footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.issue-content .right-sidebar .all-report .footer .box{
+    width: 120px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+.issue-content .right-sidebar .all-report .footer .box span{
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+}
+
+/*-------- end issue management right side notification all-report------------*/
 
 .issue-container .top{
     display: flex;
