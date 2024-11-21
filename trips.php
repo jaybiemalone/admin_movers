@@ -224,12 +224,24 @@
                 </ul>
             </div>
             <div class="trip-box">
+            </div>
+            <div class="trip-box">
+            </div>
+            <div class="trip-box">
+            </div>
+            <div class="trip-box">
                 <div class="first-box">
                     <p>Trips Statistics</p>
                 </div>
                 <div class="second-box">
                     <img src="./Asset/Statistic.png" alt="" width="900px" height="217px" style="border-radius: 10px;">
                 </div>
+            </div>
+            <div class="trip-box">
+                <div class="top">
+                    <h1>Upcoming Trips</h1>
+                </div>
+                <div class="bottom"></div>
             </div>
         </div>
     </div>

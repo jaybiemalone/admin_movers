@@ -4,6 +4,7 @@
     background-color: white;
     border-bottom: 1px solid rgba(73, 72, 72, 0.26);
     display: flex;
+    width: 100%;
     position: relative;
 }
 
