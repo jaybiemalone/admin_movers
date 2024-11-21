@@ -1,36 +1,57 @@
 <?php
 include 'db.php';  // Include the database connection
 
-// Ensure you're receiving data from the form
+$error = "";  // Variable to store error messages
+$success = "";  // Variable to store success messages
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];  // Match the form input name
-    $email = $_POST['email'];        // Match the form input name
-    $password = $_POST['password'];  // Match the form input name
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-    // Hash the password before storing it in the database
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    // Check if the username already exists
+    $checkUserSQL = "SELECT id FROM users WHERE username = ?";
+    $checkStmt = $conn->prepare($checkUserSQL);
+    $checkStmt->bind_param("s", $username);
+    $checkStmt->execute();
+    $checkStmt->store_result();
 
-    // SQL query to insert the new user into the database
-    $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $username, $email, $hashed_password);
-    $stmt->execute();
-
-    // Check if the insertion was successful
-    if ($stmt->affected_rows > 0) {
-        // After a successful registration, just reload the page (or you can redirect to login if you prefer)
-        header("Location: register.php");  // Reload the page after successful registration
-        exit();
+    if ($checkStmt->num_rows > 0) {
+        $error = "Username is already taken.";
     } else {
-        // If there is an error, you can reload the page and add a query string for error (optional)
-        header("Location: register.php?error=registration_failed");  // Pass error via URL
-        exit();
+        // Check if the email already exists
+        $checkEmailSQL = "SELECT id FROM users WHERE email = ?";
+        $checkEmailStmt = $conn->prepare($checkEmailSQL);
+        $checkEmailStmt->bind_param("s", $email);
+        $checkEmailStmt->execute();
+        $checkEmailStmt->store_result();
+
+        if ($checkEmailStmt->num_rows > 0) {
+            $error = "Email is already registered.";
+        } else {
+            // If username and email are unique, hash the password and insert the user
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+            $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("sss", $username, $email, $hashed_password);
+
+            if ($stmt->execute()) {
+                $success = "Registration successful! You can now <a href='index.php'>log in</a>.";
+            } else {
+                $error = "Registration failed. Please try again.";
+            }
+
+            $stmt->close();
+        }
+        $checkEmailStmt->close();
     }
 
-    $stmt->close();
+    $checkStmt->close();
     $conn->close();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -101,10 +122,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <div class="register-container">
-            <form id="register-form" method="POST" action="register.php">
-            <div class="logo-container">
-                <img src="./Asset/logo.png" alt="Logo" width="300" height="120">
-            </div>
+        <h2>Register</h2>
+        <form id="register-form" method="POST" action="">
             <label for="username">Username</label>
             <input type="text" name="username" id="username" placeholder="Enter your username" required><br>
 
@@ -115,10 +134,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="password" name="password" id="password" placeholder="Enter your password" required><br>
 
             <button id="submit" type="submit">Register</button><br><br>
-            <a href="index.php" style=" margin-left: 180px;">back?</a>
+            <a href="index.php" style="margin-left: 180px;">Back</a>
         </form>
 
-        <div id="response-message"></div>
+        <div class="response-message">
+            <?php if (!empty($error)): ?>
+                <p class="response-message error"><?= $error; ?></p>
+            <?php elseif (!empty($success)): ?>
+                <p class="response-message success"><?= $success; ?></p>
+            <?php endif; ?>
+        </div>
     </div>
 </body>
 </html>
+
