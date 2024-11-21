@@ -48,6 +48,8 @@ li{
     width: 100%;
     box-sizing: border-box;
     background-color: rgb(219 234 254);
+    justify-content: flex-start;
+    align-items: flex-start;
 
     overflow: auto;
     animation: ease-in 1s;
@@ -61,6 +63,7 @@ li{
 }
 @media  only screen and (max-width: 660px){
     .main-content{
+        padding-top: 50px;
         width: 100vw;
         position: absolute;
     }

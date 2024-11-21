@@ -6,6 +6,7 @@
     display: flex;
     width: 100%;
     position: relative;
+    height: 50px;
 }
 
 .main-content nav .log-out{
@@ -133,6 +134,7 @@ a{
         z-index: 1;
         width: 100%;
         border: none;
+        position: fixed;
     }
     .main-content nav .log-out{
         display: none;
