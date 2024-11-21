@@ -15,22 +15,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
         $result = $stmt->get_result();
 
+        // Delay for 2 seconds to simulate loading
+        sleep(2);  // Pause for 2 seconds
+
         // Check if user exists
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
 
             // Verify the password securely using password_verify (for hashed passwords)
             if (password_verify($password, $user['password'])) {
-                // Redirect to the dashboard.php page after a successful login
-                header("Location: dashbord.php");  // Redirect to dashboard.php
+                // Successful login, redirect to dashbord.php
+                header("Location: dashbord.php");  // Redirect to dashbord.php
                 exit();  // Make sure the script stops executing after the redirect
+            } else {
+                // Incorrect password handling, redirect with error
+                header("Location: login.php?error=incorrect_password");  // Redirect with error
+                exit();
             }
+        } else {
+            // Username not found handling, redirect with error
+            header("Location: login.php?error=username_not_found");  // Redirect with error
+            exit();
         }
     }
 }
-
-// If no redirect happens, do nothing (no message is shown)
-exit();
-$stmt->close();
-$conn->close();
 ?>
