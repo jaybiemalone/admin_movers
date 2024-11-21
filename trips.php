@@ -196,45 +196,68 @@
             <div class="trip-box">
                 <ul>
                     <li>Booked Trips</li>
-                    <li><span><i class='bx bxs-up-arrow' style='color:#ffffff' ></i> 30%</span></li>
+                    <li><span><i class='bx bxs-up-arrow' style='color:#ffffff' ></i> 0%</span></li>
                 </ul>
                 <ul>
-                    <li><h2>245</h2></li>
+                    <li><h2>0</h2></li>
                     <li><a href="#">Drtails <i class='bx bxs-right-arrow' style='color:#1207f7'  ></i></a></li>
                 </ul>
             </div>
             <div class="trip-box">
                 <ul>
                     <li>Total Earning</li>
-                    <li><span><i class='bx bxs-up-arrow' style='color:#ffffff' ></i> 30%</span></li>
+                    <li><span><i class='bx bxs-up-arrow' style='color:#ffffff' ></i> 0%</span></li>
                 </ul>
                 <ul>
-                    <li><h2>4814</h2></li>
+                    <li><h2>0</h2></li>
                     <li><a href="#">Drtails <i class='bx bxs-right-arrow' style='color:#1207f7'></i></a></li>
                 </ul>
             </div>
             <div class="trip-box">
                 <ul>
                     <li>Available Cabs</li>
-                    <li><span><i class='bx bxs-up-arrow' style='color:#ffffff' ></i> 30%</span></li>
+                    <li><span><i class='bx bxs-up-arrow' style='color:#ffffff' ></i> 0%</span></li>
                 </ul>
                 <ul>
-                    <li><h2>112</h2></li>
+                    <li><h2>0</h2></li>
                     <li><a href="#">Drtails <i class='bx bxs-right-arrow' style='color:#1207f7'></i></a></li>
                 </ul>
             </div>
             <div class="trip-box">
+                <ul>
+                    <li>Cancel trips</li>
+                    <li><span><i class='bx bxs-up-arrow' style='color:#ffffff' ></i> 0%</span></li>
+                </ul>
+                <ul>
+                    <li><h2>0</h2></li>
+                    <li><a href="#">Drtails <i class='bx bxs-right-arrow' style='color:#1207f7'></i></a></li>
+                </ul>
             </div>
             <div class="trip-box">
+                <ul>
+                    <li>Tourist</li>
+                    <li><span><i class='bx bxs-up-arrow' style='color:#ffffff' ></i> 0%</span></li>
+                </ul>
+                <ul>
+                    <li><h2>0</h2></li>
+                    <li><a href="#">Drtails <i class='bx bxs-right-arrow' style='color:#1207f7'></i></a></li>
+                </ul>
             </div>
             <div class="trip-box">
+                <ul>
+                    <li>Happy Customer</li>
+                    <li><span><i class='bx bxs-up-arrow' style='color:#ffffff' ></i> 0%</span></li>
+                </ul>
+                <ul>
+                    <li><h2>0</h2></li>
+                    <li><a href="#">Drtails <i class='bx bxs-right-arrow' style='color:#1207f7'></i></a></li>
+                </ul>
             </div>
             <div class="trip-box">
                 <div class="first-box">
                     <p>Trips Statistics</p>
                 </div>
                 <div class="second-box">
-                    <img src="./Asset/Statistic.png" alt="" width="900px" height="217px" style="border-radius: 10px;">
                 </div>
             </div>
             <div class="trip-box">
