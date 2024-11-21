@@ -48,7 +48,6 @@ li{
     width: 100%;
     box-sizing: border-box;
     background-color: rgb(219 234 254);
-    justify-content: flex-start;
     align-items: flex-start;
 
     overflow: auto;
