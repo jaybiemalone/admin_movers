@@ -208,11 +208,11 @@
                     <div class="box">
                         <a href="passenger-button.php"><div class="passenger">
                             <img src="./Asset/passenger-button.png" alt="" style="border-radius: 20px;">
-                            <h2>Passenger</h2>
+                            <h2>Member</h2>
                         </div></a>
                         <a href="legal-driver-monitor.php"><div class="driver">
                             <img src="./Asset/driver-button.png" alt="" style="border-radius: 20px;">
-                            <h2>Driver</h2>
+                            <h2>Status</h2>
                         </div></a>
                     </div>
                 </div>

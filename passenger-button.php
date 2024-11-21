@@ -191,7 +191,7 @@
                     <span>Monitoring</span>
                 </a>
                 <i class='bx bx-chevron-right'></i>
-                <span>Passenger</span>
+                <span>Member</span>
             </div>
             <div class="log-out">
                 <button id="toggleBtn"><i class='bx bx-cog' ></i></button>
@@ -206,7 +206,7 @@
         <div class="legal-monitoring-passenger">
             <div class="passenger-container">
                 <div class="top">
-                    <h3>Passenger</h3>
+                    <h3>Member</h3>
                 </div>
                 <div class="bottom">
                     <div class="passenger-log-container">
@@ -215,7 +215,7 @@
             include 'db.php';
 
             // Query to retrieve passenger data
-            $sql = "SELECT user, id, email, ticket, dstatus, dtext , ddate FROM passenger"; // Update 'your_table_name' with actual table name
+            $sql = "SELECT user, id, email, dcreate, dstatus, dtext , ddate FROM passenger"; // Update 'your_table_name' with actual table name
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
@@ -225,7 +225,7 @@
                             <td><h3>User</h3></td>
                             <td><h3>ID</h3></td>
                             <td><h3>Email</h3></td>
-                            <td><h3>Ticket</h3></td>
+                            <td><h3>Time</h3></td>
                             <td><h3>Status</h3></td>
                             <td style="display: none;">text</td>
                             <td><h3>Date</h3></td>
@@ -238,11 +238,11 @@
                             <td>{$row['user']}</td>
                             <td>{$row['id']}</td>
                             <td>{$row['email']}</td>
-                            <td>{$row['ticket']}</td>
+                            <td>{$row['dcreate']}</td>
                             <td>{$row['dstatus']}</td>
                             <td>{$row['dtext']}</td>
                             <td>{$row['ddate']}</td>
-                            <td><button onclick='showDetails({$row['id']})'>Show</button></td>
+                            <td><button onclick='showDetails({$row['id']})'>Accept?</button></td>
                           </tr>";
                 }
 
