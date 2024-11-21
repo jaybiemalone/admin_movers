@@ -35,7 +35,6 @@
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="upcomingtrips.php">Upcoming Trips</a></li>
                         <li><a href="triphistory.php">Tips history</a></li>
                         <li><a href="trips.php">Trips</a></li>
                     </div>
@@ -116,7 +115,6 @@
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="upcomingtrips.php">Upcoming Trips</a></li>
                         <li><a href="triphistory.php">Tips history</a></li>
                         <li><a href="trips.php">Trips</a></li>
                     </div>
