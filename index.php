@@ -23,7 +23,7 @@
         </form>
 
         <!-- Error/success messages -->
-        <div id="response-message" style="display: none;"></div>
+        <div id="response-message" style="display: block;"></div>
     </div>
 
     <script>
