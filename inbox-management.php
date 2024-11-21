@@ -180,6 +180,8 @@
                 </a>
                 <i class='bx bx-chevron-right'></i>
                 <span>Maintenance</span>
+                <i class='bx bx-chevron-right'></i>
+                <span>Inbox</span>
             </div>
             <div class="log-out">
                 <button id="toggleBtn"><i class='bx bx-cog' ></i></button>
@@ -191,6 +193,8 @@
                 <button style="display: none;" id="sidebtn"><i class='bx bx-menu bx-rotate-180' ></i></button>
             </div>
         </nav>
+        <div class="inbox-content">
+        </div>
     </div>
 </body>
 </html>

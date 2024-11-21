@@ -180,9 +180,11 @@
                 </a>
                 <i class='bx bx-chevron-right'></i>
                 <span>Maintenance</span>
+                <i class='bx bx-chevron-right'></i>
+                <span>Task</span>
             </div>
             <div class="log-out">
-                <button id="toggleBtn"><i class='bx bx-cog' ></i></button>
+                <button id="toggleBtn"><i class='bx bx-cog'></i></button>
                 <div id="logout" class="hidden">
                     <p style="padding-top: 5px;"><a href="index.php">Log out</a></p>
                 </div>
@@ -191,6 +193,21 @@
                 <button style="display: none;" id="sidebtn"><i class='bx bx-menu bx-rotate-180' ></i></button>
             </div>
         </nav>
+        <div class="task-content">
+            <div class="top">
+                <div class="box">
+                    <div class="task-name">
+                        <h1>Inbox</h1>
+                    </div>
+                    <div class="button">
+                        <input type="search">
+                        <span class="material-symbols-outlined">search</span>
+                        <button>Add Task</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom"></div>
+        </div>
     </div>
 </body>
 </html>
