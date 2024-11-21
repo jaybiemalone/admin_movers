@@ -349,11 +349,11 @@ $result = $conn->query($sql);
 
                         <!-- user-Modal Content -->
                         <div class="user-modal-content">
-                            <span class="user-modal-close">&times;</span>
                             <div class="choices">
                                 <button id="add-employee"  class="add-employee">Employee</button>
                                 <button id="add-work" class="add-work">Work</button>
                                 <button id="add-vacation" class="add-vacation">Vacation</button>
+                                <span class="user-modal-close">&times;</span>
                             </div>
                             <div id="add-employee-content" class="add-employee-content">
                             <div class="top">
