@@ -15,8 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
         $result = $stmt->get_result();
 
-        // Delay for 2 seconds to simulate loading
-        sleep(2);  // Pause for 2 seconds
+        // Simulate a 2-second loading delay
+        sleep(2);
+
+        // Response array
+        $response = array('status' => 'error'); // Default to error
 
         // Check if user exists
         if ($result->num_rows > 0) {
@@ -24,19 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Verify the password securely using password_verify (for hashed passwords)
             if (password_verify($password, $user['password'])) {
-                // Successful login, redirect to dashbord.php
-                header("Location: dashbord.php");  // Redirect to dashbord.php
-                exit();  // Make sure the script stops executing after the redirect
-            } else {
-                // Incorrect password handling, redirect with error
-                header("Location: login.php?error=incorrect_password");  // Redirect with error
-                exit();
+                $response['status'] = 'success';
             }
-        } else {
-            // Username not found handling, redirect with error
-            header("Location: login.php?error=username_not_found");  // Redirect with error
-            exit();
         }
+
+        // Send the response as JSON
+        echo json_encode($response);
     }
 }
 ?>
