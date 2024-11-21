@@ -21,19 +21,25 @@
     flex-shrink: 0;
     font-size: 40px;
     background: white;
-    padding-left: 40px;
     cursor: pointer;
 }
 .main-content nav .log-out #toggleBtn{
+    width: 100%;
+    background-color: white;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-content nav .log-out #logout{
+    box-sizing: border-box;
     background: white;
     width: 80px;
     height: 35px;
     border-radius: 10px;
-    padding-left: 10px;
+    margin-left: 10px;
+    padding: 6px 15px;
 }
 
 .main-content nav .log-out #logout p:hover{
@@ -46,7 +52,6 @@
 
 .hidden{
     display: none;
-    padding-left: 15px;
 }
 
 .main-content nav .logo-nav-container{

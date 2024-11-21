@@ -98,15 +98,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .register-container button {
             width: 100%;
             padding: 10px;
-            background-color: #4CAF50;
+            background-color: rgb(8, 61, 160);
             color: white;
             border: none;
             border-radius: 4px;
             font-size: 16px;
             cursor: pointer;
-        }
-        .register-container button:hover {
-            background-color: #45a049;
         }
         .response-message {
             text-align: center;

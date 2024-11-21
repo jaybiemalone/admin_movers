@@ -27,55 +27,55 @@
     </div>
 
     <script>
-        // JavaScript to handle form submission and AJAX request
-        document.getElementById("login-form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent default form submission
+        document.getElementById("login-form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission
 
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-            const responseMessage = document.getElementById("response-message");
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const responseMessage = document.getElementById("response-message");
 
-            // Show loading message
-            responseMessage.style.display = "block";
-            responseMessage.innerHTML = "Loading...";
+    // Show loading message
+    responseMessage.style.display = "block";
+    responseMessage.innerHTML = "Loading...";
 
-            // AJAX request
-            const xhr = new XMLHttpRequest();
-            xhr.open("POST", "login.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    // Create an AJAX request
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "login.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    const response = JSON.parse(xhr.responseText); // Parse the response from the server
-                    responseMessage.style.display = "none"; // Hide loading message
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText); // Parse the server response
+            responseMessage.style.display = "none"; // Hide loading message
 
-                    if (response.status === "success") {
-                        // Redirect to the dashboard on successful login
-                        window.location.href = "dashbord.php";
-                    } else {
-                        // Display error message
-                        responseMessage.style.display = "block";
-                        responseMessage.innerHTML = "Invalid username or password.";
-                    }
-                } else {
-                    // Handle unexpected server error
-                    responseMessage.style.display = "block";
-                    responseMessage.innerHTML = "An error occurred. Please try again.";
-                }
-            };
-
-            xhr.onerror = function() {
-                // Handle network or connection errors
+            if (response.status === "success") {
+                // Redirect to the dashboard on successful login
+                window.location.href = "dashbord.php";
+            } else {
+                // Display error message from the server
                 responseMessage.style.display = "block";
-                responseMessage.innerHTML = "Unable to connect to the server.";
-            };
+                responseMessage.innerHTML = response.message; // Show specific error message
+            }
+        } else {
+            // Handle unexpected server error
+            responseMessage.style.display = "block";
+            responseMessage.innerHTML = "An error occurred. Please try again.";
+        }
+    };
 
-            // Send the username and password to the server
-            xhr.send(
-                "username=" + encodeURIComponent(username) +
-                "&password=" + encodeURIComponent(password)
-            );
-        });
+        xhr.onerror = function () {
+            // Handle network or connection errors
+            responseMessage.style.display = "block";
+            responseMessage.innerHTML = "Unable to connect to the server.";
+        };
+
+        // Send the username and password to the server
+        xhr.send(
+            "username=" + encodeURIComponent(username) +
+            "&password=" + encodeURIComponent(password)
+        );
+    });
+
     </script>
 </body>
 </html>

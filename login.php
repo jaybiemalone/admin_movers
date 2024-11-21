@@ -1,12 +1,13 @@
 <?php
 include 'db.php';  // Include your database connection
 
-// Check if the form has been submitted using POST method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Ensure the 'username' and 'password' fields are set in the POST request
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
+
+        // Simulate a 2-second delay
+        sleep(2);
 
         // SQL query to check if the user exists
         $sql = "SELECT * FROM users WHERE username = ?";
@@ -15,24 +16,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
         $result = $stmt->get_result();
 
-        // Simulate a 2-second loading delay
-        sleep(2);
+        // Prepare response
+        $response = array();
 
-        // Response array
-        $response = array('status' => 'error'); // Default to error
-
-        // Check if user exists
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
 
-            // Verify the password securely using password_verify (for hashed passwords)
+            // Verify password
             if (password_verify($password, $user['password'])) {
                 $response['status'] = 'success';
+            } else {
+                $response['status'] = 'error';
+                $response['message'] = 'Invalid password.';
             }
+        } else {
+            $response['status'] = 'error';
+            $response['message'] = 'No user found.';
         }
 
-        // Send the response as JSON
+        // Send JSON response
         echo json_encode($response);
+        $stmt->close();
+        $conn->close();
     }
 }
 ?>
