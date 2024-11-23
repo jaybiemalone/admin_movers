@@ -16,37 +16,39 @@ if (isset($_POST['submit'])) {
     $fileTmpName = $_FILES['docu_file']['tmp_name'];
     $fileType = $_FILES['docu_file']['type'];
 
-    // Check if the file is a PDF
-    $allowedType = 'application/pdf';
-    if ($fileType !== $allowedType) {
-        die("Error: Only PDF files are allowed.");
-    }
+    // Allowed file types
+    $allowedTypes = ['pdf', 'doc', 'docx'];
 
-    // Define the upload path
+    // Extract file extension
+    $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+    // Define the full upload path
     $uploadPath = $uploadDirectory . basename($fileName);
 
-    // Upload the file and save to database if successful
-    if (move_uploaded_file($fileTmpName, $uploadPath)) {
-        $stmt = $conn->prepare("INSERT INTO pdf_files (file_name, file_path) VALUES (?, ?)");
-        $stmt->bind_param("ss", $fileName, $uploadPath);
+    if (in_array($fileExtension, $allowedTypes)) {
+        if (move_uploaded_file($fileTmpName, $uploadPath)) {
+            $stmt = $conn->prepare("INSERT INTO pdf_files (file_name, file_path) VALUES (?, ?)");
+            $stmt->bind_param("ss", $fileName, $uploadPath);
 
-        if ($stmt->execute()) {
-            // Set a success message
-            $_SESSION['success_message'] = "PDF uploaded successfully!";
+            if ($stmt->execute()) {
+                // Set a success message
+                $_SESSION['success_message'] = ucfirst($fileExtension) . " file uploaded successfully!";
+            } else {
+                echo "Error: " . $stmt->error;
+            }
+
+            $stmt->close();
         } else {
-            echo "Error: " . $stmt->error;
+            echo "Error uploading the file.";
         }
-
-        $stmt->close();
     } else {
-        echo "Error uploading the PDF.";
+        echo "Invalid file type. Only PDF, DOC, and DOCX files are allowed.";
     }
 
     // Redirect to the same page to avoid resubmission
     header("Location: " . $_SERVER['PHP_SELF']);
     exit(); // Make sure to exit after the redirect
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -261,26 +263,35 @@ if (isset($_POST['submit'])) {
                             <option value="">8</option>
                         </Select></li>
                     </ul>
-                    <table style="width: 100%;">
-                        <tr>
-                            <td>Document Name</td>
-                            <td>Uploaded At</td>
-                            <td>Time</td>
-                            <td>Action</td>
-                        </tr>
-                    </table>
-                    <ul>
-                        <?php
-                        // Fetch uploaded PDFs from database
-                        $result = $conn->query("SELECT * FROM pdf_files");
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
-                                echo "<li><a href='{$row['file_path']}' download>{$row['file_name']}</a></li>";
-                            }
-                        } else {
-                            echo "<p>No PDFs found.</p>";
-                        }
-                        ?>
+                    <table style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>Uploaded At</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        // Fetch uploaded PDFs from the database
+        $result = $conn->query("SELECT * FROM pdf_files");
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td><a href='" . htmlspecialchars($row['file_path']) . "' download>" . htmlspecialchars($row['file_name']) . "</a></td>";
+                echo "<td>" . htmlspecialchars($row['uploaded_at']) . "</td>";
+                echo "<td>
+                        <a href='delete.php?id=" . htmlspecialchars($row['id']) . "' onclick='return confirm(\"Are you sure you want to delete this file?\")'>Delete</a>
+                        <a href='" . htmlspecialchars($row['file_path']) . "' target='_blank'>View</a>
+                      </td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='4'>No PDFs found.</td></tr>";
+        }
+        ?>
+    </tbody>
+</table>
                     </ul>
                 </div>
             </div>
