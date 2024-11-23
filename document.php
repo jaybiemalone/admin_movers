@@ -297,7 +297,7 @@ if (isset($_POST['submit'])) {
                                 echo "</tr>";
                             }
                         } else {
-                            echo "<tr><td colspan='3'>No files found.</td></tr>";
+                            echo "<tr><td colspan='3'></td></tr>";
                         }
                         ?>
                         </tbody>
