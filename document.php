@@ -1,6 +1,6 @@
 <?php
 session_start(); // Start the session
-include 'db.php';
+include 'db.php'; // Make sure this includes a valid database connection
 
 // Check if the form is submitted
 if (isset($_POST['submit'])) {
@@ -16,19 +16,24 @@ if (isset($_POST['submit'])) {
     $fileTmpName = $_FILES['docu_file']['tmp_name'];
     $fileType = $_FILES['docu_file']['type'];
 
+    // Get the document title from the form
+    $documentTitle = $_POST['name-file'];
+
     // Allowed file types
     $allowedTypes = ['pdf', 'doc', 'docx'];
 
     // Extract file extension
     $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
 
-    // Define the full upload path
-    $uploadPath = $uploadDirectory . basename($fileName);
+    // Sanitize and define the full upload path
+    $sanitizedFileName = preg_replace('/[^a-zA-Z0-9_\.-]/', '_', $fileName);
+    $uploadPath = $uploadDirectory . $sanitizedFileName;
 
     if (in_array($fileExtension, $allowedTypes)) {
         if (move_uploaded_file($fileTmpName, $uploadPath)) {
-            $stmt = $conn->prepare("INSERT INTO pdf_files (file_name, file_path) VALUES (?, ?)");
-            $stmt->bind_param("ss", $fileName, $uploadPath);
+            // Insert both the file name and the document title into the database
+            $stmt = $conn->prepare("INSERT INTO pdf_files (file_name, file_path, document_title, uploaded_at) VALUES (?, ?, ?, NOW())");
+            $stmt->bind_param("sss", $sanitizedFileName, $uploadPath, $documentTitle);
 
             if ($stmt->execute()) {
                 // Set a success message
@@ -230,20 +235,24 @@ if (isset($_POST['submit'])) {
         </nav>
         <div class="document-content">
             <div class="document-upload">
-            <form method="post" enctype="multipart/form-data">
-                    <ul>
-                        <li><h1>Upload Document</h1></li>
-                        <li>
-                            <label for="">Document Title</label>
-                            <input type="text" name="document_title" placeholder="Enter Document Title" required>
-                        </li>
-                        <li>
-                            <label for="">Upload Document</label>
-                            <input type="file" id="docu_file" name="docu_file" accept="application/pdf" required>
-                        </li>
-                        <li><button type="submit" name="submit">Upload Document</button></li>
-                    </ul>
-                </form>
+            <form action="document.php" method="POST" enctype="multipart/form-data">
+                <ul>
+                    <li>
+                        <h1>Upload Document</h1>
+                    </li>
+                    <li>
+                        <label for="name-file">Document Title</label>
+                        <input type="text" name="name-file" id="name-file" placeholder="Enter Document Title" required>
+                    </li>
+                    <li>
+                        <label for="docu_file">Upload Document</label>
+                        <input type="file" id="docu_file" name="docu_file" accept=".pdf,.doc,.docx" required>
+                    </li>
+                    <li>
+                        <button type="submit" name="submit">Upload Document</button>
+                    </li>
+                </ul>
+            </form>
             </div>
             <div class="document-container">
                 <div class="document-title">
@@ -264,34 +273,35 @@ if (isset($_POST['submit'])) {
                         </Select></li>
                     </ul>
                     <table style="width: 100%; border-collapse: collapse;">
-    <thead>
-        <tr>
-            <th>File Name</th>
-            <th>Uploaded At</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-        // Fetch uploaded PDFs from the database
-        $result = $conn->query("SELECT * FROM pdf_files");
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td><a href='" . htmlspecialchars($row['file_path']) . "' download>" . htmlspecialchars($row['file_name']) . "</a></td>";
-                echo "<td>" . htmlspecialchars($row['uploaded_at']) . "</td>";
-                echo "<td>
-                        <a href='delete.php?id=" . htmlspecialchars($row['id']) . "' onclick='return confirm(\"Are you sure you want to delete this file?\")'>Delete</a>
-                        <a href='" . htmlspecialchars($row['file_path']) . "' target='_blank'>View</a>
-                      </td>";
-                echo "</tr>";
-            }
-        } else {
-            echo "<tr><td colspan='4'>No PDFs found.</td></tr>";
-        }
-        ?>
-    </tbody>
-</table>
+                        <thead>
+                            <tr>
+                                <th>File Name</th>
+                                <th>Uploaded At</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        // Fetch uploaded files from the database
+                        $result = $conn->query("SELECT * FROM pdf_files");
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr>";
+                                // Display the document title
+                                echo "<td>" . htmlspecialchars($row['document_title']) . "</td>"; // Display document title
+                                echo "<td>" . htmlspecialchars($row['uploaded_at']) . "</td>"; // Upload timestamp
+                                echo "<td>
+                                        <a href='delete.php?id=" . htmlspecialchars($row['id']) . "' onclick='return confirm(\"Are you sure you want to delete this file?\")'>Delete</a>
+                                        <a href='" . htmlspecialchars($row['file_path']) . "' target='_blank'>View</a>
+                                    </td>"; // Action links
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='3'>No files found.</td></tr>";
+                        }
+                        ?>
+                        </tbody>
+                    </table>
                     </ul>
                 </div>
             </div>
