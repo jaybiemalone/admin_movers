@@ -1,19 +1,31 @@
 <?php
 include 'db.php';
 
-// SQL query to count rows
-$stmt = $conn->prepare("SELECT COUNT(*) AS total_rows FROM issue_management");
-$stmt->execute();
-$count_result = $stmt->get_result();
+// Initialize variables
 $total_rows = 0;
+$total_task = 0;
 
-if ($count_result->num_rows > 0) {
-    $row = $count_result->fetch_assoc();
-    $total_rows = $row['total_rows'];
-} else {
-    $total_rows = 0;
+// Execute queries for counts
+$stmt1 = $conn->prepare("SELECT COUNT(*) AS total_rows FROM issue_management");
+$stmt2 = $conn->prepare("SELECT COUNT(*) AS total_task FROM task_management");
+
+if ($stmt1 && $stmt2) {
+    $stmt1->execute();
+    $result1 = $stmt1->get_result();
+    if ($result1->num_rows > 0) {
+        $row = $result1->fetch_assoc();
+        $total_rows = $row['total_rows'];
+    }
+    $stmt1->close();
+
+    $stmt2->execute();
+    $result2 = $stmt2->get_result();
+    if ($result2->num_rows > 0) {
+        $row = $result2->fetch_assoc();
+        $total_task = $row['total_task'];
+    }
+    $stmt2->close();
 }
-$stmt->close();
 
 // Fetch all rows for display
 $sql = "SELECT * FROM issue_management";
@@ -242,7 +254,15 @@ $result = $conn->query($sql);
             </div>
             <div class="card">
                 <ul>
-                    <li><h1>0</h1></li>
+                    <li>
+                        <?php
+                        if ($total_rows > 0) {
+                            echo "<h1>" . htmlspecialchars($total_task) . "</h1>";
+                        } else {
+                            echo "<p>0</p>";
+                        }
+                        ?>
+                    </li>
                     <li><h3>Task Active</h3></li>
                     <img src="./Asset/building_up_down.gif" alt="" width="60">
                 </ul>

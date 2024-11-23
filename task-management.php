@@ -258,25 +258,27 @@ $result = $conn->query($sql);
                             echo "<div class=\"task-box\">";
                             
                             echo "<ul>";
-                            echo "<li>" . htmlspecialchars($row['']) . "</li>";
+                            echo "<li>" . htmlspecialchars($row['category']) . "</li>";
                             echo "</ul>";
 
                             echo "<ul>";
-                            echo "<li>" . htmlspecialchars($row['']) . "</li>";
-                            echo "<li>" . htmlspecialchars($row['']) . "</li>";
-                            echo "<li>" . htmlspecialchars($row['']) . "</li>";
+                            echo "<li>" . htmlspecialchars($row['label']) . "</li>";
                             echo "</ul>";
 
                             echo "<ul>";
-                            echo "<li>" . htmlspecialchars($row['']) . "</li>";
+                            echo "<li>" . htmlspecialchars($row['description']) . "</li>";
                             echo "</ul>";
 
                             echo "<ul>";
-                            echo "<li>" . htmlspecialchars($row['']) . "</li>";
+                            echo "<li> Start Date: " . htmlspecialchars($row['date-task']) . "</li>";
                             echo "</ul>";
 
                             echo "<ul>";
-                            echo "<li></li>";
+                            echo "<li> People assign: " . htmlspecialchars($row['member']) . "</li>";
+                            echo "</ul>";
+
+                            echo "<ul>";
+                            echo "<li><button>Start</button></li>";
                             echo "</ul>";
 
                             echo "</div>";
