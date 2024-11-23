@@ -1,3 +1,25 @@
+<?php
+include 'db.php';
+
+// SQL query to count rows
+$stmt = $conn->prepare("SELECT COUNT(*) AS total_rows FROM task_management");
+$stmt->execute();
+$count_result = $stmt->get_result();
+$total_rows = 0;
+
+if ($count_result->num_rows > 0) {
+    $row = $count_result->fetch_assoc();
+    $total_rows = $row['total_rows'];
+} else {
+    $total_rows = 0;
+}
+$stmt->close();
+
+// Fetch all rows for display
+$sql = "SELECT * FROM task_management";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -197,7 +219,7 @@
             <div class="top">
                 <div class="box">
                     <div class="task-name">
-                        <h1>Inbox</h1>
+                        <h1>Task List</h1>
                     </div>
                     <div class="button">
                         <input type="search">
@@ -206,7 +228,65 @@
                     </div>
                 </div>
             </div>
-            <div class="bottom"></div>
+            <div class="bottom">
+                <div class="box">
+                    <div class="card">
+                        <h1>Not Started</h1>
+                        <span>0</span>
+                        <img src="./Asset/waiting.gif" alt="" width="40">
+                    </div>
+                    <div class="card">
+                        <h1>Started</h1>
+                        <span>0</span>
+                        <img src="./Asset/waiting.gif" alt="" width="40">
+                    </div>
+                    <div class="card">
+                        <h1>In Progress</h1>
+                        <span>0</span>
+                        <img src="./Asset/waiting.gif" alt="" width="40">
+                    </div>
+                    <div class="card">
+                        <h1>Completed</h1>
+                        <span>0</span>
+                        <img src="./Asset/waiting.gif" alt="" width="40">
+                    </div>
+                </div>
+                <div class="box">
+                <?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<div class=\"task-box\">";
+                            
+                            echo "<ul>";
+                            echo "<li>" . htmlspecialchars($row['']) . "</li>";
+                            echo "</ul>";
+
+                            echo "<ul>";
+                            echo "<li>" . htmlspecialchars($row['']) . "</li>";
+                            echo "<li>" . htmlspecialchars($row['']) . "</li>";
+                            echo "<li>" . htmlspecialchars($row['']) . "</li>";
+                            echo "</ul>";
+
+                            echo "<ul>";
+                            echo "<li>" . htmlspecialchars($row['']) . "</li>";
+                            echo "</ul>";
+
+                            echo "<ul>";
+                            echo "<li>" . htmlspecialchars($row['']) . "</li>";
+                            echo "</ul>";
+
+                            echo "<ul>";
+                            echo "<li></li>";
+                            echo "</ul>";
+
+                            echo "</div>";
+                        }
+                    } else {
+                        echo "<p>No issues found.</p>";
+                    }
+                    ?>
+                </div>
+            </div>
         </div>
     </div>
 </body>

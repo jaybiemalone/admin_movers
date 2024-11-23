@@ -4,6 +4,8 @@
     justify-content: flex-start;
 
     padding: 10px 20px;
+    flex-direction: column;
+    gap: 20px;
     color: black;
 }
 
@@ -64,4 +66,32 @@
     padding: 10px 25px;
     background-color: rgb(71, 129, 235);
     color: white;
+}
+
+.task-content .bottom{
+    width: 100%;
+    height: auto;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.task-content .bottom .box:nth-child(1){
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.task-content .bottom .box:nth-child(1) .card{
+    background-color: white;
+    border-radius: 10px;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
 }
