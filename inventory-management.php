@@ -59,10 +59,19 @@
                 </a>
             </li>
             <li>
-                <a href="legal.php">
-                    <i class='bx bx-file'></i>
-                    <span>Legal Compliance</span>
-                </a>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <i class='bx bx-taxi'></i>
+                    <span>My Files</span>
+                    <i class='bx bx-chevron-right'></i>
+                </button>
+                <ul class="sub-menu">
+                    <div>
+                        <li><a href="document.php">Document</a></li>
+                        <li><a href="template-files.php">Template</a></li>
+                        <li><a href="marketing-files.php">Marketing</a></li>
+                        <li><a href="project-files.php">Projects</a></li>
+                    </div>
+                </ul>
             </li>
             <li>
                 <a href="contract.php">
@@ -133,10 +142,19 @@
                 </a>
             </li>
             <li>
-                <a href="document.php">
-                    <i class='bx bx-folder-open'></i>
-                    <span>Document</span>
-                </a>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <i class='bx bx-taxi'></i>
+                    <span>My Files</span>
+                    <i class='bx bx-chevron-right'></i>
+                </button>
+                <ul class="sub-menu">
+                    <div>
+                        <li><a href="document.php">Document</a></li>
+                        <li><a href="template-files.php">Template</a></li>
+                        <li><a href="marketing-files.php">Marketing</a></li>
+                        <li><a href="project-files.php">Projects</a></li>
+                    </div>
+                </ul>
             </li>
             <li>
                 <a href="legal.php">
