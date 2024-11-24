@@ -35,8 +35,8 @@
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="triphistory.php">Tips history</a></li>
-                        <li><a href="trips.php">Trips</a></li>
+                        <li><a href="trips.php">Trip Dashboard</a></li>
+                        <li><a href="triphistory.php">History Rides</a></li>
                     </div>
                 </ul>
             </li>
@@ -124,8 +124,8 @@
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="triphistory.php">Tips history</a></li>
-                        <li><a href="trips.php">Trips</a></li>
+                        <li><a href="trips.php">Trip Dashboard</a></li>
+                        <li><a href="triphistory.php">History Rides</a></li>
                     </div>
                 </ul>
             </li>

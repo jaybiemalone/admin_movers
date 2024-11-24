@@ -36,8 +36,8 @@
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="triphistory.php">Tips history</a></li>
-                        <li class="active"><a href="trips.php">Trips</a></li>
+                        <li><a href="trips.php">Trip Dashboard</a></li>
+                        <li><a href="triphistory.php">History Rides</a></li>
                     </div>
                 </ul>
             </li>
@@ -125,8 +125,8 @@
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="triphistory.php">Tips history</a></li>
-                        <li class="active"><a href="trips.php">Trips</a></li>
+                        <li><a href="trips.php">Trip Dashboard</a></li>
+                        <li><a href="triphistory.php">History Rides</a></li>
                     </div>
                 </ul>
             </li>
@@ -281,6 +281,12 @@
             <div class="trip-box">
                 <div class="top">
                     <h1>Upcoming Trips</h1>
+                </div>
+                <div class="bottom"></div>
+            </div>
+            <div class="trip-box">
+                <div class="top">
+                    <h1>Peak hours Trip</h1>
                 </div>
                 <div class="bottom"></div>
             </div>
