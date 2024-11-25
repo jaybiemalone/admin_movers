@@ -282,7 +282,8 @@ if (isset($_POST['submit'])) {
             </div>
             <div class="document-container">
                 <div class="document-title">
-                    <h1>Document</h1>
+                    <ul><h1>Document</h1></ul>
+                    <ul><input type="search" placeholder="Seach Title Here"></ul>
                 </div>
                 <div class="document-history">
                     <ul>

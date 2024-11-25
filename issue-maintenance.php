@@ -237,7 +237,7 @@ $result = $conn->query($sql);
                     if ($total_rows > 0) {
                         echo "<h1>" . htmlspecialchars($total_rows) . "</h1>";
                     } else {
-                        echo "<p>0</p>";
+                        echo "<h1>0</h1>";
                     }
                     ?>
                     </li>
@@ -259,7 +259,7 @@ $result = $conn->query($sql);
                         if ($total_rows > 0) {
                             echo "<h1>" . htmlspecialchars($total_task) . "</h1>";
                         } else {
-                            echo "<p>0</p>";
+                            echo "<h1>0</h1>";
                         }
                         ?>
                     </li>
