@@ -1,3 +1,36 @@
+<?php
+include 'db.php';
+
+// Initialize variables
+$total_rows = 0;
+$total_task = 0;
+
+// Execute queries for counts
+$stmt1 = $conn->prepare("SELECT COUNT(*) AS total_rows FROM issue_management");
+$stmt2 = $conn->prepare("SELECT COUNT(*) AS total_task FROM inbox_communication");
+
+if ($stmt1 && $stmt2) {
+    $stmt1->execute();
+    $result1 = $stmt1->get_result();
+    if ($result1->num_rows > 0) {
+        $row = $result1->fetch_assoc();
+        $total_rows = $row['total_rows'];
+    }
+    $stmt1->close();
+
+    $stmt2->execute();
+    $result2 = $stmt2->get_result();
+    if ($result2->num_rows > 0) {
+        $row = $result2->fetch_assoc();
+        $total_task = $row['total_task'];
+    }
+    $stmt2->close();
+}
+
+// Fetch all rows for display
+$sql = "SELECT * FROM inbox_communication";
+$result = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -212,7 +245,74 @@
             </div>
         </nav>
         <div class="inbox-content">
+            <div class="message-inbox">
+                <div class="top">
+                    <h1>Message <span></span></h1>
+                </div>
+                <div class="body">
+                <?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<div class="close-button" onclick="showModal(' . htmlspecialchars(json_encode($row)) . ')">';
+                            echo "<ul>";
+                            echo "<li><h2>" . htmlspecialchars($row['name_issue']) . "</h2></li>";
+                            echo "</ul>";
+
+                            echo "<ul>";
+                            echo "<li>" . htmlspecialchars($row['date_id']) . "</li>";
+                            echo "</ul>";
+
+                            echo "<ul>";
+                            echo "<li>" . htmlspecialchars($row['action_issue']) . "</li>";
+                            echo "<li>" . htmlspecialchars($row['email']) . "</li>";
+                            echo "</ul>";
+
+                            echo "</div>";
+                        }
+                    } else {
+                        echo "<p>No issues found.</p>";
+                    }
+                ?>
+                </div>
+            </div>
+            <div id="inbox-modal" class="message-display">
+                <div class="ibox-modal-content">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-date"></p>
+                    <p id="modal-action"></p>
+                    <p id="modal-email"></p>
+                </div>
+            </div>
         </div>
     </div>
+    <script>
+    // Function to show the modal with dynamic data
+    function showModal(data) {
+        document.getElementById('modal-title').textContent = data.name_issue;
+        document.getElementById('modal-date').textContent = "Date: " + data.date_id;
+        document.getElementById('modal-action').textContent = "Action: " + data.action_issue;
+        document.getElementById('modal-email').textContent = "Email: " + data.email;
+
+        document.getElementById('inbox-modal').style.display = "flex"; // Show the modal
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        document.getElementById('inbox-modal').style.display = "none"; // Hide the modal
+    }
+
+    // Close modal if clicked outside of content
+    window.onclick = function(event) {
+        const modal = document.getElementById('inbox-modal');
+        if (event.target === modal) {
+            modal.style.display = "none"; // Hide the modal if clicked outside
+        }
+    };
+    </script>
+
 </body>
 </html>
+
+<?php
+$conn->close();
+?>
