@@ -247,7 +247,13 @@ $result = $conn->query($sql);
         <div class="inbox-content">
             <div class="message-inbox">
                 <div class="top">
-                    <h1>Message <span></span></h1>
+                    <h1>Message <?php
+                    if ($total_task > 0) {
+                        echo "<span>+" . htmlspecialchars($total_task) . "</span>";
+                    } else {
+                        echo "<span>0</span>";
+                    }
+                    ?></h1>
                 </div>
                 <div class="body">
                 <?php
@@ -259,12 +265,13 @@ $result = $conn->query($sql);
                             echo "</ul>";
 
                             echo "<ul>";
+                            echo "<li>" . htmlspecialchars($row['email']) . "</li>";
                             echo "<li>" . htmlspecialchars($row['date_id']) . "</li>";
                             echo "</ul>";
 
                             echo "<ul>";
                             echo "<li>" . htmlspecialchars($row['action_issue']) . "</li>";
-                            echo "<li>" . htmlspecialchars($row['email']) . "</li>";
+                            echo "<li>" . htmlspecialchars($row['send_at']) . "</li>";
                             echo "</ul>";
 
                             echo "</div>";
@@ -300,14 +307,6 @@ $result = $conn->query($sql);
     function closeModal() {
         document.getElementById('inbox-modal').style.display = "none"; // Hide the modal
     }
-
-    // Close modal if clicked outside of content
-    window.onclick = function(event) {
-        const modal = document.getElementById('inbox-modal');
-        if (event.target === modal) {
-            modal.style.display = "none"; // Hide the modal if clicked outside
-        }
-    };
     </script>
 
 </body>
