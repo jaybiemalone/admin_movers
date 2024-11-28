@@ -95,7 +95,50 @@
     padding: 5px 10px;
 }
 
+.inbox-content .message-inbox .body .close-button ul:nth-child(3) li:nth-child(1){
+    color: rgb(202, 2, 202);
+    background-color: rgba(149, 8, 149, 0.29);
+}
+
 .inbox-content .message-display{
     width: 100%;
     height: 100%;
+}
+
+.inbox-content .message-display .ibox-modal-content{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inbox-content .message-display .ibox-modal-content .send-feedback{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    width: 80%;
+    height: 70px;
+}
+
+.inbox-content .message-display .ibox-modal-content .send-feedback textarea{
+    box-sizing: border-box;
+    width: 90%;
+    height: 60px;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.inbox-content .message-display .ibox-modal-content .send-feedback button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(11, 86, 172);
 }

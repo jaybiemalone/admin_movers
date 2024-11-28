@@ -265,7 +265,7 @@ $result = $conn->query($sql);
                             echo "</ul>";
 
                             echo "<ul>";
-                            echo "<li>" . htmlspecialchars($row['email']) . "</li>";
+                            echo "<li>" . htmlspecialchars($row['email_id']) . "</li>";
                             echo "<li>" . htmlspecialchars($row['date_id']) . "</li>";
                             echo "</ul>";
 
@@ -282,12 +282,20 @@ $result = $conn->query($sql);
                 ?>
                 </div>
             </div>
-            <div id="inbox-modal" class="message-display">
-                <div class="ibox-modal-content">
-                    <h2 id="modal-title"></h2>
-                    <p id="modal-date"></p>
-                    <p id="modal-action"></p>
-                    <p id="modal-email"></p>
+            <div class="message-display" >
+                <div class="ibox-modal-content" id="inbox-modal" style="display: none;">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <h2 id="inbox-modal-title">Modal Title</h2>
+                    <p id="inbox-modal-date">Modal Date</p>
+                    <p id="inbox-modal-action">Modal Action</p>
+                    <p id="inbox-modal-name">Name</p>
+                    <p id="inbox-modal-email">Email</p>
+                    <p id="inbox-modal-send_at">Send At</p>
+                    <p id="inbox-modal-description">Description</p>
+                    <div class="send-feedback">
+                        <textarea name="" id="" placeholder="Write a Message"></textarea>
+                        <button>Send</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -295,10 +303,13 @@ $result = $conn->query($sql);
     <script>
     // Function to show the modal with dynamic data
     function showModal(data) {
-        document.getElementById('modal-title').textContent = data.name_issue;
-        document.getElementById('modal-date').textContent = "Date: " + data.date_id;
-        document.getElementById('modal-action').textContent = "Action: " + data.action_issue;
-        document.getElementById('modal-email').textContent = "Email: " + data.email;
+        if (data.name_issue) document.getElementById('inbox-modal-title').textContent = data.name_issue;
+        if (data.date_id) document.getElementById('inbox-modal-date').textContent = "Date: " + data.date_id;
+        if (data.action_issue) document.getElementById('inbox-modal-action').textContent = "Action: " + data.action_issue;
+        if (data.name) document.getElementById('inbox-modal-name').textContent = "Name: " + data.name;
+        if (data.email_id) document.getElementById('inbox-modal-email').textContent = "Email: " + data.email_id;
+        if (data.send_at) document.getElementById('inbox-modal-send_at').textContent = data.send_at;
+        if (data.description_issue) document.getElementById('inbox-modal-description').textContent = "Description: " + data.description_issue;
 
         document.getElementById('inbox-modal').style.display = "flex"; // Show the modal
     }
