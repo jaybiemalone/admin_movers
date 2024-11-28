@@ -5,7 +5,7 @@ $username = "admin_nov";
 $password = "gHvlCB%CK3kt*Jl^";
 $dbname = "admin_movers";
 
-// Create connection
+// Create connections
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // password:gHvlCB%CK3kt*Jl^

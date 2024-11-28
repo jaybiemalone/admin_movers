@@ -2,7 +2,7 @@
 session_start(); // Start the session
 include 'db.php'; // Include a valid database connection
 
-// Check if the form is submitted
+// Check if the form is submitteds
 if (isset($_POST['submit'])) {
     $uploadDirectory = 'uploads/';
 
