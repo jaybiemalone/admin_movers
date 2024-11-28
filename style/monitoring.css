@@ -1,4 +1,5 @@
 .legal-monitoring-content{
+    padding-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,7 +7,7 @@
 
 .legal-monitoring-content .monitoring-container{
     width: 90%;
-    height: 90%;
+    height: 480px;
     background-color: white;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;

@@ -218,7 +218,7 @@
                 </ul>
                 <ul>
                     <li><h2>0</h2></li>
-                    <li><a href="#">Drtails <i class='bx bxs-right-arrow' style='color:#1207f7'  ></i></a></li>
+                    <li><a href="#">Details <i class='bx bxs-right-arrow' style='color:#1207f7'  ></i></a></li>
                 </ul>
             </div>
             <div class="trip-box">
@@ -228,7 +228,7 @@
                 </ul>
                 <ul>
                     <li><h2>0</h2></li>
-                    <li><a href="#">Drtails <i class='bx bxs-right-arrow' style='color:#1207f7'></i></a></li>
+                    <li><a href="#">Details <i class='bx bxs-right-arrow' style='color:#1207f7'></i></a></li>
                 </ul>
             </div>
             <div class="trip-box">
@@ -238,7 +238,7 @@
                 </ul>
                 <ul>
                     <li><h2>0</h2></li>
-                    <li><a href="#">Drtails <i class='bx bxs-right-arrow' style='color:#1207f7'></i></a></li>
+                    <li><a href="#">Details <i class='bx bxs-right-arrow' style='color:#1207f7'></i></a></li>
                 </ul>
             </div>
             <div class="trip-box">
@@ -248,7 +248,7 @@
                 </ul>
                 <ul>
                     <li><h2>0</h2></li>
-                    <li><a href="#">Drtails <i class='bx bxs-right-arrow' style='color:#1207f7'></i></a></li>
+                    <li><a href="#">Details <i class='bx bxs-right-arrow' style='color:#1207f7'></i></a></li>
                 </ul>
             </div>
             <div class="trip-box">
@@ -258,17 +258,17 @@
                 </ul>
                 <ul>
                     <li><h2>0</h2></li>
-                    <li><a href="#">Drtails <i class='bx bxs-right-arrow' style='color:#1207f7'></i></a></li>
+                    <li><a href="#">Details <i class='bx bxs-right-arrow' style='color:#1207f7'></i></a></li>
                 </ul>
             </div>
             <div class="trip-box">
                 <ul>
-                    <li>Happy Customer</li>
+                    <li>Feedback</li>
                     <li><span><i class='bx bxs-up-arrow' style='color:#ffffff' ></i> 0%</span></li>
                 </ul>
                 <ul>
                     <li><h2>0</h2></li>
-                    <li><a href="#">Drtails <i class='bx bxs-right-arrow' style='color:#1207f7'></i></a></li>
+                    <li><a href="#">Details <i class='bx bxs-right-arrow' style='color:#1207f7'></i></a></li>
                 </ul>
             </div>
             <div class="trip-box">

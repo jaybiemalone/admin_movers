@@ -14,23 +14,32 @@ if (isset($_POST['submit'])) {
     // Check if a file was uploaded
     if (isset($_FILES['docu_file']) && $_FILES['docu_file']['error'] === UPLOAD_ERR_OK) {
         // Get the file details
-        $fileName = $_FILES['docu_file']['name'];
+        $fileName = basename($_FILES['docu_file']['name']); // Use basename() to avoid directory traversal
         $fileTmpName = $_FILES['docu_file']['tmp_name'];
         $fileType = $_FILES['docu_file']['type'];
         $fileSize = $_FILES['docu_file']['size'];
 
         // Get the document title from the form
-        $documentTitle = htmlspecialchars($_POST['name-file'], ENT_QUOTES, 'UTF-8');
+        $documentTitle = htmlspecialchars(trim($_POST['name-file']), ENT_QUOTES, 'UTF-8');
 
-        // Allowed file types
+        // Allowed file types (also checking MIME type)
         $allowedTypes = ['pdf', 'doc', 'docx'];
 
-        // Extract file extension
+        // Extract file extension and validate it
         $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+        // Check file MIME type as well to prevent spoofing
+        $allowedMimeTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+        if (!in_array($fileType, $allowedMimeTypes)) {
+            $_SESSION['error_message'] = "Invalid file MIME type. Only PDF, DOC, and DOCX files are allowed.";
+            header("Location: " . $_SERVER['PHP_SELF']);
+            exit();
+        }
 
         // Sanitize and define the full upload path
         $sanitizedFileName = preg_replace('/[^a-zA-Z0-9_\.-]/', '_', $fileName);
-        $uploadPath = $uploadDirectory . $sanitizedFileName;
+        $uniqueFileName = time() . "_" . $sanitizedFileName; // Prevent overwriting by making the filename unique
+        $uploadPath = $uploadDirectory . $uniqueFileName;
 
         // Validate file type
         if (in_array($fileExtension, $allowedTypes)) {
@@ -44,7 +53,7 @@ if (isset($_POST['submit'])) {
                 if (move_uploaded_file($fileTmpName, $uploadPath)) {
                     // Insert the file details into the template_document table
                     $stmt = $conn->prepare("INSERT INTO template_document (file_name, file_path, document_title, uploaded_at) VALUES (?, ?, ?, NOW())");
-                    $stmt->bind_param("sss", $sanitizedFileName, $uploadPath, $documentTitle);
+                    $stmt->bind_param("sss", $uniqueFileName, $uploadPath, $documentTitle);
 
                     if ($stmt->execute()) {
                         // Set a success message
@@ -70,6 +79,7 @@ if (isset($_POST['submit'])) {
     exit(); // Ensure script stops after redirect
 }
 ?>
+
 
 
 <!DOCTYPE html>

@@ -315,7 +315,7 @@
                     <div class="circle-percent" style="text-align: center;">
                         <h3>0%<br><p style="font-weight: normal; font-size: 12px;">Male</p></h3>
                         <h3>0%<br><p style="font-weight: normal; font-size: 12px;">Female</p></h3>
-                        <h3>0%<br><p style="font-weight: normal; font-size: 12px;">Other</p></h3>
+                        <h3>0%<br><p style="font-weight: normal; font-size: 12px;">Others</p></h3>
                     </div>
                 </div>
             </div>
