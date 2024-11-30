@@ -1,5 +1,5 @@
 <?php
-// Use environment variables for credentials (add these to your .env file or server configuration)
+// Use environment variables for credentials
 $db_host = getenv('DB_HOST') ?: 'localhost';
 $db_user = getenv('DB_USER') ?: 'admin_nov';
 $db_pass = getenv('DB_PASS') ?: 'gHvlCB%CK3kt*Jl^';
@@ -32,8 +32,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             mkdir($target_dir, 0777, true);
         }
         $file_path = $target_dir . basename($_FILES["file"]["name"]);
-        if (!move_uploaded_file($_FILES["file"]["tmp_name"], $file_path)) {
-            $file_path = "";
+        
+        // Check for file type and size
+        $allowed_extensions = ['jpg', 'jpeg', 'png', 'gif'];
+        $file_extension = pathinfo($file_path, PATHINFO_EXTENSION);
+
+        if (in_array(strtolower($file_extension), $allowed_extensions) && $_FILES['file']['size'] <= 5000000) {
+            if (!move_uploaded_file($_FILES["file"]["tmp_name"], $file_path)) {
+                $file_path = "";  // If file upload fails
+            }
+        } else {
+            $file_path = "";  // Invalid file type or size
         }
     }
 
@@ -55,17 +64,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // Fetch records for display
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
-
-// Check connection
 if ($conn->connect_error) {
     die("Database connection failed: " . $conn->connect_error);
 }
 
 $sql = "SELECT * FROM user_management";
 $result = $conn->query($sql);
-
-// Display records
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -272,28 +279,28 @@ $result = $conn->query($sql);
                     <div class="select-option">
                     <form action="" method="POST" enctype="multipart/form-data">
                         <ul>
-                        <li><label for="role">Role
-                        <select name="role" id="role">
-                            <option value="">Select Role</option>
-                            <option value="Driver">Driver</option>
-                            <option value="Passenger">Passenger</option>
-                            <option value="Employee">Employee</option>
-                        </select>
-                        </label></li>
-                        <li><label for="position">Position
-                            <select name="position" id="position">
-                                <option value="">Select Position</option>
-                                <option value="Operations Manager">Operations Manager</option>
-                                <option value="Driver">Driver</option>
-                            </select>
-                        </label></li>
-                        <li><label for="team">Team
-                            <select name="team" id="team">
-                                <option value="">Select Team</option>
-                                <option value="Operations Team">Operations Team</option>
-                                <option value="Customer Support Team">Customer Support Team</option>
-                            </select>
-                        </label></li>
+                            <li><label for="role">Role
+                                <select name="role" id="role" required>
+                                    <option value="">Select Role</option>
+                                    <option value="Driver">Driver</option>
+                                    <option value="Passenger">Passenger</option>
+                                    <option value="Employee">Employee</option>
+                                </select>
+                            </label></li>
+                            <li><label for="position">Position
+                                <select name="position" id="position" required>
+                                    <option value="">Select Position</option>
+                                    <option value="Operations Manager">Operations Manager</option>
+                                    <option value="Driver">Driver</option>
+                                </select>
+                            </label></li>
+                            <li><label for="team">Team
+                                <select name="team" id="team" required>
+                                    <option value="">Select Team</option>
+                                    <option value="Operations Team">Operations Team</option>
+                                    <option value="Customer Support Team">Customer Support Team</option>
+                                </select>
+                            </label></li>
                             <li>
                                 <label for="location">Location
                                 <select name="location" id="location">
@@ -470,6 +477,7 @@ $result = $conn->query($sql);
                 </div>
         </div>
                 <div id="content2" class="content" style="display: none;">
+                <div id="content3" class="content" style="display: none;">
                 </div>
             </div>
         </div>
