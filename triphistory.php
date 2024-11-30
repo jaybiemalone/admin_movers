@@ -64,12 +64,12 @@
             <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <i class='bx bx-sitemap'></i>
-                    <span>Other</span>
+                    <span>Communication Management</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="issue-maintenance.php">Issue</a></li>
+                        <li><a href="issue-maintenance.php">Issue & Concern</a></li>
                         <li><a href="inbox-management.php">Inbox</a></li>
                     </div>
                 </ul>
@@ -127,12 +127,12 @@
             <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <i class='bx bx-sitemap'></i>
-                    <span>Other</span>
+                    <span>Communication Management</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="issue-maintenance.php">Issue</a></li>
+                        <li><a href="issue-maintenance.php">Issue & Concern</a></li>
                         <li><a href="inbox-management.php">Inbox</a></li>
                     </div>
                 </ul>
@@ -150,6 +150,10 @@
                 </button>
                 <a href="index.php">
                     <span>Home</span>
+                </a>
+                <i class='bx bx-chevron-right'></i>
+                <a href="dashbord.php">
+                    <span>Dashboard</span>
                 </a>
                 <i class='bx bx-chevron-right'></i>
                 <span>Trip History</span>

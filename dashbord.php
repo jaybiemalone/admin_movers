@@ -63,7 +63,7 @@
             <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <i class='bx bx-sitemap'></i>
-                    <span>Other</span>
+                    <span>Communication Management</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
                 <ul class="sub-menu">
@@ -126,12 +126,12 @@
             <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <i class='bx bx-sitemap'></i>
-                    <span>Other</span>
+                    <span>Communication Management</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="issue-maintenance.php">Issue</a></li>
+                        <li><a href="issue-maintenance.php">Issue & Concern</a></li>
                         <li><a href="inbox-management.php">Inbox</a></li>
                     </div>
                 </ul>
@@ -208,8 +208,30 @@
                             <p>Short info</p>
                         </div>
                     </div>
-                    <div class="box"></div>
-                    <div class="box"></div>
+                    <div class="box">
+                        <div class="header"><a href="#"><h1>HR Analytic</h1></a></div>
+                        <div class="body">
+                        <canvas id="finance"></canvas>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="header"><a href="#"><h1>Finance Analytic</h1></a></div>
+                        <div class="body">
+                        <canvas id="hr"></canvas>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="header"><a href="#"><h1>Logistic Analytic</h1></a></div>
+                        <div class="body">
+                        <canvas id="logistic"></canvas>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="header"><a href="triphistory.php"><h1>Book Analytic</h1></a></div>
+                        <div class="body">
+                        <canvas id="booking"></canvas>
+                        </div>
+                    </div>
                 </div>
                 <div class="right">
                     <div class="box">
@@ -224,8 +246,18 @@
                             <p>Short info</p>
                         </div>
                     </div>
-                    <div class="box"></div>
-                    <div class="box"></div>
+                    <div class="box">
+                        <div class="header">
+                            <h1>Employee</h1>
+                        </div>
+                        <div class="body"></div>
+                    </div>
+                    <div class="box">
+                        <div class="header">
+                            <h1>Traffic Location</h1>
+                        </div>
+                        <div class="body"></div>
+                    </div>
                 </div>
             </div>
         </div>
