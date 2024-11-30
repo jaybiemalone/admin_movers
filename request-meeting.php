@@ -1,9 +1,31 @@
+<?php
+include 'db.php';
+
+// SQL query to count rows
+$stmt = $conn->prepare("SELECT COUNT(*) AS total_rows FROM request_management");
+$stmt->execute();
+$count_result = $stmt->get_result();
+$total_rows = 0;
+
+if ($count_result->num_rows > 0) {
+    $row = $count_result->fetch_assoc();
+    $total_rows = $row['total_rows'];
+} else {
+    $total_rows = 0;
+}
+$stmt->close();
+
+// Fetch all rows for display
+$sql = "SELECT * FROM request_management";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movers</title>
+    <title>Movers.com</title>
     <link rel="icon" href="/Asset/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style/index.css">
     <script type="text/javascript" src="app.js" defer></script>
@@ -163,14 +185,12 @@
                     <span>Home</span>
                 </a>
                 <i class='bx bx-chevron-right'></i>
-                <a href="facility.php">
-                    <span>Facility</span>
-                </a>
+                <span>Maintenance</span>
                 <i class='bx bx-chevron-right'></i>
-                <span>Meeting</span>
+                <span>request</span>
             </div>
             <div class="log-out">
-                <button id="toggleBtn"><i class='bx bx-cog' ></i></button>
+                <button id="toggleBtn"><i class='bx bx-cog'></i></button>
                 <div id="logout" class="hidden">
                     <p style="padding-top: 5px;"><a href="index.php">Log out</a></p>
                 </div>
@@ -179,6 +199,81 @@
                 <button style="display: none;" id="sidebtn"><i class='bx bx-menu bx-rotate-180' ></i></button>
             </div>
         </nav>
+        <div class="request-content">
+            <div class="top">
+                <div class="box">
+                    <div class="request-name">
+                        <h1>request List</h1>
+                    </div>
+                    <div class="button">
+                        <input type="search">
+                        <span class="material-symbols-outlined">search</span>
+                        <button>Add request</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="box">
+                    <div class="card">
+                        <h1>Not Started</h1>
+                        <span>0</span>
+                        <img src="./Asset/waiting.gif" alt="" width="40">
+                    </div>
+                    <div class="card">
+                        <h1>Started</h1>
+                        <span>0</span>
+                        <img src="./Asset/waiting.gif" alt="" width="40">
+                    </div>
+                    <div class="card">
+                        <h1>Requested Room</h1>
+                        <span>0</span>
+                        <img src="./Asset/waiting.gif" alt="" width="40">
+                    </div>
+                    <div class="card">
+                        <h1>Completed</h1>
+                        <span>0</span>
+                        <img src="./Asset/waiting.gif" alt="" width="40">
+                    </div>
+                </div>
+                <div class="box">
+                <?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<div class=\"request-box\">";
+                            
+                            echo "<ul>";
+                            echo "<li>" . htmlspecialchars($row['category']) . "</li>";
+                            echo "</ul>";
+
+                            echo "<ul>";
+                            echo "<li>" . htmlspecialchars($row['label']) . "</li>";
+                            echo "</ul>";
+
+                            echo "<ul>";
+                            echo "<li>" . htmlspecialchars($row['description']) . "</li>";
+                            echo "</ul>";
+
+                            echo "<ul>";
+                            echo "<li> Start Date: " . htmlspecialchars($row['date-request']) . "</li>";
+                            echo "</ul>";
+
+                            echo "<ul>";
+                            echo "<li> People assign: " . htmlspecialchars($row['member']) . "</li>";
+                            echo "</ul>";
+
+                            echo "<ul>";
+                            echo "<li><button>Start</button></li>";
+                            echo "</ul>";
+
+                            echo "</div>";
+                        }
+                    } else {
+                        echo "<p>No issues found.</p>";
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
