@@ -1,21 +1,31 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $conn = new mysqli("localhost", "admin_nov", "gHvlCB%CK3kt*Jl^", "admin_movers");
+// Use environment variables for credentials (add these to your .env file or server configuration)
+$db_host = getenv('DB_HOST') ?: 'localhost';
+$db_user = getenv('DB_USER') ?: 'admin_nov';
+$db_pass = getenv('DB_PASS') ?: 'gHvlCB%CK3kt*Jl^';
+$db_name = getenv('DB_NAME') ?: 'admin_movers';
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Database connection
+    $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
+
+    // Check connection
     if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        die("Database connection failed: " . $conn->connect_error);
     }
 
-    $first_name = $_POST['first_name'] ?? '';
-    $last_name = $_POST['last_name'] ?? '';
-    $position = $_POST['position'] ?? '';
-    $drole = $_POST['drole'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $phone_number = $_POST['phone_number'] ?? '';
-    $team = $_POST['team'] ?? '';
-    $ddescription = $_POST['ddescription'] ?? '';
+    // Sanitize input data
+    $first_name = $conn->real_escape_string($_POST['first_name'] ?? '');
+    $last_name = $conn->real_escape_string($_POST['last_name'] ?? '');
+    $position = $conn->real_escape_string($_POST['position'] ?? '');
+    $drole = $conn->real_escape_string($_POST['drole'] ?? '');
+    $email = $conn->real_escape_string($_POST['email'] ?? '');
+    $phone_number = $conn->real_escape_string($_POST['phone_number'] ?? '');
+    $team = $conn->real_escape_string($_POST['team'] ?? '');
+    $ddescription = $conn->real_escape_string($_POST['ddescription'] ?? '');
     $file_path = "";
 
+    // Handle file upload
     if (isset($_FILES['file']) && $_FILES['file']['error'] == 0) {
         $target_dir = "uploads/";
         if (!is_dir($target_dir)) {
@@ -27,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+    // Insert data into the database
     $sql = $conn->prepare("INSERT INTO user_management (first_name, last_name, position, drole, email, phone_number, team, ddescription, uploaded_file_path) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $sql->bind_param("sssssssss", $first_name, $last_name, $position, $drole, $email, $phone_number, $team, $ddescription, $file_path);
@@ -37,15 +48,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         echo "Error: " . $sql->error;
     }
+
     $sql->close();
     $conn->close();
 }
 
 // Fetch records for display
-$conn = new mysqli("localhost", "admin_nov", "gHvlCB%CK3kt*Jl^", "admin_movers");
+$conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
+}
+
 $sql = "SELECT * FROM user_management";
 $result = $conn->query($sql);
+
+// Display records
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -243,8 +264,9 @@ $result = $conn->query($sql);
             </div>
             <div class="user-container">
                 <div class="choose">
-                <button id="showContent1" class="show-button" ><h3>Personal</h3></button>
-                <button id="showContent2" class="show-button" ><h3>Archive</h3></button>
+                <button id="showContent1" class="show-button" ><h3>All Member</h3></button>
+                <button id="showContent2" class="show-button" ><h3>Pending</h3></button>
+                <button id="showContent3" class="show-button" ><h3>Cancel</h3></button>
                 </div>
                 <div id="content1" class="content">
                     <div class="select-option">
@@ -286,44 +308,44 @@ $result = $conn->query($sql);
                             <thead>
                                 <tr>
                                     <th>First Name</th>
-                                    <th>Last Name</th>
                                     <th>Position</th>
-                                    <th>Role</th>
                                     <th>Email</th>
                                     <th>Phone Number</th>
-                                    <th>Team</th>
-                                    <th>Description</th>
                                     <th>Uploaded File</th>
                                     <th>Created At</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                if ($result && $result->num_rows > 0) {
-                                    while ($row = $result->fetch_assoc()) {
-                                        echo "<tr>";
-                                        echo "<td>" . $row['first_name'] . "</td>";
-                                        echo "<td>" . $row['last_name'] . "</td>";
-                                        echo "<td>" . $row['position'] . "</td>";
-                                        echo "<td>" . $row['drole'] . "</td>";
-                                        echo "<td>" . $row['email'] . "</td>";
-                                        echo "<td>" . $row['phone_number'] . "</td>";
-                                        echo "<td>" . $row['team'] . "</td>";
-                                        echo "<td>" . $row['ddescription'] . "</td>";
-                                        echo "<td>";
-                                        if (!empty($row['uploaded_file_path'])) {
-                                            echo "<a href='" . $row['uploaded_file_path'] . "' target='_blank'>View File</a>";
+                            <?php
+                            if ($result && $result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<tr>";
+                                    echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['position']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['phone_number']) . "</td>";
+                                    echo "<td>";
+                                    if (!empty($row['uploaded_file_path'])) {
+                                        $file_extension = pathinfo($row['uploaded_file_path'], PATHINFO_EXTENSION);
+                                        $allowed_extensions = ['jpg', 'jpeg', 'png', 'gif'];
+
+                                        if (in_array(strtolower($file_extension), $allowed_extensions)) {
+                                            echo "<img src='" . htmlspecialchars($row['uploaded_file_path']) . "' alt='Uploaded Image' style='max-width: 50px; max-height: 50px; border-radius: 50%;'>";
                                         } else {
-                                            echo "No file uploaded";
+                                            echo "<a href='" . htmlspecialchars($row['uploaded_file_path']) . "' target='_blank'>View File</a>";
                                         }
-                                        echo "</td>";
-                                        echo "<td>" . $row['created_at'] . "</td>";
-                                        echo "</tr>";
+                                    } else {
+                                        echo "No file uploaded";
                                     }
-                                } else {
-                                    echo "<tr><td colspan='11'>No records found.</td></tr>";
+                                    echo "</td>";
+                                    echo "<td>" . htmlspecialchars($row['created_at']) . "</td>";
+                                    echo "</tr>";
                                 }
-                                ?>
+                            } else {
+                                echo "<tr><td colspan='6'>No records found.</td></tr>";
+                            }
+                            $conn->close();
+                            ?>
                             </tbody>
                         </table>
                         </ul>
