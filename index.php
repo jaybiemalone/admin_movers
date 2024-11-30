@@ -19,7 +19,6 @@
             <input type="password" name="password" id="password" placeholder="Enter your password" required><br>
 
             <button id="submit" type="submit">Login</button><br>
-            <a href="register.php">Don't have an account? Register here</a>
         </form>
 
         <!-- Error/success messages -->

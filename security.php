@@ -17,25 +17,21 @@
             <li>
                 <div class="Logo">
                     <img src="./Asset/logo.png" alt="" width="180" height="62">
+                    <button onclick=toggleSidebar() id="toggle-btn">
+                    </button>
                 </div>
             </li>
-            <li>
+            <li class="active">
                 <a href="dashbord.php">
-                    <i class='bx bxs-dashboard' ></i>
+                    <i class='bx bxs-dashboard'></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="user.php">
-                    <i class='bx bx-user' ></i>
-                    <span>User</span>
-                </a>
-            </li>
-            <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-                    <i class='bx bx-taxi' ></i>
+                    <i class='bx bx-taxi'></i>
                     <span>Trip Management</span>
-                    <i class='bx bx-chevron-right' ></i>
+                    <i class='bx bx-chevron-right'></i>
                 </button>
                 <ul class="sub-menu">
                     <div>
@@ -45,26 +41,26 @@
                 </ul>
             </li>
             <li>
-                <a href="communication.php">
-                    <i class='bx bx-chat' ></i>
-                    <span>Communication</span>
+                <a href="user.php">
+                    <i class='bx bx-user'></i>
+                    <span>User</span>
                 </a>
             </li>
             <li>
                 <a href="facility.php">
-                    <i class='bx bxs-car-garage' ></i>
+                    <i class='bx bxs-car-garage'></i>
                     <span>Facility</span>
                 </a>
             </li>
             <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <i class='bx bx-taxi'></i>
-                    <span>My Files</span>
+                    <span>Documents</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="document.php">Document</a></li>
+                        <li><a href="contract.php">Contract</a></li>
                         <li><a href="template-files.php">Template</a></li>
                         <li><a href="marketing-files.php">Marketing</a></li>
                         <li><a href="project-files.php">Projects</a></li>
@@ -73,41 +69,22 @@
             </li>
             <li>
                 <a href="legal.php">
-                    <i class='bx bx-file' ></i>
+                    <i class='bx bx-file'></i>
                     <span>Legal Compliance</span>
-                </a>
-            </li>
-            <li>
-                <a href="contract.php">
-                    <i class='bx bxs-edit' ></i>
-                    <span>Contract</span>
-                </a>
-            </li>
-            <li class="active">
-                <a href="security.php">
-                    <i class='bx bx-shield' ></i>
-                    <span>Security</span>
                 </a>
             </li>
             <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <i class='bx bx-sitemap'></i>
-                    <span>Maintenance</span>
+                    <span>Other</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
                 <ul class="sub-menu">
                     <div>
                         <li><a href="issue-maintenance.php">Issue</a></li>
-                        <li><a href="task-management.php">Task</a></li>
                         <li><a href="inbox-management.php">Inbox</a></li>
                     </div>
                 </ul>
-            </li>
-            <li>
-                <a href="index.php">
-                    <i class='bx bx-user-circle bx-rotate-180' ></i>
-                    <span>Log out</span>
-                </a>
             </li>
         </ul>
     </div>
@@ -120,23 +97,17 @@
                     </button>
                 </div>
             </li>
-            <li>
+            <li class="active">
                 <a href="dashbord.php">
-                    <i class='bx bxs-dashboard' ></i>
+                    <i class='bx bxs-dashboard'></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="user.php">
-                    <i class='bx bx-user' ></i>
-                    <span>User</span>
-                </a>
-            </li>
-            <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-                    <i class='bx bx-taxi' ></i>
+                    <i class='bx bx-taxi'></i>
                     <span>Trip Management</span>
-                    <i class='bx bx-chevron-right' ></i>
+                    <i class='bx bx-chevron-right'></i>
                 </button>
                 <ul class="sub-menu">
                     <div>
@@ -146,26 +117,26 @@
                 </ul>
             </li>
             <li>
-                <a href="communication.php">
-                    <i class='bx bx-chat' ></i>
-                    <span>Communication</span>
+                <a href="user.php">
+                    <i class='bx bx-user'></i>
+                    <span>User</span>
                 </a>
             </li>
             <li>
                 <a href="facility.php">
-                    <i class='bx bxs-car-garage' ></i>
+                    <i class='bx bxs-car-garage'></i>
                     <span>Facility</span>
                 </a>
             </li>
             <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <i class='bx bx-taxi'></i>
-                    <span>My Files</span>
+                    <span>Documents</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="document.php">Document</a></li>
+                        <li><a href="contract.php">Contract</a></li>
                         <li><a href="template-files.php">Template</a></li>
                         <li><a href="marketing-files.php">Marketing</a></li>
                         <li><a href="project-files.php">Projects</a></li>
@@ -174,32 +145,19 @@
             </li>
             <li>
                 <a href="legal.php">
-                    <i class='bx bx-file' ></i>
+                    <i class='bx bx-file'></i>
                     <span>Legal Compliance</span>
-                </a>
-            </li>
-            <li>
-                <a href="contract.php">
-                    <i class='bx bxs-edit' ></i>
-                    <span>Contract</span>
-                </a>
-            </li>
-            <li class="active">
-                <a href="security.php">
-                    <i class='bx bx-shield' ></i>
-                    <span>Security</span>
                 </a>
             </li>
             <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <i class='bx bx-sitemap'></i>
-                    <span>Maintenance</span>
+                    <span>Other</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
                 <ul class="sub-menu">
                     <div>
                         <li><a href="issue-maintenance.php">Issue</a></li>
-                        <li><a href="task-management.php">Task</a></li>
                         <li><a href="inbox-management.php">Inbox</a></li>
                     </div>
                 </ul>

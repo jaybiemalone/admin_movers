@@ -23,7 +23,7 @@
                     </button>
                 </div>
             </li>
-            <li>
+            <li class="active">
                 <a href="dashbord.php">
                     <i class='bx bxs-dashboard'></i>
                     <span>Dashboard</span>
@@ -57,49 +57,36 @@
             <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <i class='bx bx-taxi'></i>
-                    <span>My Files</span>
+                    <span>Documents</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="document.php">Document</a></li>
+                        <li><a href="contract.php">Contract</a></li>
                         <li><a href="template-files.php">Template</a></li>
                         <li><a href="marketing-files.php">Marketing</a></li>
                         <li><a href="project-files.php">Projects</a></li>
                     </div>
                 </ul>
             </li>
-            <li class="active">
+            <li>
                 <a href="legal.php">
                     <i class='bx bx-file'></i>
                     <span>Legal Compliance</span>
                 </a>
             </li>
             <li>
-                <a href="contract.php">
-                    <i class='bx bxs-edit'></i>
-                    <span>Contract</span>
-                </a>
-            </li>
-            <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <i class='bx bx-sitemap'></i>
-                    <span>Maintenance</span>
+                    <span>Other</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="#">Issue</a></li>
-                        <li><a href="#">Task</a></li>
-                        <li><a href="#">Inbox</a></li>
+                        <li><a href="issue-maintenance.php">Issue</a></li>
+                        <li><a href="inbox-management.php">Inbox</a></li>
                     </div>
                 </ul>
-            </li>
-            <li>
-                <a href="index.php">
-                    <i class='bx bx-user-circle bx-rotate-180' ></i>
-                    <span>Log out</span>
-                </a>
             </li>
         </ul>
     </div>
@@ -112,7 +99,7 @@
                     </button>
                 </div>
             </li>
-            <li>
+            <li class="active">
                 <a href="dashbord.php">
                     <i class='bx bxs-dashboard'></i>
                     <span>Dashboard</span>
@@ -146,40 +133,33 @@
             <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <i class='bx bx-taxi'></i>
-                    <span>My Files</span>
+                    <span>Documents</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="document.php">Document</a></li>
+                        <li><a href="contract.php">Contract</a></li>
                         <li><a href="template-files.php">Template</a></li>
                         <li><a href="marketing-files.php">Marketing</a></li>
                         <li><a href="project-files.php">Projects</a></li>
                     </div>
                 </ul>
             </li>
-            <li class="active">
+            <li>
                 <a href="legal.php">
                     <i class='bx bx-file'></i>
                     <span>Legal Compliance</span>
                 </a>
             </li>
             <li>
-                <a href="contract.php">
-                    <i class='bx bxs-edit'></i>
-                    <span>Contract</span>
-                </a>
-            </li>
-            <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
                     <i class='bx bx-sitemap'></i>
-                    <span>Maintenance</span>
+                    <span>Other</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
                 <ul class="sub-menu">
                     <div>
                         <li><a href="issue-maintenance.php">Issue</a></li>
-                        <li><a href="task-management.php">Task</a></li>
                         <li><a href="inbox-management.php">Inbox</a></li>
                     </div>
                 </ul>
