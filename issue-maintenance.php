@@ -7,7 +7,7 @@ $total_task = 0;
 
 // Execute queries for counts
 $stmt1 = $conn->prepare("SELECT COUNT(*) AS total_rows FROM issue_management");
-$stmt2 = $conn->prepare("SELECT COUNT(*) AS total_task FROM task_management");
+$stmt2 = $conn->prepare("SELECT COUNT(*) AS total_task FROM request_management");
 
 if ($stmt1 && $stmt2) {
     $stmt1->execute();

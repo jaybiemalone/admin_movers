@@ -82,7 +82,7 @@
         </ul>
     </div>
     <div class="sidebar">
-    <ul>
+        <ul>
             <li>
                 <div class="Logo">
                     <img src="./Asset/logo.png" alt="" width="180" height="62">
@@ -198,7 +198,7 @@
                     </div>
                     <div class="box">
                         <div class="title">
-                            <h2>Finance</h2>
+                            <h2>Finance Earning</h2>
                         </div>
                         <div class="value">
                             <p>₱ 0</p>
@@ -221,25 +221,25 @@
                         </div>
                     </div>
                     <div class="box">
-                        <div class="header"><a href="#"><h1>HR Analytic</h1></a></div>
+                        <div class="header"><a href="#"><h1>HR Performance</h1></a></div>
                         <div class="body">
                         <canvas id="finance"></canvas>
                         </div>
                     </div>
                     <div class="box">
-                        <div class="header"><a href="#"><h1>Finance Analytic</h1></a></div>
+                        <div class="header"><a href="#"><h1>Finance Performance</h1></a></div>
                         <div class="body">
                         <canvas id="hr"></canvas>
                         </div>
                     </div>
                     <div class="box">
-                        <div class="header"><a href="#"><h1>Logistic Analytic</h1></a></div>
+                        <div class="header"><a href="#"><h1>Logistic Performance</h1></a></div>
                         <div class="body">
                         <canvas id="logistic"></canvas>
                         </div>
                     </div>
                     <div class="box">
-                        <div class="header"><a href="triphistory.php"><h1>Book Analytic</h1></a></div>
+                        <div class="header"><a href="triphistory.php"><h1>Core Performance</h1></a></div>
                         <div class="body">
                         <canvas id="booking"></canvas>
                         </div>

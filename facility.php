@@ -178,19 +178,19 @@
         <div class="facility-container">
             <div class="facility-card">
                 <div class="card">
-                    <h1><a href="request-meeting.php">Request Meeting</a></h1>
+                    <h1><a href="request-meeting.php">Available Cab</a></h1>
                     <span>0</span>
                 </div>
                 <div class="card">
-                    <h1><a href="tickets-management.php">Active Tickets</a></h1>
+                    <h1><a href="tickets-management.php">Available Room</a></h1>
                     <span>0</span>
                 </div>
                 <div class="card">
-                    <h1><a href="resolve-issues.php">Resolve Issues</a></h1>
+                    <h1><a href="resolve-issues.php">Available Driver</a></h1>
                     <span>0</span>
                 </div>
                 <div class="card">
-                    <h1><a href="inventory-management.php">Inventory Items</a></h1>
+                    <h1><a href="inventory-management.php">Room Request</a></h1>
                     <span>0</span>
                 </div>
             </div>
