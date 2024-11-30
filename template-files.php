@@ -112,19 +112,6 @@ if (isset($_POST['submit'])) {
                 </a>
             </li>
             <li>
-                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-                    <i class='bx bx-taxi'></i>
-                    <span>Trip Management</span>
-                    <i class='bx bx-chevron-right'></i>
-                </button>
-                <ul class="sub-menu">
-                    <div>
-                        <li><a href="trips.php">Trip Dashboard</a></li>
-                        <li><a href="triphistory.php">History Rides</a></li>
-                    </div>
-                </ul>
-            </li>
-            <li>
                 <a href="user.php">
                     <i class='bx bx-user'></i>
                     <span>User</span>
@@ -186,19 +173,6 @@ if (isset($_POST['submit'])) {
                     <i class='bx bxs-dashboard'></i>
                     <span>Dashboard</span>
                 </a>
-            </li>
-            <li>
-                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-                    <i class='bx bx-taxi'></i>
-                    <span>Trip Management</span>
-                    <i class='bx bx-chevron-right'></i>
-                </button>
-                <ul class="sub-menu">
-                    <div>
-                        <li><a href="trips.php">Trip Dashboard</a></li>
-                        <li><a href="triphistory.php">History Rides</a></li>
-                    </div>
-                </ul>
             </li>
             <li>
                 <a href="user.php">
