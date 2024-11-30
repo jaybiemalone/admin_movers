@@ -44,7 +44,7 @@
             <li>
                 <a href="request-meeting.php">
                     <i class='bx bxs-comment-dots' undefined ></i>
-                    <span>Request Room</span>
+                    <span>Request</span>
                 </a>
             </li>
             <li>
@@ -113,7 +113,7 @@
             <li>
                 <a href="request-meeting.php">
                     <i class='bx bxs-comment-dots' undefined ></i>
-                    <span>Request Room</span>
+                    <span>Request</span>
                 </a>
             </li>
             <li>

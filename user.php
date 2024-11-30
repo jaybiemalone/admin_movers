@@ -119,7 +119,7 @@ $result = $conn->query($sql);
             <li>
                 <a href="request-meeting.php">
                     <i class='bx bxs-comment-dots' undefined ></i>
-                    <span>Request Room</span>
+                    <span>Request</span>
                 </a>
             </li>
             <li>
@@ -188,7 +188,7 @@ $result = $conn->query($sql);
             <li>
                 <a href="request-meeting.php">
                     <i class='bx bxs-comment-dots' undefined ></i>
-                    <span>Request Room</span>
+                    <span>Request</span>
                 </a>
             </li>
             <li>
@@ -280,7 +280,7 @@ $result = $conn->query($sql);
                     <form action="" method="POST" enctype="multipart/form-data">
                         <ul>
                             <li><label for="role">Role
-                                <select name="role" id="role" required>
+                                <select name="role" id="role">
                                     <option value="">Select Role</option>
                                     <option value="Driver">Driver</option>
                                     <option value="Passenger">Passenger</option>
@@ -288,14 +288,14 @@ $result = $conn->query($sql);
                                 </select>
                             </label></li>
                             <li><label for="position">Position
-                                <select name="position" id="position" required>
+                                <select name="position" id="position">
                                     <option value="">Select Position</option>
                                     <option value="Operations Manager">Operations Manager</option>
                                     <option value="Driver">Driver</option>
                                 </select>
                             </label></li>
                             <li><label for="team">Team
-                                <select name="team" id="team" required>
+                                <select name="team" id="team">
                                     <option value="">Select Team</option>
                                     <option value="Operations Team">Operations Team</option>
                                     <option value="Customer Support Team">Customer Support Team</option>
@@ -371,99 +371,69 @@ $result = $conn->query($sql);
                                 <div class="left-profile"></div>
                                 <div class="right-information"></div>
                             </div>
-                            <form action="save_select" method="POST">
-                            <div class="bottom">
-                                <div class="left-icon">
-                                    <input type="file" name="file" id="file" style="display: none;">
-                                    <label for="file">Upload</label><br>
-                                    <p>upload picture</p>
-                                </div>
-                                <div class="right-info">
-                                    <div class="info">
-                                        <label for="">First Name(requirements)</label>
-                                        <input type="text" placeholder="First Name">
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
+                                <div class="bottom">
+                                    <div class="left-icon">
+                                        <input type="file" name="file" id="file" style="display: none;">
+                                        <label for="file">Upload</label><br>
+                                        <p>upload picture</p>
                                     </div>
-                                    <div class="info">
-                                        <label for="">Last Name(requirements)</label>
-                                        <input type="text" placeholder="Last Name">
+                                    <div class="right-info">
+                                        <div class="info">
+                                            <label for="">First Name (required)</label>
+                                            <input type="text" name="first_name" placeholder="First Name" required>
+                                        </div>
+                                        <div class="info">
+                                            <label for="">Last Name (required)</label>
+                                            <input type="text" name="last_name" placeholder="Last Name" required>
+                                        </div>
+                                        <div class="info">
+                                            <label for="">Position</label><br>
+                                            <select name="position" id="" required>
+                                                <option value=""></option>
+                                                <option value="Operations Manager">Admin</option>
+                                                <option value="Dispatch Officer">HR Admin</option>
+                                                <option value="Fleet Manager">Logistic Admin</option>
+                                                <option value="Fleet Manager">Finance Admin</option>
+                                                <!-- Add other options -->
+                                            </select>
+                                        </div>
+                                        <div class="info">
+                                            <label for="">Role</label><br>
+                                            <select name="drole" id="" required>
+                                                <option value=""></option>
+                                                <option value="Driver">Assistant</option>
+                                                <option value="Employee">Employee</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="info">
-                                        <label for="">Position</label><br>
-                                        <select name="" id="">
-                                            <option value=""></option>
-                                            <option value="" disabled>Operations Team</option>
-                                            <option value="">Operations Manager</option>
-                                            <option value="">Dispatch Officer</option>
-                                            <option value="">Fleet Manager</option>
-                                            <option value="">Logistics Coordinator</option>
-                                            <option value="" disabled>Driver Management Team</option>
-                                            <option value="">Driver Recruitment Specialist</option>
-                                            <option value="">Driver Relations Officer</option>
-                                            <option value="">Driver Training Coordinator</option>
-                                            <option value="">Compliance Officer</option>
-                                            <option value="" disabled>Customer Support Team</option>
-                                            <option value="">Customer Service Representative</option>
-                                            <option value="">Escalation Specialist</option>
-                                            <option value="">Customer Experience Manager</option>
-                                            <option value="" disabled>Product and Technology Team</option>
-                                            <option value="">Product Manager</option>
-                                            <option value="">Software Engineer</option>
-                                            <option value="">Data Analyst</option>
-                                            <option value="">Quality Assurance Tester</option>
-                                            <option value="" disabled>Marketing and Sales Team</option>
-                                            <option value="">Marketing Manager</option>
-                                            <option value="">Sales Executive</option>
-                                            <option value="">Brand Ambassador</option>
-                                            <option value="" disabled>Finance Team</option>
-                                            <option value="">Finance Manager</option>
-                                            <option value="">Payroll Officer</option>
-                                            <option value="">Financial Analyst</option>
-                                            <option value="" disabled>Compliance and Regulatory Team</option>
-                                            <option value="">Compliance Manager</option>
-                                            <option value="">Legal Counsel</option>
-                                            <option value="">Safety & Risk Manager</option>
-                                        </select>
-                                    </div>
-                                    <div class="info">
-                                        <label for="">Role</label><br>
-                                        <select name="" id="">
-                                            <option value=""></option>
-                                            <option value="">Driver</option>
-                                            <option value="">Passenger</option>
-                                            <option value="">Employee</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="bellow-employee-info">
-                                    <div class="info">
-                                        <h1>Contact</h1>
-                                        <label for="">Email</label><br>
-                                        <input type="email">
-                                    </div>
-                                    <div class="info">
-                                        <label for="">Phone number</label><br><br>
-                                            <input type="text">
-                                    </div>
-                                    <div class="info">
-                                        <h1>Team</h1><br>
-                                        <select name="" id="">
-                                            <option value=""></option>
-                                            <option value="">Operations Team</option>
-                                            <option value="">Driver Management Team</option>
-                                            <option value="">Customer Support Team</option>
-                                            <option value="">Product and Technology Team</option>
-                                            <option value="">Marketing and Sales Team</option>
-                                            <option value="">Finance Team</option>
-                                            <option value="">Compliance and Regulatory Team</option>
-                                        </select>
-                                    </div>
-                                    <div class="info"><br>
-                                        <h1>Description</h1>
-                                        <textarea name="" id=""></textarea>
-                                        <button type="submit" name="save_select" id="submit">Save</button>
+                                    <div class="bellow-employee-info">
+                                        <div class="info">
+                                            <h1>Contact</h1>
+                                            <label for="">Email</label><br>
+                                            <input type="email" name="email" required>
+                                        </div>
+                                        <div class="info">
+                                            <label for="">Phone number</label><br><br>
+                                            <input type="text" name="phone_number" required>
+                                        </div>
+                                        <div class="info">
+                                            <h1>Team</h1><br>
+                                            <select name="team" id="" required>
+                                                <option value=""></option>
+                                                <option value="Operations Team">Operations Team</option>
+                                                <option value="Driver Management Team">Driver Management Team</option>
+                                                <option value="Customer Support Team">Customer Support Team</option>
+                                                <!-- Add other options -->
+                                            </select>
+                                        </div>
+                                        <div class="info"><br>
+                                            <h1>Description</h1>
+                                            <textarea name="ddescription" required></textarea>
+                                            <button type="submit" name="save_select" id="submit">Save</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             </form>
                             </div>
                             <div id="add-work-content" class="add-work-content" style="display: none;">Work

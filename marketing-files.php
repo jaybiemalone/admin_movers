@@ -100,7 +100,7 @@ if (isset($_POST['submit'])) {
             <li>
                 <a href="request-meeting.php">
                     <i class='bx bxs-comment-dots' undefined ></i>
-                    <span>Request Room</span>
+                    <span>Request</span>
                 </a>
             </li>
             <li>
@@ -169,7 +169,7 @@ if (isset($_POST['submit'])) {
             <li>
                 <a href="request-meeting.php">
                     <i class='bx bxs-comment-dots' undefined ></i>
-                    <span>Request Room</span>
+                    <span>Request</span>
                 </a>
             </li>
             <li>
