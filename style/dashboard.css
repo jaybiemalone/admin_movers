@@ -129,7 +129,9 @@
 
 .dashboard-content .dashboard-container .left .box .header,
 .dashboard-content .dashboard-container .right .box:nth-child(2) .header,
-.dashboard-content .dashboard-container .right .box:nth-child(3) .header{
+.dashboard-content .dashboard-container .right .box:nth-child(3) .header,
+.dashboard-content .dashboard-container .right .box:nth-child(4) .header,
+.dashboard-content .dashboard-container .right .box:nth-child(5) .header{
     width: 100%;
     height: 15%;
     display: flex;
@@ -166,7 +168,9 @@
 }
 
 .dashboard-content .dashboard-container .right .box:nth-child(2),
-.dashboard-content .dashboard-container .right .box:nth-child(3){
+.dashboard-content .dashboard-container .right .box:nth-child(3),
+.dashboard-content .dashboard-container .right .box:nth-child(4),
+.dashboard-content .dashboard-container .right .box:nth-child(5){
     box-sizing: border-box;
     height: 450px;
     padding: 0 10px;

@@ -28,19 +28,6 @@
                 </a>
             </li>
             <li>
-                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-                    <i class='bx bx-taxi'></i>
-                    <span>Trip Management</span>
-                    <i class='bx bx-chevron-right'></i>
-                </button>
-                <ul class="sub-menu">
-                    <div>
-                        <li><a href="trips.php">Trip Dashboard</a></li>
-                        <li><a href="triphistory.php">History Rides</a></li>
-                    </div>
-                </ul>
-            </li>
-            <li>
                 <a href="user.php">
                     <i class='bx bx-user'></i>
                     <span>User</span>
@@ -48,13 +35,19 @@
             </li>
             <li>
                 <a href="facility.php">
-                    <i class='bx bxs-car-garage'></i>
+                    <i class='bx bxs-copy-alt'></i>
                     <span>Facility</span>
                 </a>
             </li>
             <li>
+                <a href="request-meeting.php">
+                    <i class='bx bxs-comment-dots' undefined ></i>
+                    <span>Request Room</span>
+                </a>
+            </li>
+            <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-                    <i class='bx bx-taxi'></i>
+                    <i class='bx bxs-data' ></i>
                     <span>Documents</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
@@ -104,19 +97,6 @@
                 </a>
             </li>
             <li>
-                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-                    <i class='bx bx-taxi'></i>
-                    <span>Trip Management</span>
-                    <i class='bx bx-chevron-right'></i>
-                </button>
-                <ul class="sub-menu">
-                    <div>
-                        <li><a href="trips.php">Trip Dashboard</a></li>
-                        <li><a href="triphistory.php">History Rides</a></li>
-                    </div>
-                </ul>
-            </li>
-            <li>
                 <a href="user.php">
                     <i class='bx bx-user'></i>
                     <span>User</span>
@@ -124,13 +104,19 @@
             </li>
             <li>
                 <a href="facility.php">
-                    <i class='bx bxs-car-garage'></i>
+                    <i class='bx bxs-copy-alt'></i>
                     <span>Facility</span>
                 </a>
             </li>
             <li>
+                <a href="request-meeting.php">
+                    <i class='bx bxs-comment-dots' undefined ></i>
+                    <span>Request Room</span>
+                </a>
+            </li>
+            <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-                    <i class='bx bx-taxi'></i>
+                    <i class='bx bxs-data' ></i>
                     <span>Documents</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>

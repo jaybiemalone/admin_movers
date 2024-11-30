@@ -37,13 +37,19 @@
             </li>
             <li>
                 <a href="facility.php">
-                    <i class='bx bxs-car-garage'></i>
+                    <i class='bx bxs-copy-alt'></i>
                     <span>Facility</span>
                 </a>
             </li>
             <li>
+                <a href="request-meeting.php">
+                    <i class='bx bxs-comment-dots' undefined ></i>
+                    <span>Request Room</span>
+                </a>
+            </li>
+            <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-                    <i class='bx bx-taxi'></i>
+                    <i class='bx bxs-data' ></i>
                     <span>Documents</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
@@ -100,13 +106,19 @@
             </li>
             <li>
                 <a href="facility.php">
-                    <i class='bx bxs-car-garage'></i>
+                    <i class='bx bxs-copy-alt'></i>
                     <span>Facility</span>
                 </a>
             </li>
             <li>
+                <a href="request-meeting.php">
+                    <i class='bx bxs-comment-dots' undefined ></i>
+                    <span>Request Room</span>
+                </a>
+            </li>
+            <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-                    <i class='bx bx-taxi'></i>
+                    <i class='bx bxs-data' ></i>
                     <span>Documents</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>

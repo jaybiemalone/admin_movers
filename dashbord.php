@@ -35,13 +35,19 @@
             </li>
             <li>
                 <a href="facility.php">
-                    <i class='bx bxs-car-garage'></i>
+                    <i class='bx bxs-copy-alt'></i>
                     <span>Facility</span>
                 </a>
             </li>
             <li>
+                <a href="request-meeting.php">
+                    <i class='bx bxs-comment-dots' undefined ></i>
+                    <span>Request Room</span>
+                </a>
+            </li>
+            <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-                    <i class='bx bx-taxi'></i>
+                    <i class='bx bxs-data' ></i>
                     <span>Documents</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
@@ -76,7 +82,7 @@
         </ul>
     </div>
     <div class="sidebar">
-        <ul>
+    <ul>
             <li>
                 <div class="Logo">
                     <img src="./Asset/logo.png" alt="" width="180" height="62">
@@ -98,13 +104,19 @@
             </li>
             <li>
                 <a href="facility.php">
-                    <i class='bx bxs-car-garage'></i>
+                    <i class='bx bxs-copy-alt'></i>
                     <span>Facility</span>
                 </a>
             </li>
             <li>
+                <a href="request-meeting.php">
+                    <i class='bx bxs-comment-dots' undefined ></i>
+                    <span>Request Room</span>
+                </a>
+            </li>
+            <li>
                 <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-                    <i class='bx bx-taxi'></i>
+                    <i class='bx bxs-data' ></i>
                     <span>Documents</span>
                     <i class='bx bx-chevron-right'></i>
                 </button>
@@ -254,7 +266,19 @@
                     </div>
                     <div class="box">
                         <div class="header">
-                            <h1>Traffic Location</h1>
+                            <h1></h1>
+                        </div>
+                        <div class="body"></div>
+                    </div>
+                    <div class="box">
+                        <div class="header">
+                            <h1></h1>
+                        </div>
+                        <div class="body"></div>
+                    </div>
+                    <div class="box">
+                        <div class="header">
+                            <a href="triphistory.php"><h1>Traffic Location</h1></a>
                         </div>
                         <div class="body"></div>
                     </div>
